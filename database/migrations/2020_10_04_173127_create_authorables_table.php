@@ -14,7 +14,7 @@ class CreateAuthorablesTable extends Migration
     public function up()
     {
         Schema::create('authorables', function (Blueprint $table) {
-            $table->integer('author_id');
+            $table->integer('user_id');
             $table->integer('authorable_id');
             $table->string('authorable_type');
         });

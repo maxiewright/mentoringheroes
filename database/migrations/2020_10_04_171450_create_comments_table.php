@@ -14,12 +14,13 @@ class CreateCommentsTable extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->integer('id');
+            $table->id();
+            $table->foreignId('user_id')->constrained();
             $table->text('body');
             $table->integer('commentable_id');
             $table->string('commentable_type');
-            $table->string('status');
-            $table->date('published_at');
+            $table->foreignId('comment_status_id')->constrained();
+            $table->date('approved_at');
             $table->timestamps();
         });
     }

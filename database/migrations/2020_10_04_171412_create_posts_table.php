@@ -23,7 +23,7 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->text('meta_description');
             $table->text('meta_keywords');
-            $table->string('status');
+            $table->foreignId('post_status_id')->constrained();
             $table->boolean('featured')->default(0);
             $table->date('published_at');
             $table->timestamps();

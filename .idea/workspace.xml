@@ -153,6 +153,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\maxie\mentoringheroes\resources\views\layouts\blog" />
+      <recent name="C:\Users\maxie\mentoringheroes\resources\views\blog" />
+      <recent name="C:\Users\maxie\mentoringheroes\resources\views" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -168,7 +175,7 @@
       <option name="presentableId" value="Default" />
       <updated>1601831216213</updated>
       <workItem from="1601831217299" duration="269000" />
-      <workItem from="1601831545392" duration="2173000" />
+      <workItem from="1601831545392" duration="21156000" />
     </task>
     <servers />
   </component>
@@ -176,9 +183,33 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1601833555881">
+    <state x="624" y="216" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601854879852">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601833555881" />
+    <state x="624" y="216" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601854879852" />
+    <state x="2035" y="0" width="1488" height="704" maximized="true" key="dock-window-1" timestamp="1601842259796">
+      <screen x="1920" y="0" width="1600" height="860" />
+    </state>
+    <state x="2035" y="0" width="1488" height="704" maximized="true" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601842259796" />
+    <state x="1920" y="0" width="1488" height="704" maximized="true" key="dock-window-2" timestamp="1601842680244">
+      <screen x="1920" y="0" width="1600" height="860" />
+    </state>
+    <state x="1920" y="0" width="1488" height="704" maximized="true" key="dock-window-2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601842680244" />
+    <state x="1941" y="0" width="1328" height="704" maximized="true" key="dock-window-3" timestamp="1601860458023">
+      <screen x="1920" y="0" width="1600" height="860" />
+    </state>
+    <state x="1941" y="0" width="1328" height="704" maximized="true" key="dock-window-3/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601860458023" />
+    <state x="1990" y="0" width="1328" height="704" key="dock-window-4" timestamp="1601854762816">
+      <screen x="1920" y="0" width="1600" height="860" />
+    </state>
+    <state x="1990" y="0" width="1328" height="704" key="dock-window-4/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601854762816" />
+    <state x="532" y="237" key="run.anything.popup" timestamp="1601854394740">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="532" y="237" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601854394740" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1601860737944">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601860737944" />
   </component>
 </project>
