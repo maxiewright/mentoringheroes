@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2490dfbf499c290431ce3e765fef55ae",
+    "content-hash": "9bbd342ab1d46f090de300196f17a03c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -914,6 +914,48 @@
                 "validator"
             ],
             "time": "2020-09-26T15:48:38+00:00"
+        },
+        {
+            "name": "everestmx/nova-belongs-to-many-field",
+            "version": "0.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/everestmx/nova-belongs-to-many-field.git",
+                "reference": "8c588c887053391b798558a49ae60731d9b296db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/everestmx/nova-belongs-to-many-field/zipball/8c588c887053391b798558a49ae60731d9b296db",
+                "reference": "8c588c887053391b798558a49ae60731d9b296db",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Everestmx\\BelongsToManyField\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Everestmx\\BelongsToManyField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "BelongsToMany nova representation in field.",
+            "keywords": [
+                "field",
+                "laravel",
+                "nova"
+            ],
+            "time": "2019-09-25T19:21:52+00:00"
         },
         {
             "name": "fideloper/proxy",

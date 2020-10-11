@@ -9,15 +9,16 @@
     "license": "MIT",
     "require": {
         "php": "^7.3",
+        "everestmx/nova-belongs-to-many-field": "^0.0.5",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.0",
         "laravel/jetstream": "^1.3",
+        "laravel/nova": "~3.0",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.0",
-        "livewire/livewire": "^2.0",
-        "laravel/nova": "~3.0"
+        "livewire/livewire": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
@@ -51,6 +52,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "post-update-cmd": [
+            "@php artisan nova:publish"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
@@ -67,10 +71,5 @@
             "type": "composer",
             "url": "https://nova.laravel.com"
         }
-    ],
-    "scripts": {
-        "post-update-cmd": [
-            "@php artisan nova:publish"
-        ]
-    }
+    ]
 }

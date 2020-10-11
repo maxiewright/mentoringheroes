@@ -41,7 +41,8 @@ class Post extends Model
 
     public function authors()
     {
-        return $this->morphToMany(User::class, 'authorable');
+        return $this->morphToMany(User::class, 'authorable')
+            ->withPivot('is_lead');
     }
 
     /**

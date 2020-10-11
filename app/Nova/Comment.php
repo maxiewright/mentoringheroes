@@ -3,7 +3,11 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\MorphTo;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Comment extends Resource
@@ -41,6 +45,14 @@ class Comment extends Resource
     {
         return [
             ID::make(__('ID'), 'id')->sortable(),
+
+            MorphTo::make('Commentable')->types([
+                Post::class,
+            ]),
+
+            Textarea::make('Body'),
+
+            BelongsTo::make('Status', 'status', CommentStatus::class),
         ];
     }
 
