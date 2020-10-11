@@ -15,7 +15,11 @@ class Post extends Model
 
     protected $fillable = [
         'title', 'seo_title', 'image', 'excerpt', 'body', 'slug', 'meta_description',
-        'meta_keywords', 'post_status_id', 'featured', 'published_at',
+        'meta_keywords', 'post_status_id', 'is_featured', 'published_at',
+    ];
+
+    protected $dates = [
+        'published_at'
     ];
 
     /**
@@ -41,13 +45,34 @@ class Post extends Model
     }
 
     /**
+     * get Lead Author of this post
+     *
+     * @return mixed|null
+     */
+    public function getLeadAuthorAttribute()
+    {
+        return $this->authors()->wherePivot('is_lead', true)->first();
+    }
+
+    /**
      * return the categories for this model
      *
      * @return BelongsToMany
      */
     public function categories()
     {
-        return $this->belongsToMany(Category::class, 'post_category');
+        return $this->belongsToMany(Category::class, 'post_category')
+            ->withPivot('is_main');
+    }
+
+    /**
+     * Get main category for this post
+     *
+     * @return mixed
+     */
+    public function getMainCategoryAttribute()
+    {
+        return $this->categories()->wherePivot('is_main', true)->first();
     }
 
     /**

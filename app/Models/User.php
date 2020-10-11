@@ -61,13 +61,15 @@ class User extends Authenticatable
     ];
 
     /**
-     * This can create a post model
+     * Get all post that are authored by this user
      *
      * @return MorphToMany
      */
     public function posts()
     {
-        return $this->morphedByMany(Post::class, 'authorable');
+        return $this->morphedByMany(Post::class, 'authorable')
+            ->withPivot('is_lead');
     }
+
 
 }

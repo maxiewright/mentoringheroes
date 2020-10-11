@@ -17,15 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('blog.index');
-});
-
+//Front End
+Route::get('/', [PostController::class, 'index']);
 Route::resource('posts', PostController::class);
-Route::resource('categories', CategoryController::class);
-Route::resource('comments', CommentController::class);
-Route::resource('tags', TagController::class);
 
+
+
+// Admin
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

@@ -16,6 +16,7 @@ class CreatePostCategoryTable extends Migration
         Schema::create('post_category', function (Blueprint $table) {
             $table->foreignId('post_id')->constrained();
             $table->foreignId('category_id')->constrained();
+            $table->boolean('is_main')->default(false);
         });
     }
 

@@ -2,12 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d1d42dc-4858-41c1-ad8e-c4596f3e4746" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/CategorySeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/CommentStatusSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/PostSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/PostStatusSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/TagSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentStatusController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PostStatusController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/CommentStatus.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/PostStatus.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Nova/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Nova/Comment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Nova/CommentStatus.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Nova/Post.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Nova/PostStatus.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Nova/Resource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Nova/Tag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Nova/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Providers/NovaServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/View/Components/Layouts/Blog/Master.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/nova.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/CategoryFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/CommentFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/CommentStatusFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/PostFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/TagFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_04_171410_create_post_statuses_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_04_171448_create_comment_statuses_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/vendor/nova/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/vendor/nova/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/vendor/nova/manifest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/vendor/nova/mix-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/vendor/nova/vendor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/vendor/nova/en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/vendor/nova/en/validation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/blog/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/blog/partials/stats/comments.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/blog/partials/stats/likes.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/blog/partials/stats/views.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/blog/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/layouts/blog/master.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/blog/aside.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/blog/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/blog/guest.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/blog/master.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/blog/text-header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/blog/top-bar-nav.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/blog/topic-nav.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/nova/partials/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/nova/partials/logo.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/nova/partials/meta.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/nova/partials/user.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/bootstrap-4.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/default.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/semantic-ui.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-bootstrap-4.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-default.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-tailwind.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/tailwind.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mentoringheores.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mentoringheores.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_04_171412_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_04_171412_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_04_171852_create_post_category_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_04_171852_create_post_category_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_04_173127_create_authorables_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_04_173127_create_authorables_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/PostSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PostSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +80,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="blade" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -142,16 +212,32 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/bcmath_compat" />
+      <path value="$PROJECT_DIR$/vendor/moontoast/math" />
+      <path value="$PROJECT_DIR$/vendor/laravel/nova" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/brick/money" />
+      <path value="$PROJECT_DIR$/vendor/cakephp/chronos" />
+      <path value="$PROJECT_DIR$/vendor/spatie/once" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/symfony/intl" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iQE3RGwaUxQK63INuMgVmXQj1o" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -186,7 +272,10 @@
       <option name="presentableId" value="Default" />
       <updated>1601831216213</updated>
       <workItem from="1601831217299" duration="269000" />
-      <workItem from="1601831545392" duration="21524000" />
+      <workItem from="1601831545392" duration="25007000" />
+      <workItem from="1601931446930" duration="1213000" />
+      <workItem from="1602279845884" duration="3384000" />
+      <workItem from="1602343018564" duration="26173000" />
     </task>
     <task id="LOCAL-00001" summary="Completed Blog Models">
       <created>1601861448608</created>
@@ -195,37 +284,57 @@
       <option name="project" value="LOCAL" />
       <updated>1601861448608</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Completed Blog Models">
+      <created>1601861520938</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601861520939</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Completed Blog Models" />
     <option name="LAST_COMMIT_MESSAGE" value="Completed Blog Models" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="700" y="323" key="#Composer" timestamp="1602380620329">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="700" y="323" key="#Composer/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602380620329" />
     <state x="624" y="216" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601854879852">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="624" y="216" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601854879852" />
-    <state x="505" y="105" key="CommitChangelistDialog2" timestamp="1601861448048">
+    <state x="505" y="105" key="CommitChangelistDialog2" timestamp="1601861520340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="505" y="105" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601861448048" />
-    <state x="2035" y="0" width="1488" height="704" maximized="true" key="dock-window-1" timestamp="1601842259796">
+    <state x="505" y="105" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601861520340" />
+    <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1601932206597">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601932206597" />
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1601861663423">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601861663423" />
+    <state x="1920" y="0" width="1454" height="704" maximized="true" key="dock-window-1" timestamp="1602347302800">
       <screen x="1920" y="0" width="1600" height="860" />
     </state>
-    <state x="2035" y="0" width="1488" height="704" maximized="true" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601842259796" />
-    <state x="1920" y="0" width="1488" height="704" maximized="true" key="dock-window-2" timestamp="1601842680244">
+    <state x="1920" y="0" width="1454" height="704" maximized="true" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602347302800" />
+    <state x="2030" y="0" width="1454" height="960" key="dock-window-2" timestamp="1602374872214">
       <screen x="1920" y="0" width="1600" height="860" />
     </state>
-    <state x="1920" y="0" width="1488" height="704" maximized="true" key="dock-window-2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601842680244" />
-    <state x="1941" y="0" width="1328" height="704" maximized="true" key="dock-window-3" timestamp="1601860458023">
+    <state x="2030" y="0" width="1454" height="960" key="dock-window-2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602374872214" />
+    <state x="1920" y="0" width="1454" height="704" maximized="true" key="dock-window-3" timestamp="1602382762896">
       <screen x="1920" y="0" width="1600" height="860" />
     </state>
-    <state x="1941" y="0" width="1328" height="704" maximized="true" key="dock-window-3/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601860458023" />
+    <state x="1920" y="0" width="1454" height="704" maximized="true" key="dock-window-3/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602382762896" />
     <state x="1990" y="0" width="1328" height="704" key="dock-window-4" timestamp="1601854762816">
       <screen x="1920" y="0" width="1600" height="860" />
     </state>
@@ -234,9 +343,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="532" y="237" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601854394740" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1601860737944">
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1602382683496">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601860737944" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602382683496" />
+    <state x="2369" y="4" width="840" height="856" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@1920.0.1600.860" timestamp="1602294472544" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/blog/index.blade.php</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

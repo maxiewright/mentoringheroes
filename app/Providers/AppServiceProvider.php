@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,7 +27,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       Relation::morphMap([
+//        Paginator::defaultView('vendor.pagination.simple-tailwind');
+
+        Relation::morphMap([
           'post' => Post::class,
           'user' => User::class,
        ]);

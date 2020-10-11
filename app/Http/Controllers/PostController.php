@@ -14,7 +14,16 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::query()
+            ->orderBy('published_at', 'desc')
+            ->paginate(6);
+
+        $featuredPost = Post::query()->where(function ($query){
+            $query->where('is_featured', '=',true)
+                ->latest('published_at');
+        })->first();
+
+        return view('blog.index', compact('posts', 'featuredPost'));
     }
 
     /**
@@ -46,7 +55,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('blog.show', compact('post'));
     }
 
     /**

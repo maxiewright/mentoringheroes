@@ -24,7 +24,7 @@ class CreatePostsTable extends Migration
             $table->text('meta_description');
             $table->text('meta_keywords');
             $table->foreignId('post_status_id')->constrained();
-            $table->boolean('featured')->default(0);
+            $table->boolean('is_featured')->default(0);
             $table->date('published_at');
             $table->timestamps();
             $table->softDeletes();
