@@ -14,10 +14,12 @@ class CreateAuthorablesTable extends Migration
     public function up()
     {
         Schema::create('authorables', function (Blueprint $table) {
+            $table->id();
             $table->integer('user_id');
             $table->boolean('is_lead');
             $table->integer('authorable_id');
             $table->string('authorable_type');
+            $table->timestamps();
         });
     }
 

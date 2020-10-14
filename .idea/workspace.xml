@@ -5,20 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d1d42dc-4858-41c1-ad8e-c4596f3e4746" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Observers/PostObserver.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/mentoringheores.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mentoringheores.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Nova/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/CommentStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/CommentStatus.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Nova/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/PostStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/PostStatus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Resource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Resource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Nova/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Tag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/PostFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PostFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_04_171412_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_04_171412_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_04_171852_create_post_category_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_04_171852_create_post_category_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_04_171955_create_taggables_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_04_171955_create_taggables_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_04_173127_create_authorables_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_04_173127_create_authorables_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/blog/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blog/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/blog/top-bar-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/blog/top-bar-nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/blog/topic-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/blog/topic-nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +181,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
       <path value="$PROJECT_DIR$/vendor/symfony/intl" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
-      <path value="$PROJECT_DIR$/vendor/everestmx/nova-belongs-to-many-field" />
+      <path value="$PROJECT_DIR$/vendor/armincms/many-to-many" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iQE3RGwaUxQK63INuMgVmXQj1o" />
@@ -224,7 +232,12 @@
       <workItem from="1601831545392" duration="25007000" />
       <workItem from="1601931446930" duration="1213000" />
       <workItem from="1602279845884" duration="3384000" />
-      <workItem from="1602343018564" duration="34182000" />
+      <workItem from="1602343018564" duration="34275000" />
+      <workItem from="1602423157896" duration="837000" />
+      <workItem from="1602433894341" duration="1795000" />
+      <workItem from="1602460175663" duration="651000" />
+      <workItem from="1602494466499" duration="83000" />
+      <workItem from="1602680649760" duration="15737000" />
     </task>
     <task id="LOCAL-00001" summary="Completed Blog Models">
       <created>1601861448608</created>
@@ -247,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602384534191</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added Blog Resources to Nova">
+      <created>1602398660514</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602398660514</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,41 +277,48 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Completed Blog Models" />
     <MESSAGE value="Post index complete&#10;Added laravel nova" />
-    <option name="LAST_COMMIT_MESSAGE" value="Post index complete&#10;Added laravel nova" />
+    <MESSAGE value="Added Blog Resources to Nova" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Blog Resources to Nova" />
   </component>
   <component name="WindowStateProjectService">
     <state x="700" y="323" key="#Composer" timestamp="1602380620329">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="700" y="323" key="#Composer/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602380620329" />
-    <state x="624" y="216" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601854879852">
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602691237673">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="624" y="216" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601854879852" />
-    <state x="505" y="105" key="CommitChangelistDialog2" timestamp="1602384533139">
+    <state x="624" y="206" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602691237673" />
+    <state x="624" y="216" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602687690306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="505" y="105" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602384533139" />
-    <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1601932206597">
+    <state x="624" y="216" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602687690306" />
+    <state x="505" y="105" key="CommitChangelistDialog2" timestamp="1602398659822">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601932206597" />
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1602384537106">
+    <state x="505" y="105" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602398659822" />
+    <state x="687" y="216" key="FileChooserDialogImpl" timestamp="1602494542198">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602384537106" />
-    <state x="1920" y="0" width="1454" height="704" maximized="true" key="dock-window-1" timestamp="1602347302800">
+    <state x="687" y="216" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602494542198" />
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2" timestamp="1602398674859">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="452" y="188" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602398674859" />
+    <state x="2150" y="0" width="1386" height="960" maximized="true" key="dock-window-1" timestamp="1602685089369">
       <screen x="1920" y="0" width="1600" height="860" />
     </state>
-    <state x="1920" y="0" width="1454" height="704" maximized="true" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602347302800" />
-    <state x="2030" y="0" width="1454" height="960" key="dock-window-2" timestamp="1602374872214">
-      <screen x="1920" y="0" width="1600" height="860" />
+    <state x="2150" y="0" width="1386" height="960" maximized="true" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602685089369" />
+    <state x="118" y="-17" width="1454" height="960" maximized="true" key="dock-window-2" timestamp="1602494549743">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="2030" y="0" width="1454" height="960" key="dock-window-2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602374872214" />
-    <state x="1920" y="0" width="1454" height="704" maximized="true" key="dock-window-3" timestamp="1602382762896">
-      <screen x="1920" y="0" width="1600" height="860" />
+    <state x="2030" y="0" width="1454" height="960" maximized="true" key="dock-window-2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602494549743" />
+    <state x="118" y="-17" width="1454" height="960" maximized="true" key="dock-window-2/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@1920.0.1600.860" timestamp="1602494442459" />
+    <state x="142" y="40" width="1454" height="704" key="dock-window-3" timestamp="1602494442459">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1920" y="0" width="1454" height="704" maximized="true" key="dock-window-3/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602382762896" />
+    <state x="1920" y="0" width="1454" height="704" maximized="true" key="dock-window-3/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602434117669" />
+    <state x="142" y="40" width="1454" height="704" key="dock-window-3/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@1920.0.1600.860" timestamp="1602494442459" />
     <state x="1990" y="0" width="1328" height="704" key="dock-window-4" timestamp="1601854762816">
       <screen x="1920" y="0" width="1600" height="860" />
     </state>
@@ -300,10 +327,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="532" y="237" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1601854394740" />
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1602394005048">
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1602692798860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602394005048" />
+    <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1602692798860" />
     <state x="2369" y="4" width="840" height="856" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040/1920.0.1600.860@1920.0.1600.860" timestamp="1602294472544" />
   </component>
   <component name="XDebuggerManager">

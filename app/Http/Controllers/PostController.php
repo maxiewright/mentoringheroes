@@ -15,10 +15,17 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::query()
+            ->whereNotNull('published_at')
             ->orderBy('published_at', 'desc')
             ->paginate(6);
 
-        $featuredPost = Post::query()->where(function ($query){
+//        foreach ($posts as $post){
+//            dd($post->image);
+//        }
+
+        $featuredPost = Post::query()
+            ->whereNotNull('published_at')
+            ->where(function ($query){
             $query->where('is_featured', '=',true)
                 ->latest('published_at');
         })->first();
@@ -91,4 +98,7 @@ class PostController extends Controller
     {
         //
     }
+
+
+
 }

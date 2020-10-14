@@ -31,7 +31,7 @@ class PostFactory extends Factory
             'meta_description' => $this->faker->text(50),
             'meta_keywords' => $this->faker->words,
             'post_status_id' => rand(1, 3),
-            'is_featured' => rand(0,1),
+            'is_featured' => $this->faker->boolean,
             'published_at' => $this->faker->date(),
         ];
     }

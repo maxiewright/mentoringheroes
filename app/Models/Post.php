@@ -8,19 +8,34 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'title', 'seo_title', 'image', 'excerpt', 'body', 'slug', 'meta_description',
+        'title', 'seo_title', 'image_path', 'excerpt', 'body', 'slug', 'meta_description',
         'meta_keywords', 'post_status_id', 'is_featured', 'published_at',
     ];
 
     protected $dates = [
         'published_at'
     ];
+
+//    public function getImageAttribute(){
+//        Storage::get($this->image_path);
+//    }
+
+    public function getImageAttribute()
+    {
+        return Storage::disk('public')->url($this->image_path);
+    }
+
+//    protected function defaultImageUrl()
+//    {
+//        return 'https://ui-avatars.com/api/?name='.urlencode($this->name).'&color=7F9CF5&background=EBF4FF';
+//    }
 
     /**
      * returns status for this model.
@@ -73,7 +88,9 @@ class Post extends Model
      */
     public function getMainCategoryAttribute()
     {
-        return $this->categories()->wherePivot('is_main', true)->first();
+        return $this->categories->first();
+//            ->wherePivot('is_main', true)
+//            ->first();
     }
 
     /**

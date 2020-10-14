@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Front End
-Route::get('/', [PostController::class, 'index']);
+Route::get('/', [PostController::class, 'index'])->name('home');
 Route::resource('posts', PostController::class);
 
 

@@ -3,15 +3,15 @@
 namespace App\Nova;
 
 
-use Everestmx\BelongsToManyField\BelongsToManyField;
+
+use Armincms\Fields\BelongsToMany;
+use Armincms\Fields\MorphToMany;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\MorphMany;
-use Laravel\Nova\Fields\MorphToMany;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
@@ -54,20 +54,39 @@ class Post extends Resource
             ID::make(__('ID'), 'id')
                 ->sortable(),
 
-            Image::make('Feature Image', 'image'),
-
             Text::make('Title')
                 ->sortable()
                 ->rules('required', 'max:255'),
+
+            Text::make('SEO Title', 'seo_title'),
+
+            Image::make('Feature Image', 'image_path')
+            ->disk('public')
+            ->path('post-images')
+                ->storeAs(function (Request $request) {
+                    return sha1($request->file('image_path')->getClientOriginalName());
+                })
+                ->rules('required'),
 
             Text::make('Excerpt')
                 ->rules('required'),
 
             Trix::make('Body')
                 ->hideFromIndex()
-                ->rules('require',),
+                ->rules('required'),
 
-            Slug::make('slug'),
+            Slug::make('Slug', 'slug')
+                ->rules('required'),
+
+            Text::make('Meta Description', 'meta_description')
+                ->rules('required'),
+
+            Text::make('Meta Keywords', 'meta_keywords')
+                ->rules('required'),
+
+            BelongsTo::make('Status', 'status', PostStatus::class)
+                ->default(1)
+                ->rules('required'),
 
             Boolean::make('Feature', 'is_featured'),
 
@@ -77,18 +96,20 @@ class Post extends Resource
                         Boolean::make('Lead Author', 'is_lead')
                     ];
                 })
-                ->searchable(),
+                ->pivots()
+                ->rules('required'),
 
-            morphToMany::make('Tags', 'tags', Tag::class),
+            MorphToMany::make('Tags', 'tags', Tag::class)
+                ->rules('required'),
 
-            BelongsToMany::make('Categories', 'categories', Category::class)
-                ->searchable(),
 
-            BelongsTo::make('Status', 'status', PostStatus::class),
+           BelongsToMany::make('Categories', 'categories', Category::class)
+               ->fields(function (){
+                   Text::make('Main Category', 'is_main');
+               })
+               ->rules('required'),
 
             MorphMany::make('Comments'),
-
-            BelongsToManyField::make('Categories', 'categories', Category::class),
 
         ];
     }

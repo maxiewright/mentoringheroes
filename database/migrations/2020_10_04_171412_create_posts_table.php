@@ -23,9 +23,9 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->text('meta_description');
             $table->text('meta_keywords');
-            $table->foreignId('post_status_id')->constrained();
+            $table->foreignId('post_status_id')->default(1)->constrained();
             $table->boolean('is_featured')->default(0);
-            $table->date('published_at');
+            $table->date('published_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

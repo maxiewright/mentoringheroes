@@ -4,8 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9bbd342ab1d46f090de300196f17a03c",
+    "content-hash": "a6020dc62e428b5b37ffa2cee15e19c8",
     "packages": [
+        {
+            "name": "armincms/many-to-many",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/armincms/many-to-many.git",
+                "reference": "583fab8e2edc4a1937a726c3ca69550fe4a0a20f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/armincms/many-to-many/zipball/583fab8e2edc4a1937a726c3ca69550fe4a0a20f",
+                "reference": "583fab8e2edc4a1937a726c3ca69550fe4a0a20f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Armincms\\Fields\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Armincms\\Fields\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "armincms",
+                "laravel",
+                "nova"
+            ],
+            "time": "2020-04-04T04:52:46+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.0.1",
@@ -914,48 +956,6 @@
                 "validator"
             ],
             "time": "2020-09-26T15:48:38+00:00"
-        },
-        {
-            "name": "everestmx/nova-belongs-to-many-field",
-            "version": "0.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/everestmx/nova-belongs-to-many-field.git",
-                "reference": "8c588c887053391b798558a49ae60731d9b296db"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/everestmx/nova-belongs-to-many-field/zipball/8c588c887053391b798558a49ae60731d9b296db",
-                "reference": "8c588c887053391b798558a49ae60731d9b296db",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Everestmx\\BelongsToManyField\\FieldServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Everestmx\\BelongsToManyField\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "BelongsToMany nova representation in field.",
-            "keywords": [
-                "field",
-                "laravel",
-                "nova"
-            ],
-            "time": "2019-09-25T19:21:52+00:00"
         },
         {
             "name": "fideloper/proxy",

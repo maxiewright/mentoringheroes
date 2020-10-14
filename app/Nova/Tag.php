@@ -2,9 +2,9 @@
 
 namespace App\Nova;
 
+use Armincms\Fields\MorphedByMany;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\MorphedByMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -30,7 +30,7 @@ class Tag extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name',
     ];
 
     /**
@@ -42,7 +42,6 @@ class Tag extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make(__('ID'), 'id')->sortable(),
 
             Text::make('Name'),
 

@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <x-layouts.blog.master>
-    <!-- Featured post -->
-    <section class=" flex flex-row mx-auto">
-        <div class="transition-all duration-150 flex w-full px-4 py-6">
-            <div
-                class="flex flex-row items-stretch transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
-                <!-- Featured Image -->
-                <div class="flex flex-col md:w-1/2 lg:w-1/3">
-                    <img
-                        src="{{$featuredPost->image}}"
-                        alt="Blog Cover"
-                        class="object-fill w-full rounded-l"
-                    />
+    @if ($featuredPost)
+        <!-- Featured post -->
+            <section class=" flex flex-row mx-auto">
+                <div class="transition-all duration-150 flex w-full px-4 py-6">
+                    <div
+                        class="flex flex-row items-stretch transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
+                        <!-- Featured Image -->
+                        <div class="flex flex-col md:w-1/2 lg:w-1/3">
+                            <img
+                                src="{{$featuredPost->image ?? ''}}"
+                                alt="Blog Cover"
+                                class="object-fill w-full rounded-l"
+                            />
+                        </div>
+                        <div class="bg-white flex flex-col p-4 md:w-1/2 lg:w-2/3">
+                            <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">{{$featuredPost->main_category->name}}</a>
+                            <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{$featuredPost->title }}</a>
+                            <p href="#" class="text-sm pb-3">
+                                By <a href="#" class="font-semibold hover:text-gray-800">{{$featuredPost->lead_author->name}}</a>,
+                                Published on {{$featuredPost->published_at->toFormattedDateString()}}
+                            </p>
+                            <a href="#" class="pb-6">{{$featuredPost->excerpt}}</a>
+                            <a href="{{route('posts.show', $featuredPost->id)}}" class="uppercase text-gray-800 hover:text-black">Continue Reading <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white flex flex-col p-4 md:w-1/2 lg:w-2/3">
-                    <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">{{$featuredPost->main_category->name}}</a>
-                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{$featuredPost->title}}</a>
-                    <p href="#" class="text-sm pb-3">
-                        By <a href="#" class="font-semibold hover:text-gray-800">{{$featuredPost->lead_author->name}}</a>,
-                        Published on {{$featuredPost->published_at->toFormattedDateString()}}
-                    </p>
-                    <a href="#" class="pb-6">{{$featuredPost->excerpt}}</a>
-                    <a href="{{route('posts.show', $featuredPost->id)}}" class="uppercase text-gray-800 hover:text-black">Continue Reading <i
-                            class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+            </section>
+    @endif
     <div class="w-full bg-gary-100 container mx-auto">
         <div class="flex flex-col items-center py-6">
             <a href="#" class="font-bold text-gray-800 uppercase hover:text-gary-700 text-3xl">
