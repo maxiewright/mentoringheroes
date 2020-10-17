@@ -24,9 +24,10 @@
 </head>
 
 <body class="bg-white font-family-karla">
-@include('layouts.blog.top-bar-nav')
-@include('layouts.blog.text-header')
-@include('layouts.blog.topic-nav')
+
+<x-layouts.front-end.top-bar-nav />
+<x-layouts.front-end.text-header />
+<x-layouts.front-end.topic-nav />
 
 <div class="container mx-auto flex flex-wrap py-6">
     {{$slot}}
@@ -36,6 +37,6 @@
 
 @livewireScripts
 
-@include('layouts.blog.footer')
+<x-layouts.front-end.footer />
 </body>
 </html>

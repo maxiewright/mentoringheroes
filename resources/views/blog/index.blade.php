@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<x-layouts.blog.master>
+<x-layouts.front-end.master>
     @if ($featuredPost)
         <!-- Featured post -->
             <section class=" flex flex-row mx-auto">
@@ -29,13 +29,9 @@
                 </div>
             </section>
     @endif
-    <div class="w-full bg-gary-100 container mx-auto">
-        <div class="flex flex-col items-center py-6">
-            <a href="#" class="font-bold text-gray-800 uppercase hover:text-gary-700 text-3xl">
-                Latest Articles
-            </a>
-        </div>
-    </div>
+        <x-typography.section-header>
+            Latest Articles
+        </x-typography.section-header>
     {{--    Latest Posts--}}
     <section class="container flex flex-row flex-wrap mx-auto">
         @foreach($posts as $post)
@@ -102,21 +98,8 @@
     </section>
     <!-- Pagination -->
     <section class="flex flex-row flex-wrap mx-auto">
-{{--        <div class="flex items-center py-8">--}}
-{{--            <a href="#"--}}
-{{--               class="h-10 w-10 bg-blue-800 hover:bg-blue-600 font-semibold text-white text-sm flex items-center justify-center">1</a>--}}
-{{--            <a href="#"--}}
-{{--               class="h-10 w-10 font-semibold text-gray-800 hover:bg-blue-600 hover:text-white text-sm flex items-center justify-center">2</a>--}}
-{{--            <a href="#"--}}
-{{--               class="h-10 w-10 font-semibold text-gray-800 hover:text-gray-900 text-sm flex items-center justify-center ml-3">--}}
-{{--                Next--}}
-{{--                <i class="fas fa-arrow-right ml-2"></i></a>--}}
-{{--        </div>--}}
-
         {{ $posts->links() }}
     </section>
-
-
-</x-layouts.blog.master>
+</x-layouts.front-end.master>
 
 

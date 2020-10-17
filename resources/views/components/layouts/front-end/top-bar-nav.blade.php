@@ -3,24 +3,24 @@
 
         <nav>
             <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
-                <li><a class="hover:text-gray-200 hover:underline px-4" href="#">About</a></li>
-                <li><a class="hover:text-gray-200 hover:underline px-4" href="#">Contact Us</a></li>
+                <li><a class="hover:text-gray-200 hover:underline px-4" href="{{route('about')}}">About</a></li>
+                <li><a class="hover:text-gray-200 hover:underline px-4" href="{{'contact'}}">Contact Us</a></li>
             </ul>
         </nav>
 
         <div class="flex items-center text-lg no-underline text-white pr-6">
-            <a class="" href="#">
+            <a class="" href="https://www.facebook.com/">
                 <i class="fab fa-facebook"></i>
             </a>
-            <a class="pl-6" href="#">
+            <a class="pl-6" href="https://www.instagram.com/">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a class="pl-6" href="#">
+            <a class="pl-6" href="https://www.twitter.com/">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a class="pl-6" href="#">
-                <i class="fab fa-linkedin"></i>
-            </a>
+{{--            <a class="pl-6" href="https://www.linkedin.com/">--}}
+{{--                <i class="fab fa-linkedin"></i>--}}
+{{--            </a>--}}
         </div>
     </div>
 </nav>

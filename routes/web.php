@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CommentController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\PodcastController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\TagController;
+use App\Http\Controllers\VlogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +17,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Front End
+/*
+ * Front End
+ */
 Route::get('/', [PostController::class, 'index'])->name('home');
 Route::resource('posts', PostController::class);
+Route::resource('vlogs', VlogController::class);
+Route::resource('podcasts', PodcastController::class);
+Route::resource('courses', CourseController::class);
+
+//Views
+Route::view('subscribe','details.subscribe')->name('subscribe');
+Route::view('contact','details.contact')->name('contact');
+Route::view('about','details.about')->name('about');
 
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<x-layouts.blog.master>
+<x-layouts.front-end.master>
     <!-- Post Section -->
     <article class="flex flex-col shadow my-4">
         <!-- Article Image -->
@@ -94,5 +94,5 @@
 
 
 
-</x-layouts.blog.master>
+</x-layouts.front-end.master>
 
