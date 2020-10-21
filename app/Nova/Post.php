@@ -58,9 +58,10 @@ class Post extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('SEO Title', 'seo_title'),
+            Text::make('Tagline', 'seo_title')
+                ->rules('required'),
 
-            Image::make('Feature Image', 'image_path')
+            Image::make('Featured Image', 'image_path')
             ->disk('public')
             ->path('post-images')
                 ->storeAs(function (Request $request) {
@@ -88,7 +89,7 @@ class Post extends Resource
                 ->default(1)
                 ->rules('required'),
 
-            Boolean::make('Feature', 'is_featured'),
+            Boolean::make('Featured', 'is_featured'),
 
             MorphToMany::make('Authors', 'authors', User::class)
                 ->fields(function (){

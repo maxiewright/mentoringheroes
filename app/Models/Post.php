@@ -23,6 +23,18 @@ class Post extends Model
         'published_at'
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($post){
+            if ($post->status->name == 'Published' ){
+                $post->published_at = now();
+            }else{
+                $post->published_at = null;
+            }
+        });
+    }
 //    public function getImageAttribute(){
 //        Storage::get($this->image_path);
 //    }
