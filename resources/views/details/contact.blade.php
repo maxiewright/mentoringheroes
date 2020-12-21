@@ -5,18 +5,17 @@
                 Contact Us
             </x-typography.section-header>
         </div>
-
-        <form action="" class="form bg-white p-6 my-10 relative">
+        <form action="{{route('contact_us.store')}}" method="post" class="form bg-white p-6 my-10 relative" novalidate>
+            @csrf
+            @method('POST')
             <h3 class="text-2xl text-gray-900 font-semibold">Let us contact you!</h3>
-{{--            <p class="text-gray-600"> </p>--}}
             <div class="flex space-x-5 mt-3">
-                <input type="text" name="" id="" placeholder="Your Name" class="border p-2  w-1/2">
-                <input type="tel" name="" id="" placeholder="Your Number" class="border p-2 w-1/2">
+                <x-input.text name="name" placeholder="Your Name" class="w-1/2"/>
+                <x-input.text name="phone" placeholder="Your Number" class="w-1/2"/>
             </div>
-            <input type="email" name="" id="" placeholder="Your Email" class="border p-2 w-full mt-3">
-            <textarea name="" id="" cols="10" rows="3" placeholder="Let us know how we can help"
-                      class="border p-2 mt-3 w-full"></textarea>
-
+            <x-input.text name="email" placeholder="Your Email" class="w-full mt-3"/>
+            <x-input.textarea name="details" placeholder="Let us know how we can help"
+                              class="w-full mt-3" cols="10" rows="3" />
             <input type="submit" value="Submit"
                    class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
         </form>

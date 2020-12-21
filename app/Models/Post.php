@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
@@ -33,21 +34,17 @@ class Post extends Model
             }else{
                 $post->published_at = null;
             }
+
+            $post->slug = Str::slug($post->title);
+
         });
     }
-//    public function getImageAttribute(){
-//        Storage::get($this->image_path);
-//    }
+
 
     public function getImageAttribute()
     {
         return Storage::disk('public')->url($this->image_path);
     }
-
-//    protected function defaultImageUrl()
-//    {
-//        return 'https://ui-avatars.com/api/?name='.urlencode($this->name).'&color=7F9CF5&background=EBF4FF';
-//    }
 
     /**
      * returns status for this model.

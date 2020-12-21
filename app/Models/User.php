@@ -78,4 +78,5 @@ class User extends Authenticatable
         return $this->hasMany(SocialMediaHandle::class, 'social_media_handle_id');
     }
 
+
 }

@@ -4,7 +4,7 @@
         <nav>
             <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
                 <li><a class="hover:text-gray-200 hover:underline px-4" href="{{route('about')}}">About</a></li>
-                <li><a class="hover:text-gray-200 hover:underline px-4" href="{{'contact'}}">Contact Us</a></li>
+                <li><a class="hover:text-gray-200 hover:underline px-4" href="{{route('contact_us.index')}}">Contact Us</a></li>
             </ul>
         </nav>
 

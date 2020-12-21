@@ -48,8 +48,6 @@ class User extends Resource
         return [
             ID::make()->sortable(),
 
-            Gravatar::make()->maxWidth(50),
-
             Avatar::make('Photo', 'profile_photo_path'),
 
             Text::make('Name')
@@ -117,4 +115,11 @@ class User extends Resource
     {
         return [];
     }
+
+    /**
+     * The logical group associated with the resource.
+     *
+     * @var string
+     */
+    public static $group = 'Users';
 }

@@ -19,10 +19,6 @@ class PostController extends Controller
             ->orderBy('published_at', 'desc')
             ->paginate(6);
 
-//        foreach ($posts as $post){
-//            dd($post->image);
-//        }
-
         $featuredPost = Post::query()
             ->whereNotNull('published_at')
             ->where(function ($query){

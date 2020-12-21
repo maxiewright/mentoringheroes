@@ -14,6 +14,7 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -39,7 +40,7 @@ class Post extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'title',
     ];
 
     /**
@@ -59,6 +60,7 @@ class Post extends Resource
                 ->rules('required', 'max:255'),
 
             Text::make('Tagline', 'seo_title')
+                ->showOnIndex(false)
                 ->rules('required'),
 
             Image::make('Featured Image', 'image_path')
@@ -69,20 +71,19 @@ class Post extends Resource
                 })
                 ->rules('required'),
 
-            Text::make('Excerpt')
+            Textarea::make('Excerpt')
                 ->rules('required'),
 
             Trix::make('Body')
                 ->hideFromIndex()
                 ->rules('required'),
 
-            Slug::make('Slug', 'slug')
-                ->rules('required'),
-
             Text::make('Meta Description', 'meta_description')
+                ->showOnIndex(false)
                 ->rules('required'),
 
             Text::make('Meta Keywords', 'meta_keywords')
+                ->showOnIndex(false)
                 ->rules('required'),
 
             BelongsTo::make('Status', 'status', PostStatus::class)
@@ -158,5 +159,12 @@ class Post extends Resource
     {
         return [];
     }
+
+    /**
+     * The logical group associated with the resource.
+     *
+     * @var string
+     */
+    public static $group = 'Posts';
 
 }

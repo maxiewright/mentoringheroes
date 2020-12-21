@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\PodcastController;
 use App\Http\Controllers\PostController;
@@ -25,12 +26,12 @@ Route::resource('posts', PostController::class);
 Route::resource('vlogs', VlogController::class);
 Route::resource('podcasts', PodcastController::class);
 Route::resource('courses', CourseController::class);
+Route::resource('contact_us', ContactController::class);
 
 //Views
 Route::view('subscribe','details.subscribe')->name('subscribe');
-Route::view('contact','details.contact')->name('contact');
+//Route::view('contact','details.contact')->name('contact');
 Route::view('about','details.about')->name('about');
-
 
 
 // Admin

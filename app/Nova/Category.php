@@ -100,4 +100,11 @@ class Category extends Resource
     {
         return [];
     }
+
+    /**
+     * The logical group associated with the resource.
+     *
+     * @var string
+     */
+    public static $group = 'Metadata';
 }
