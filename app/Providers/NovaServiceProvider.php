@@ -56,7 +56,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new Help,
+            new \Tightenco\NovaGoogleAnalytics\PageViewsMetric,
+            new \Tightenco\NovaGoogleAnalytics\VisitorsMetric,
+            new \Tightenco\NovaGoogleAnalytics\MostVisitedPagesCard,
         ];
     }
 

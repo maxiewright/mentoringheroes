@@ -5,35 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d1d42dc-4858-41c1-ad8e-c4596f3e4746" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/ContactRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/View/Components/Input/Text.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/View/Components/Input/Textarea.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/input/text.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/input/textarea.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Nova/Metrics/Visitors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mentoringheores.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mentoringheores.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/CommentStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/CommentStatus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/PostStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/PostStatus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/SocialMediaHandle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/SocialMediaHandle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/SocialMediaPlatform.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/SocialMediaPlatform.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Tag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nova/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_17_202736_create_contacts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_17_202736_create_contacts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/blog/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blog/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/layouts/front-end/top-bar-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/layouts/front-end/top-bar-nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/layouts/front-end/topic-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/layouts/front-end/topic-nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/details/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/details/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/posts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/NovaServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/NovaServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/nova.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/nova.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/layouts/front-end/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/layouts/front-end/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/nova/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/nova/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/nova/partials/logo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/nova/partials/logo.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/nova/partials/meta.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/nova/partials/meta.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +173,16 @@
       <path value="$PROJECT_DIR$/vendor/symfony/intl" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
       <path value="$PROJECT_DIR$/vendor/armincms/many-to-many" />
+      <path value="$PROJECT_DIR$/vendor/tightenco/nova-google-analytics" />
+      <path value="$PROJECT_DIR$/vendor/google/apiclient-services" />
+      <path value="$PROJECT_DIR$/vendor/google/apiclient" />
+      <path value="$PROJECT_DIR$/vendor/google/auth" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-analytics" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iQE3RGwaUxQK63INuMgVmXQj1o" />
@@ -206,7 +199,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/analytics" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -218,18 +211,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\maxie\mentoringheroes\storage\app\analytics" />
+      <recent name="C:\Users\maxie\mentoringheroes\resources\views\podcast" />
+      <recent name="C:\Users\maxie\mentoringheroes\resources\views\course" />
+      <recent name="C:\Users\maxie\mentoringheroes\resources\views\components\layouts\front-end" />
+      <recent name="C:\Users\maxie\mentoringheroes\resources\views\layouts\frontend" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\maxie\mentoringheroes\resources\views\components\layouts" />
       <recent name="C:\Users\maxie\mentoringheroes\resources\views\layouts\frontend\podcast" />
       <recent name="C:\Users\maxie\mentoringheroes\resources\views\layouts\blog" />
       <recent name="C:\Users\maxie\mentoringheroes\resources\views\blog" />
       <recent name="C:\Users\maxie\mentoringheroes\resources\views" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\maxie\mentoringheroes\resources\views\podcast" />
-      <recent name="C:\Users\maxie\mentoringheroes\resources\views\course" />
-      <recent name="C:\Users\maxie\mentoringheroes\resources\views\components\layouts\front-end" />
-      <recent name="C:\Users\maxie\mentoringheroes\resources\views\layouts\frontend" />
     </key>
   </component>
   <component name="RunManager">
@@ -268,7 +262,8 @@
       <workItem from="1608504537857" duration="265000" />
       <workItem from="1608504820562" duration="140000" />
       <workItem from="1608504975888" duration="796000" />
-      <workItem from="1608505814409" duration="3592000" />
+      <workItem from="1608505814409" duration="4875000" />
+      <workItem from="1608746429379" duration="7318000" />
     </task>
     <task id="LOCAL-00001" summary="Completed Blog Models">
       <created>1601861448608</created>
