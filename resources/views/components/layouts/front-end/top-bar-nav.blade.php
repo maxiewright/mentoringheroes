@@ -9,18 +9,15 @@
         </nav>
 
         <div class="flex items-center text-lg no-underline text-white pr-6">
-            <a class="" href="https://www.facebook.com/">
+            <a class="" href="https://www.facebook.com/mentoringheroes">
                 <i class="fab fa-facebook"></i>
             </a>
-            <a class="pl-6" href="https://www.instagram.com/">
+            <a class="pl-6" href="https://www.instagram.com/mentoringheroes">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a class="pl-6" href="https://www.twitter.com/">
+            <a class="pl-6" href="https://www.twitter.com/heromentoring">
                 <i class="fab fa-twitter"></i>
             </a>
-{{--            <a class="pl-6" href="https://www.linkedin.com/">--}}
-{{--                <i class="fab fa-linkedin"></i>--}}
-{{--            </a>--}}
         </div>
     </div>
 </nav>
