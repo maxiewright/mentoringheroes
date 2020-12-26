@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d1d42dc-4858-41c1-ad8e-c4596f3e4746" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/View/Components/Form/Input.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/View/Components/Input/Password.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/form/input.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/input/password.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/layouts/errors/master.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/layouts/errors/top-nav-bar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/layouts/errors/topic-nav.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/errors/503.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/layouts/front-end/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/layouts/front-end/master.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="blade" />
         <option value="composer.json" />
+        <option value="blade" />
       </list>
     </option>
   </component>
@@ -195,7 +193,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/analytics" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/components/layouts/errors" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -208,11 +206,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\maxie\mentoringheroes\resources\views\components\layouts\errors" />
       <recent name="C:\Users\maxie\mentoringheroes\storage\app\analytics" />
       <recent name="C:\Users\maxie\mentoringheroes\resources\views\podcast" />
       <recent name="C:\Users\maxie\mentoringheroes\resources\views\course" />
       <recent name="C:\Users\maxie\mentoringheroes\resources\views\components\layouts\front-end" />
-      <recent name="C:\Users\maxie\mentoringheroes\resources\views\layouts\frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\maxie\mentoringheroes\resources\views\components\layouts" />
@@ -262,7 +260,7 @@
       <workItem from="1608746429379" duration="7318000" />
       <workItem from="1608805715128" duration="11000" />
       <workItem from="1608861182321" duration="467000" />
-      <workItem from="1608914829983" duration="8862000" />
+      <workItem from="1608914829983" duration="12044000" />
     </task>
     <task id="LOCAL-00001" summary="Completed Blog Models">
       <created>1601861448608</created>
