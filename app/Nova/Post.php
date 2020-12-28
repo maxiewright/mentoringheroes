@@ -2,24 +2,20 @@
 
 namespace App\Nova;
 
-
-
-use Armincms\Fields\BelongsToMany;
-use Armincms\Fields\MorphToMany;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\MorphMany;
-use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
-use Laravel\Nova\Http\Requests\NovaRequest;
+use OptimistDigital\MultiselectField\Multiselect;
 
 class Post extends Resource
 {
+
     /**
      * The model the resource corresponds to.
      *
@@ -78,41 +74,27 @@ class Post extends Resource
                 ->hideFromIndex()
                 ->rules('required'),
 
-            Text::make('Meta Description', 'meta_description')
-                ->showOnIndex(false)
-                ->rules('required'),
-
-            Text::make('Meta Keywords', 'meta_keywords')
-                ->showOnIndex(false)
-                ->rules('required'),
-
             BelongsTo::make('Status', 'status', PostStatus::class)
                 ->default(1)
                 ->rules('required'),
 
             Boolean::make('Featured', 'is_featured'),
 
-            MorphToMany::make('Authors', 'authors', User::class)
-                ->fields(function (){
-                    return [
-                        Boolean::make('Lead Author', 'is_lead')
-                    ];
-                })
-                ->pivots()
-                ->rules('required'),
+            //MultiSelect Fields
 
-            MorphToMany::make('Tags', 'tags', Tag::class)
-                ->rules('required'),
+            Multiselect::make('Authors', 'authors')
+                ->belongsToMany(User::class)
+                ->required(),
 
+            Multiselect::make('Tags', 'tags')
+                ->belongsToMany(Tag::class)
+                ->required(),
 
-           BelongsToMany::make('Categories', 'categories', Category::class)
-               ->fields(function (){
-                   Text::make('Main Category', 'is_main');
-               })
-               ->rules('required'),
+            Multiselect::make('Categories', 'categories')
+                ->belongsToMany(Category::class)
+                ->required(),
 
             MorphMany::make('Comments'),
-
         ];
     }
 

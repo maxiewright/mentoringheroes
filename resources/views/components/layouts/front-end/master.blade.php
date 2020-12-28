@@ -19,7 +19,6 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
@@ -39,7 +38,7 @@
 <x-layouts.front-end.text-header />
 <x-layouts.front-end.topic-nav />
 
-<div class="container mx-auto flex flex-wrap py-6">
+<div class="container mx-auto">
     {{$slot}}
 </div>
 

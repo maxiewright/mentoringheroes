@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        Paginator::defaultView('vendor.pagination.simple-tailwind');
+        Paginator::defaultView('vendor.pagination.tailwind');
 
         Relation::morphMap([
           'post' => Post::class,

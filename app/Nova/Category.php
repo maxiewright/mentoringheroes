@@ -2,12 +2,11 @@
 
 namespace App\Nova;
 
-use Armincms\Fields\BelongsToMany;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
+
 
 class Category extends Resource
 {
@@ -31,7 +30,7 @@ class Category extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'name'
     ];
 
     /**
@@ -52,8 +51,7 @@ class Category extends Resource
             BelongsToMany::make('Posts', 'posts', Post::class)
                 ->fields(function (){
                     Text::make('Main Category', 'is_main');
-                })
-                ->pivots(),
+                }),
         ];
     }
 

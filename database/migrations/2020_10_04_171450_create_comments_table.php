@@ -20,7 +20,7 @@ class CreateCommentsTable extends Migration
             $table->integer('commentable_id');
             $table->string('commentable_type');
             $table->foreignId('comment_status_id')->constrained();
-            $table->date('approved_at');
+            $table->date('approved_at')->nullable();
             $table->timestamps();
         });
     }

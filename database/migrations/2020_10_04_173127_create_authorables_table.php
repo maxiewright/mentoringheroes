@@ -16,7 +16,7 @@ class CreateAuthorablesTable extends Migration
         Schema::create('authorables', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->boolean('is_lead');
+            $table->boolean('is_lead')->default(false);
             $table->integer('authorable_id');
             $table->string('authorable_type');
             $table->timestamps();

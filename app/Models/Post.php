@@ -16,8 +16,14 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'seo_title', 'image_path', 'excerpt', 'body', 'slug', 'meta_description',
-        'meta_keywords', 'post_status_id', 'is_featured', 'published_at',
+        'title',
+        'seo_title',
+        'image_path',
+        'excerpt',
+        'body',
+        'post_status_id',
+        'is_featured',
+        'published_at',
     ];
 
     protected $dates = [
@@ -34,14 +40,23 @@ class Post extends Model
             }else{
                 $post->published_at = null;
             }
-
-            $post->slug = Str::slug($post->title);
-
         });
     }
 
+    /**
+     * Returns article slug
+     * @return string
+     */
+//    public function getSlugAttribute(): string
+//    {
+//        return Str::slug($this->title);
+//    }
 
-    public function getImageAttribute()
+    /**
+     * returns article image path
+     * @return string
+     */
+    public function getImageAttribute(): string
     {
         return Storage::disk('public')->url($this->image_path);
     }
@@ -51,7 +66,6 @@ class Post extends Model
      *
      * @return BelongsTo
      */
-
     public function status()
     {
         return $this->belongsTo(PostStatus::class, 'post_status_id');
@@ -62,11 +76,11 @@ class Post extends Model
      *
      * @return MorphToMany
      */
-
     public function authors()
     {
         return $this->morphToMany(User::class, 'authorable')
-            ->withPivot('is_lead');
+            ->withPivot('is_lead')
+            ->withTimestamps();
     }
 
     /**
@@ -76,7 +90,7 @@ class Post extends Model
      */
     public function getLeadAuthorAttribute()
     {
-        return $this->authors()->wherePivot('is_lead', true)->first();
+        return $this->authors()->first();
     }
 
     /**
@@ -87,7 +101,8 @@ class Post extends Model
     public function categories()
     {
         return $this->belongsToMany(Category::class, 'post_category')
-            ->withPivot('is_main');
+            ->withPivot('is_main')
+            ->withTimestamps();
     }
 
     /**
@@ -110,7 +125,8 @@ class Post extends Model
 
     public function tags()
     {
-        return $this->morphToMany(Tag::class, 'taggable');
+        return $this->morphToMany(Tag::class, 'taggable')
+            ->withTimestamps();
     }
 
     /**

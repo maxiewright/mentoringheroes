@@ -9,7 +9,6 @@
     "license": "MIT",
     "require": {
         "php": "^7.3",
-        "armincms/many-to-many": "^0.2.1",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -19,6 +18,8 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.0",
         "livewire/livewire": "^2.0",
+        "optimistdigital/nova-multiselect-field": "^2.0",
+        "spatie/laravel-permission": "^3.18",
         "tightenco/nova-google-analytics": "^0.1.7"
     },
     "require-dev": {

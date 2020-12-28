@@ -17,12 +17,9 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('seo_title')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image_path')->nullable();
             $table->text('excerpt');
             $table->text('body');
-            $table->string('slug');
-            $table->text('meta_description');
-            $table->text('meta_keywords');
             $table->foreignId('post_status_id')->default(1)->constrained();
             $table->boolean('is_featured')->default(0);
             $table->date('published_at')->nullable();

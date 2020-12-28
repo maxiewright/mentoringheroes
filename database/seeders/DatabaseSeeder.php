@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             CommentStatusSeeder::class,
             PostStatusSeeder::class,
             TagSeeder::class,
+            SocialMediaPlatformSeeder::class,
+            RolesAndPermissionSeeder::class,
         ]);
     }
 }

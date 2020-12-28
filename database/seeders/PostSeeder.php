@@ -23,6 +23,7 @@ class PostSeeder extends Seeder
             )
             ->hasComments(3)
             ->hasTags(3)
-            ->create();
+
+            ->count(10)->create();
     }
 }

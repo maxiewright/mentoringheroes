@@ -42,10 +42,7 @@ class Tag extends Resource
     public function fields(Request $request)
     {
         return [
-
             Text::make('Name'),
-
-            MorphedByMany::make('Posts', 'posts', Post::class),
         ];
     }
 
