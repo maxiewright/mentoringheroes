@@ -38,9 +38,7 @@
 <x-layouts.front-end.text-header />
 <x-layouts.front-end.topic-nav />
 
-<div class="container mx-auto">
     {{$slot}}
-</div>
 
 @stack('modals')
 
