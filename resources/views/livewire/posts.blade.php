@@ -1,57 +1,44 @@
 <div class="container mx-auto flex flex-wrap py-6">
     @if ($featuredPost)
-    <!-- Featured post -->
+        {{-- Featured Article section --}}
         <section class="w-full md:w-2/3 flex flex-col items-center px-3">
-            <article class="flex flex-col items-stretch transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
+            <article
+                class="flex flex-col items-stretch transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
                 <!-- Article Image -->
                 <a href="#" class="hover:opacity-75">
                     <img src="{{$featuredPost->image ?? ''}}" class="h- object-fill w-full rounded-l rounded-r">
                 </a>
                 <div class="bg-white flex flex-col justify-start p-6">
-                    <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">Technology</a>
-                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">Lorem Ipsum Dolor Sit Amet Dolor Sit Amet</a>
+                    <a href="#"
+                       class="text-blue-700 text-sm font-bold uppercase pb-4">{{$featuredPost->main_category->name}}</a>
+                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">
+                        {{$featuredPost->title }}
+                    </a>
                     <p href="#" class="text-sm pb-3">
-                        By <a href="#" class="font-semibold hover:text-gray-800">David Grzyb</a>, Published on April 25th, 2020
+                        By <a href="#"
+                              class="font-semibold hover:text-gray-800">{{$featuredPost->lead_author->name}}</a>,
+                        {{$featuredPost->published_at->toFormattedDateString()}}
                     </p>
-                    <a href="#" class="pb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis porta dui. Ut eu iaculis massa. Sed ornare ligula lacus, quis iaculis dui porta volutpat. In sit amet posuere magna..</a>
-                    <a href="#" class="uppercase text-gray-800 hover:text-black">Continue Reading <i class="fas fa-arrow-right"></i></a>
+                    <a href="{{route('posts.show', $featuredPost->id)}}" class="pb-6">
+                        {!!$featuredPost->excerpt !!}
+                    </a>
+                    <a href="{{route('posts.show', $featuredPost->id)}}"
+                       class="uppercase text-gray-800 hover:text-black">
+                        Continue Reading
+                        <i class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
-{{--            <div class="transition-all duration-150 flex w-full px-4 py-6">--}}
-{{--                <div class="flex flex-row items-stretch transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">--}}
-{{--                    <!-- Featured Image -->--}}
-{{--                    <div class="flex flex-col md:w-1/2 lg:w-1/3">--}}
-{{--                        <img--}}
-{{--                            src="{{$featuredPost->image ?? ''}}"--}}
-{{--                            alt="Blog Cover"--}}
-{{--                            class=" object-contain h-full w-full rounded-l "--}}
-{{--                        />--}}
-{{--                    </div>--}}
-{{--                    <div class="bg-white flex flex-col p-4 md:w-1/2 lg:w-2/3">--}}
-{{--                        <a href="#"--}}
-{{--                           class="text-blue-700 text-sm font-bold uppercase pb-4">{{$featuredPost->main_category->name}}</a>--}}
-{{--                        <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{$featuredPost->title }}</a>--}}
-{{--                        <p href="#" class="text-sm pb-3">--}}
-{{--                            By <a href="#"--}}
-{{--                                  class="font-semibold hover:text-gray-800">{{$featuredPost->lead_author->name}}</a>,--}}
-{{--                            Published on {{$featuredPost->published_at->toFormattedDateString()}}--}}
-{{--                        </p>--}}
-{{--                        <a href="#" class="pb-6">{!!$featuredPost->excerpt !!}</a>--}}
-{{--                        <a href="{{route('posts.show', $featuredPost->id)}}"--}}
-{{--                           class="uppercase text-gray-800 hover:text-black">Continue Reading <i--}}
-{{--                                class="fas fa-arrow-right"></i></a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
             @endif
-            {{--    Latest Posts--}}
         </section>
+
         <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
 
             <div class="w-full bg-white shadow flex flex-col my-4 p-6">
                 <p class="text-xl font-semibold pb-5">About Us</p>
-                <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
-                <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
+                <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio
+                    sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
+                <a href="#"
+                   class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
                     Get to know us
                 </a>
             </div>
@@ -69,18 +56,23 @@
                     <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8">
                     <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9">
                 </div>
-                <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
+                <a href="#"
+                   class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
                     <i class="fab fa-instagram mr-2"></i> Follow @dgrzyb
                 </a>
             </div>
 
         </aside>
 
-        <x-typography.section-header> Latest Articles </x-typography.section-header>
-        <section class="container flex flex-row flex-wrap mx-auto">
+        {{-- Latest Article section --}}
+        <section class="flex flex-row flex-wrap mt-2">
+            <!-- Section Header -->
+            <x-typography.section-header> Latest Articles</x-typography.section-header>
+
+            <!-- Articles -->
             @foreach($posts as $post)
                 <a href="{{route('posts.show', $post->id)}}">
-                    <div class="transition-all duration-150 flex w-full px-4 py-6 lg:w-1/3">
+                    <article class="transition-all duration-150 flex w-full px-4 py-6 lg:w-1/3">
                         <div
                             class="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
                             <div class="md:flex-shrink-0">
@@ -116,7 +108,7 @@
                                 {!! $post->excerpt !!}
                             </p>
                             <hr class="border-gray-300"/>
-                            <section class="px-4 py-2 mt-2">
+                            <div class="px-4 py-2 mt-2">
                                 <div class="flex items-center justify-between">
 
                                     <div class="flex items-center flex-1">
@@ -136,19 +128,14 @@
                                     {{--TODO::add read time calculator --}}
                                     {{--                            <p class="mt-1 text-xs hover:text-gray-600">9 minutes read</p>--}}
                                 </div>
-                            </section>
+                            </div>
                         </div>
-                    </div>
+                    </article>
                 </a>
-            @endforeach
-        </section>
+        @endforeach
         <!-- Pagination -->
-        <section class="flex flex-row flex-wrap mx-auto">
-            {{ $posts->links('vendor.pagination.tailwind')}}
+            <div class="w-full flex justify-center">
+                {{ $posts->links('vendor.pagination.tailwind')}}
+            </div>
         </section>
-
-
-
-
-
 </div>

@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6d1d42dc-4858-41c1-ad8e-c4596f3e4746" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/layouts/front-end/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/layouts/front-end/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/blog/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blog/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/posts.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -259,7 +259,7 @@
       <workItem from="1608861182321" duration="467000" />
       <workItem from="1608914829983" duration="28254000" />
       <workItem from="1609068275224" duration="25770000" />
-      <workItem from="1609230889205" duration="2417000" />
+      <workItem from="1609230889205" duration="4104000" />
     </task>
     <task id="LOCAL-00001" summary="Completed Blog Models">
       <created>1601861448608</created>
