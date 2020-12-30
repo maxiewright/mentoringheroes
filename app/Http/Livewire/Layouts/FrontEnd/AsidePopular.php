@@ -14,7 +14,6 @@ class AsidePopular extends Component
         $this->popularPosts = Post::all();
     }
 
-
     public function render()
     {
         return view('livewire.layouts.front-end.aside-popular');

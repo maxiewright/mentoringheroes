@@ -12,7 +12,7 @@
                            href="{{route('posts.show', $post->id)}}">{{$post->title}}</a>
                     </h4>
                 <p class="no-underline hover:underline text-blue-700">
-                    {{$post->mainCategory->name}}
+                    {{$post->mainCategory->name ?? ''}}
                 </p>
                 </span>
             </li>

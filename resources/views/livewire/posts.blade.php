@@ -1,9 +1,8 @@
 <div class="container mx-auto flex flex-wrap py-6">
     @if ($featuredPost)
         {{-- Featured Article section --}}
-        <section class="w-full md:w-2/3 flex flex-col items-center px-3">
-            <article
-                class="flex flex-col items-stretch transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
+        <section class="w-full md:w-2/3 flex flex-col items-center px-3 mt-4">
+            <article class="flex flex-col items-stretch transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
                 <!-- Article Image -->
                 <a href="#" class="hover:opacity-75">
                     <img src="{{$featuredPost->image ?? ''}}" class="h- object-fill w-full rounded-l rounded-r">
@@ -32,7 +31,6 @@
         </section>
 
         <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
-
             <div class="w-full bg-white shadow flex flex-col my-4 p-6">
                 <p class="text-xl font-semibold pb-5">About Us</p>
                 <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio

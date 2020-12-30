@@ -112,9 +112,9 @@ class Post extends Model
      */
     public function getMainCategoryAttribute()
     {
-        return $this->categories->first();
+        return $this->categories
 //            ->wherePivot('is_main', true)
-//            ->first();
+            ->first();
     }
 
     /**

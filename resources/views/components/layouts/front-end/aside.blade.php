@@ -13,7 +13,5 @@
     @endif
 
     <livewire:layouts.front-end.aside-popular/>
-
     <livewire:layouts.front-end.aside-categories/>
-
 </aside>
