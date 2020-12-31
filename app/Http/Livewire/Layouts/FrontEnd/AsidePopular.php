@@ -11,7 +11,9 @@ class AsidePopular extends Component
 
     public function mount()
     {
-        $this->popularPosts = Post::all();
+        $this->popularPosts = Post::query()
+        ->limit(5)
+        ->get();
     }
 
     public function render()
