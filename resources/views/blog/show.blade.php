@@ -13,12 +13,9 @@
                 <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">{{$post->main_category->name}}</a>
                 <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{$post->title}}</a>
                 <p href="#" class="text-sm pb-8">
-                    By <a href="#" class="font-semibold hover:text-gray-800">{{$post->leadAuthor->name}}</a>, Published
-                    on {{$post->published_at->toFormattedDateString()}}
+                    By <a href="#" class="font-semibold hover:text-gray-800">{{$post->leadAuthor->name}}</a>
                 </p>
-
                 {!! $post->body !!}
-
             </div>
         </article>
         {{--    TODO:: Add pagination to move to next and previous article --}}
