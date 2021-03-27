@@ -1,5 +1,5 @@
-<x-layouts.front-end.master>
+<x-layout.front-end.master>
    <livewire:posts />
-</x-layouts.front-end.master>
+</x-layout.front-end.master>
 
 

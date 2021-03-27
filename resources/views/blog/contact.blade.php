@@ -1,1 +1,1 @@
-@extends('layouts.blog.master')
+@extends('layout.blog.master')

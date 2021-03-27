@@ -2,17 +2,17 @@
 //
 //namespace App\Observers;
 //
-//use App\Models\Post;
+//use App\Models\Posts;
 //
 //class PostObserver
 //{
 //    /**
 //     * Handle the post "created" event.
 //     *
-//     * @param  \App\Models\Post  $post
+//     * @param  \App\Models\Posts  $post
 //     * @return void
 //     */
-//    public function created(Post $post)
+//    public function created(Posts $post)
 //    {
 //        if ($post->post_status_id == 3){
 //            $post->update([
@@ -24,10 +24,10 @@
 //    /**
 //     * Handle the post "updated" event.
 //     *
-//     * @param  \App\Models\Post  $post
+//     * @param  \App\Models\Posts  $post
 //     * @return void
 //     */
-//    public function updated(Post $post)
+//    public function updated(Posts $post)
 //    {
 //        if ($post->post_status_id == 3){
 //            $post->update([
@@ -39,10 +39,10 @@
 //    /**
 //     * Handle the post "deleted" event.
 //     *
-//     * @param  \App\Models\Post  $post
+//     * @param  \App\Models\Posts  $post
 //     * @return void
 //     */
-//    public function deleted(Post $post)
+//    public function deleted(Posts $post)
 //    {
 //        //
 //    }
@@ -50,10 +50,10 @@
 //    /**
 //     * Handle the post "restored" event.
 //     *
-//     * @param  \App\Models\Post  $post
+//     * @param  \App\Models\Posts  $post
 //     * @return void
 //     */
-//    public function restored(Post $post)
+//    public function restored(Posts $post)
 //    {
 //        //
 //    }
@@ -61,10 +61,10 @@
 //    /**
 //     * Handle the post "force deleted" event.
 //     *
-//     * @param  \App\Models\Post  $post
+//     * @param  \App\Models\Posts  $post
 //     * @return void
 //     */
-//    public function forceDeleted(Post $post)
+//    public function forceDeleted(Posts $post)
 //    {
 //        //
 //    }

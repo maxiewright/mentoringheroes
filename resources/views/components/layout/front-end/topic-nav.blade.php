@@ -11,7 +11,7 @@
     </div>
     <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
         <div class="w-full container mx-auto flex flex-col sm:flex-row items-center justify-center text-sm font-bold uppercase mt-0 px-6 py-2">
-            <a href="{{route('home')}}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Articles</a>
+            <a href="{{route('posts.index')}}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Articles</a>
 {{--            <a href="{{route('vlogs.index')}}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Videos</a>--}}
 {{--            <a href="{{route('podcasts.index')}}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Podcasts</a>--}}
 {{--            <a href="{{route('courses.index')}}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Courses</a>--}}

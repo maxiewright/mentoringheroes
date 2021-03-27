@@ -23,6 +23,6 @@ class Master extends Component
      */
     public function render()
     {
-        return view('layouts.blog.master');
+        return view('layout.blog.master');
     }
 }

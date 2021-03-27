@@ -1,3 +1,6 @@
+<div>
+    {{-- Success is as dangerous as failure. --}}
+</div>
 <div class="container mx-auto flex flex-wrap py-6">
     @if ($featuredPost)
         {{-- Featured Article section --}}
@@ -16,7 +19,7 @@
                     <p href="#" class="text-sm pb-3">
                         By <a href="#"
                               class="font-semibold hover:text-gray-800">{{$featuredPost->lead_author->name}}</a>
-{{--                        ,{{$featuredPost->published_at->toFormattedDateString()}}--}}
+                        {{--                        ,{{$featuredPost->published_at->toFormattedDateString()}}--}}
                     </p>
                     <a href="{{route('posts.show', $featuredPost->id)}}" class="pb-6">
                         {!!$featuredPost->excerpt !!}
@@ -32,9 +35,9 @@
 
         <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
             <livewire:layouts.front-end.aside.featured-posts/>
-{{--            <livewire:layout.front-end.aside-categories/>--}}
+            {{--            <livewire:layout.front-end.aside-categories/>--}}
         </aside>
-{{--        @include('components.layout.front-end.aside')--}}
+        {{--        @include('components.layout.front-end.aside')--}}
 
         {{-- Latest Article section --}}
         <section class="flex flex-row flex-wrap mt-2">
@@ -93,7 +96,7 @@
                                             <a href="" class="font-semibold hover:text-gray-800 hover:underline">
                                                 <span class="nice">{{$post->lead_author->name ?? ''}}</span>
                                             </a>
-{{--                                            <span class="mx-1 text-xs hover:text-gray-600">{{$post->published_at->toFormattedDateString()}}</span>--}}
+                                            {{--                                            <span class="mx-1 text-xs hover:text-gray-600">{{$post->published_at->toFormattedDateString()}}</span>--}}
                                         </div>
                                     </div>
                                     {{--TODO::add read time calculator --}}

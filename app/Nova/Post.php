@@ -63,7 +63,7 @@ class Post extends Resource
             ->disk('public')
             ->path('post-images')
                 ->storeAs(function (Request $request) {
-                    return sha1($request->file('image_path')->getClientOriginalName());
+                    return $request->image_path->getClientOriginalName();
                 })
                 ->rules('required'),
 

@@ -1,4 +1,4 @@
-<x-layouts.front-end.master>
+<x-layout.front-end.master>
 
 
-</x-layouts.front-end.master>
+</x-layout.front-end.master>

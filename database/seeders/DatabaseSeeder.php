@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\CommentStatus;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
             TagSeeder::class,
             SocialMediaPlatformSeeder::class,
             RolesAndPermissionSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }

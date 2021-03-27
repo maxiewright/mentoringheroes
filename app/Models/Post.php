@@ -43,14 +43,6 @@ class Post extends Model
         });
     }
 
-    /**
-     * Returns article slug
-     * @return string
-     */
-//    public function getSlugAttribute(): string
-//    {
-//        return Str::slug($this->title);
-//    }
 
     /**
      * returns article image path

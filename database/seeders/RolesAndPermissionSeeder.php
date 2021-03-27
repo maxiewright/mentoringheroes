@@ -78,7 +78,7 @@ class RolesAndPermissionSeeder extends Seeder
 
             // Author
             Role::create(['name' => 'author'])->givePermissionTo([
-                //Post
+                //Posts
                 'write posts', 'edit posts',
                 //Comments
                 'view comments',
@@ -88,7 +88,7 @@ class RolesAndPermissionSeeder extends Seeder
 
             // Contributor
             Role::create(['name' => 'contributor'])->givePermissionTo([
-                //Post
+                //Posts
                 'write posts', 'edit posts',
                 //Comments
                 'view comments',
