@@ -21,48 +21,21 @@
                 {{--    Previous and Next articles--}}
 
                 <div class="w-full flex pt-6">
-                    <div wire:click="previous" class="w-1/2 bg-white shadow cursor-pointer hover:shadow-md text-left p-6">
+                    <a href="{{($previousPost) ? route('posts.show', $previousPost->id) :''}}" class="w-1/2 bg-white shadow cursor-pointer hover:shadow-md text-left p-6">
                         <p class="text-lg text-blue-800 font-bold flex items-center">
                            <i class="fas fa-arrow-left pr-1"></i>Previous</p>
                         <p class="pt-2">{{$previousPost->title ?? ''}}</p>
-                    </div>
+                    </a>
 
-                    <div wire:click="next" class="w-1/2 bg-white shadow cursor-pointer hover:shadow-md text-right p-6">
+                    <a href="{{($nextPost) ? route('posts.show', $nextPost->id) : '' }}"  class="w-1/2 bg-white shadow cursor-pointer hover:shadow-md text-right p-6">
                         <p class="text-lg text-blue-800 font-bold flex items-center justify-end">
                             Next <i class="fas fa-arrow-right pl-1"></i></p>
                         <p class="pt-2">{{$nextPost->title ?? ''}}</p>
-                    </div>
+                    </a>
 
                 </div>
 
                 @if ($post->authors->count() > 1)
-                    <div class="w-full flex flex-col text-center md:text-left md:flex-row shadow bg-white mt-10 mb-10 p-6">
-                        <div class="w-full md:w-1/5 flex justify-center md:justify-start pb-4">
-                            <img src="{{$post->leadAuthor->profile_photo_url ?? ''}}" class="rounded-full shadow h-32 w-32">
-                        </div>
-                        <div class="flex-1 flex flex-col justify-center md:justify-start">
-                            <p class="font-semibold text-2xl">{{$post->leadAuthor->name ?? ''}}</p>
-                            <p class="pt-2">{{$post->leadAuthor->about ?? ''}}</p>
-
-                            {{--Social media--}}
-                            <div
-                                class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">
-                                <a class="" href="#">
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                                <a class="pl-4" href="#">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a class="pl-4" href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a class="pl-4" href="#">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                @else
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-10 mb-10">
                         @foreach ($post->authors as $author)
                             <div class="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
@@ -97,6 +70,33 @@
                                 </div>
                             </div>
                         @endforeach
+                    </div>
+                @else
+                    <div class="w-full flex flex-col text-center md:text-left md:flex-row shadow bg-white mt-10 mb-10 p-6">
+                        <div class="w-full md:w-1/5 flex justify-center md:justify-start pb-4">
+                            <img src="{{$post->leadAuthor->profile_photo_url ?? ''}}" class="rounded-full shadow h-32 w-32">
+                        </div>
+                        <div class="flex-1 flex flex-col justify-center md:justify-start">
+                            <p class="font-semibold text-2xl">{{$post->leadAuthor->name ?? ''}}</p>
+                            <p class="pt-2">{{$post->leadAuthor->about ?? ''}}</p>
+
+                            {{--Social media--}}
+                            <div
+                                class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">
+                                <a class="" href="#">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a class="pl-4" href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a class="pl-4" href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a class="pl-4" href="#">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 @endif
             </section>

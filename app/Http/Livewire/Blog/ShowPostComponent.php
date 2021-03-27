@@ -7,34 +7,15 @@ use Livewire\Component;
 
 class ShowPostComponent extends Component
 {
-    public Post $post;
+    public $post;
     public $previousPost;
     public $nextPost;
 
-    protected $listeners = ['refreshComponent' => '$refresh'];
-
-    public function mount()
+    public function mount($postId)
     {
+        $this->post = Post::findOrFail($postId);
         $this->previousPost = Post::where('id', '<', $this->post->id)->first();
         $this->nextPost  = Post::where('id', '>', $this->post->id)->first();
-    }
-
-    public function next()
-    {
-        if ($this->nextPost){
-            $this->post = $this->nextPost;
-            $this->emit('refreshComponent');
-        } else {
-            dd('no more');
-        }
-    }
-
-    public function previous()
-    {
-        if ($this->previousPost != null){
-            $this->post = $this->previousPost;
-            $this->emit('refreshComponent');
-        }
     }
 
     public function render()

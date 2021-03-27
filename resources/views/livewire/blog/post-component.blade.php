@@ -4,32 +4,34 @@
 <div class="container mx-auto flex flex-wrap py-6">
     @if ($featuredPost)
         {{-- Featured Article section --}}
+
         <section class="w-full md:w-2/3 flex flex-col items-center px-3 mt-4">
-            <article class="flex flex-col items-stretch transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
-                <!-- Article Image -->
-                <a href="#" class="hover:opacity-75">
-                    <img src="{{$featuredPost->image ?? ''}}" class="h- object-fill w-full rounded-l rounded-r">
-                </a>
-                <div class="bg-white flex flex-col justify-start p-6">
-                    <a href="#"
-                       class="text-blue-700 text-sm font-bold uppercase pb-4">{{$featuredPost->main_category->name}}</a>
-                    <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">
-                        {{$featuredPost->title }}
-                    </a>
-                    <p href="#" class="text-sm pb-3">
-                        By <a href="#"
-                              class="font-semibold hover:text-gray-800">{{$featuredPost->lead_author->name}}</a>
-                        {{--                        ,{{$featuredPost->published_at->toFormattedDateString()}}--}}
-                    </p>
-                    <a href="{{route('posts.show', $featuredPost->id)}}" class="pb-6">
-                        {!!$featuredPost->excerpt !!}
-                    </a>
-                    <a href="{{route('posts.show', $featuredPost->id)}}"
-                       class="uppercase text-gray-800 hover:text-black">
-                        Continue Reading
-                        <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+            <a href="{{route('posts.show', $featuredPost->id)}}">
+                <article
+                    class="flex flex-col items-stretch transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
+                    <!-- Article Image -->
+                    <div class="hover:opacity-75">
+                        <img src="{{$featuredPost->image ?? ''}}" class="h- object-fill w-full rounded-l rounded-r">
+                    </div>
+                    <div class="bg-white flex flex-col justify-start p-6">
+                        <div class="text-blue-700 text-sm font-bold uppercase pb-4">{{$featuredPost->main_category->name}}</div>
+                        <div class="text-3xl font-bold hover:text-gray-700 pb-4">
+                            {{$featuredPost->title }}
+                        </div>
+                        <p class="text-sm pb-3">
+                            By <a href="" class="font-semibold hover:text-gray-800">{{$featuredPost->lead_author->name}}</a>
+                            {{--                        ,{{$featuredPost->published_at->toFormattedDateString()}}--}}
+                        </p>
+                        <div class="pb-6">
+                            {!!$featuredPost->excerpt !!}
+                        </div>
+                        <a href="{{route('posts.show', $featuredPost->id)}}"
+                           class="uppercase text-gray-800 hover:text-black">
+                            Continue Reading
+                            <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </a>
             @endif
         </section>
 
@@ -64,9 +66,9 @@
                                 @endif
 
                                 <div class="flex flex-row items-center">
-                                    @include('blog.partials.stats.views')
-                                    @include('blog.partials.stats.comments')
-                                    @include('blog.partials.stats.likes')
+                                    {{--                                    @include('blog.partials.stats.views')--}}
+                                    {{--                                    @include('blog.partials.stats.comments')--}}
+                                    {{--                                    @include('blog.partials.stats.likes')--}}
                                 </div>
                             </div>
                             <hr class="border-gray-300"/>
@@ -113,3 +115,4 @@
             </div>
         </section>
 </div>
+    

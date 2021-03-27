@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
  */
 Route::get('/', PostComponent::class)
     ->name('posts.index');
-Route::get('posts/{post}', ShowPostComponent::class)
+Route::get('posts/{postId}', ShowPostComponent::class)
     ->name('posts.show');
 
 
