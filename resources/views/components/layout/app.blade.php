@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <meta name="p:domain_verify" content="41ae1d192f0f66ec3208a65d84f7a8d7"/>
     <script data-ad-client="ca-pub-1791165165288702" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
 
     </script>
