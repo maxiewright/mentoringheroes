@@ -1,6 +1,6 @@
 <nav class="w-full py-4 bg-blue-800 shadow">
-    <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
-        <div class="flex items-center text-lg no-underline text-white pr-6">
+    <div class="w-full container mx-auto md:flex md:flex-wrap md:items-center justify-between">
+        <div class="hidden md:block flex items-center text-lg no-underline text-white pr-6">
             <a class="" href="https://www.facebook.com/mentoringheroes">
                 <i class="fab fa-facebook fa-lg"></i>
             </a>
@@ -17,15 +17,15 @@
 
 
         <div class="flex flex-col items-center">
-            <a class="font-bold text-white uppercase hover:text-red-700 md:text-5xl" href="#">
+            <a class="text-2xl font-bold text-white uppercase hover:text-red-700 md:text-5xl" href="#">
                 Mentoring Heroes
             </a>
-            <p class="text-lg text-white">
+            <p class="hidden md:block text-lg text-white">
                 Here to guide you along your hero's Journey
             </p>
         </div>
 
-        <div class="flex flex-col items-center">
+        <div class="hidden md:block flex flex-col items-center">
             <div class="pt-2 relative mx-auto text-gray-600">
                 <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
                        type="search" name="search" placeholder="Search">
@@ -41,6 +41,5 @@
                 </button>
             </div>
         </div>
-
     </div>
 </nav>

@@ -21,6 +21,22 @@
 {{--            <a href="{{route('subscribe')}}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Subscribe</a>--}}
         </div>
 
+        <div :class="open ? 'block': 'hidden'"
+             class="sm:hidden flex items-center justify-center text-lg no-underline text-blue-700 pr-6">
+
+            <a class="" href="https://www.facebook.com/mentoringheroes">
+                <i class="fab fa-facebook fa-lg"></i>
+            </a>
+            <a class="pl-6" href="https://www.instagram.com/mentoringheroes">
+                <i class="fab fa-instagram fa-lg"></i>
+            </a>
+            <a class="pl-6" href="https://www.twitter.com/heromentoring">
+                <i class="fab fa-twitter fa-lg"></i>
+            </a>
+            <a class="pl-6" href="https://www.pinterest.com/mentoringheroes/">
+                <i class="fab fa-pinterest fa-lg"></i>
+            </a>
+        </div>
 
     </div>
 </nav>
