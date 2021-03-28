@@ -15,17 +15,17 @@
             <!-- For Future -->
             {{--BEGING: Section Links--}}
             <x-nav.topic-link route="posts.index" title="Articles" />
-            <x-nav.topic-link route="posts.index" title="Videos" />
-            <x-nav.topic-link route="posts.index" title="Podcasts" />
-            <x-nav.topic-link route="posts.index" title="Courses" />
+{{--            <x-nav.topic-link route="posts.index" title="Videos" />--}}
+{{--            <x-nav.topic-link route="posts.index" title="Podcasts" />--}}
+{{--            <x-nav.topic-link route="posts.index" title="Courses" />--}}
             {{--END: Section Links--}}
 
 
             {{--BEGIN: Marketing Links--}}
-            <x-nav.topic-link route="about" title="Subscribe" />
+{{--            <x-nav.topic-link route="about" title="Subscribe" />--}}
             <x-nav.topic-link route="about" title="About" />
-            <x-nav.topic-link route="contact_us.index" title="Contact" />
-            <x-nav.topic-link route="contact_us.index" title="Write for Us" />
+            <x-nav.topic-link route="contact" title="Contact" />
+{{--            <x-nav.topic-link route="contact" title="Write for Us" />--}}
             {{--END: Marketing Links--}}
         </div>
 

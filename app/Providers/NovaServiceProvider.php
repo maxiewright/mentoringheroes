@@ -59,6 +59,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             new \Tightenco\NovaGoogleAnalytics\PageViewsMetric,
             new \Tightenco\NovaGoogleAnalytics\VisitorsMetric,
+//            new \Tightenco\NovaGoogleAnalytics\MostVisitedPagesCard,
         ];
     }
 

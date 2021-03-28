@@ -35,6 +35,7 @@ class PostComponent extends Component
     public function render()
     {
         return view('livewire.blog.post-component', [
+
             'posts' => Post::query()
                 ->with('categories', 'authors', 'tags')
                 ->where(fn($query) => $query->when(!empty($this->selectedCategories), fn($query) => $query->whereIn('id', $this->selectedCategories)
@@ -46,8 +47,6 @@ class PostComponent extends Component
             'featuredPost' => Post::query()
                 ->with('categories', 'authors', 'tags')
                 ->whereNotNull('published_at')
-                ->where(fn($query) => $query->when(!empty($this->selectedCategories), fn($query) => $query->whereIn('id', $this->selectedCategories)
-                ))
                 ->where(function ($query) {
                     $query->where('is_featured', '=', true)
                         ->latest('published_at');

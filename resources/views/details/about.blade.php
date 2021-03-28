@@ -1,4 +1,4 @@
-<x-layout.front-end.master>
+<x-layout.app>
     <div class="container mx-auto flex flex-wrap py-6">
         <div class="w-full md:w-2/3 flex flex-col px-3">
             <div class="">
@@ -19,6 +19,8 @@
                 reveals or confirms our calling can lead to a lifetime of regrets. We decided to use everyday heroes’ personal experiences to help you navigate your way along the hero’s journey. So whether you are new to this, just a beginner or yet to find your path, we are here to provide support, encouragement and genuine guidance to you. You are not just doing this for you; you also do this for those you will inspire. Let us be your partner in this epic journey because the world needs your light, and only you can shine the way you shine. Become your hero and inspire others to become heroes as they follow their hero’s journey.
             </div>
         </div>
-        <x-layout.front-end.aside />
+        <x-layout.front-end.aside>
+            <livewire:blog.aside.tab-component />
+        </x-layout.front-end.aside>
     </div>
-</x-layout.front-end.master>
+</x-layout.app>

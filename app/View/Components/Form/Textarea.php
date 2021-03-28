@@ -6,7 +6,7 @@ use Illuminate\View\Component;
 
 class Textarea extends Component
 {
-    public $name;
+    public $model;
     public $placeholder;
     public $cols;
     public $rows;
@@ -14,14 +14,14 @@ class Textarea extends Component
     /**
      * Create a new component instance.
      *
-     * @param $name
+     * @param $model
      * @param $placeholder
      * @param $cols
      * @param $rows
      */
-    public function __construct($name, $placeholder, $cols, $rows)
+    public function __construct($model, $placeholder, $cols, $rows)
     {
-        $this->name = $name;
+        $this->model = $model;
         $this->placeholder = $placeholder;
         $this->cols = $cols;
         $this->rows = $rows;

@@ -5,13 +5,13 @@
             <a class="" href="https://www.pinterest.com/mentoringheroes/">
                 <i class="fab fa-pinterest fa-lg"></i>
             </a>
-            <a class="pl-6" href="https://www.facebook.com/mentoringheroes">
+            <a class="invisible pl-6" href="https://www.facebook.com/mentoringheroes">
                 <i class="fab fa-facebook fa-lg"></i>
             </a>
-            <a class="pl-6" href="https://www.instagram.com/mentoringheroes">
+            <a class="invisible pl-6" href="https://www.instagram.com/mentoringheroes">
                 <i class="fab fa-instagram fa-lg"></i>
             </a>
-            <a class="pl-6" href="https://www.twitter.com/heromentoring">
+            <a class="invisible pl-6" href="https://www.twitter.com/heromentoring">
                 <i class="fab fa-twitter fa-lg"></i>
             </a>
         </div>

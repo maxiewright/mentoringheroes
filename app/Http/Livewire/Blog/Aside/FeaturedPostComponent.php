@@ -7,11 +7,10 @@ use Livewire\Component;
 
 class FeaturedPostComponent extends Component
 {
-    public $featuredPosts = [];
 
-    public function mount()
+    public function getFeaturedPostsProperty()
     {
-        $this->featuredPosts = Post::query()
+       return  Post::query()
             ->whereNotNull('published_at')
             ->where(function ($query){
                 $query->where('is_featured', '=',true)
@@ -23,6 +22,8 @@ class FeaturedPostComponent extends Component
 
     public function render()
     {
-        return view('livewire.blog.aside.featured-post-component');
+        return view('livewire.blog.aside.featured-post-component',[
+            'featuredPosts' => $this->featuredPosts
+        ]);
     }
 }

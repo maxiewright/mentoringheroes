@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 
 use App\Http\Livewire\Blog\PostComponent;
 use App\Http\Livewire\Blog\ShowPostComponent;
+use App\Http\Livewire\ContactComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,14 +28,19 @@ Route::get('/', PostComponent::class)
 Route::get('posts/{postId}', ShowPostComponent::class)
     ->name('posts.show');
 
+Route::get('contact', ContactComponent::class)
+    ->name('contact');
 
-Route::resource('contact_us', ContactController::class);
 
 //Views
-Route::view('subscribe','details.subscribe')->name('subscribe');
-
-Route::view('about','details.about')->name('about');
-
+Route::view('subscribe','details.subscribe')
+    ->name('subscribe');
+Route::view('about','details.about')
+    ->name('about');
+Route::view('terms_and_conditions', 'legal.terms-and-conditions')
+    ->name('terms_and_conditions');
+Route::view('privacy_policy', 'legal.privacy-policy')
+    ->name('privacy_policy');
 
 // Admin
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

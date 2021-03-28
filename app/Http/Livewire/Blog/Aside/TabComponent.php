@@ -7,7 +7,7 @@ use Livewire\Component;
 class TabComponent extends Component
 {
 
-    public string $menuItem = 'categories';
+    public string $menuItem = 'recent';
 
     public function setMenuItem($menuItem)
     {
