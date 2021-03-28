@@ -35,7 +35,6 @@
 <body class="bg-white font-family-karla">
 
 <x-layout.front-end.top-bar-nav />
-<x-layout.front-end.text-header />
 <x-layout.front-end.topic-nav />
 
     {{$slot}}

@@ -44,7 +44,7 @@
         {{-- Latest Article section --}}
         <section class="flex flex-row flex-wrap mt-2">
             <!-- Section Header -->
-            <x-typography.section-header> Latest Articles</x-typography.section-header>
+            <x-typography.section-header> Latest Articles </x-typography.section-header>
 
             <!-- Articles -->
             @foreach($posts as $post)
@@ -115,4 +115,4 @@
             </div>
         </section>
 </div>
-    
+
