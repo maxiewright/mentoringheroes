@@ -12,23 +12,17 @@
     <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
         <div class="w-full container mx-auto flex flex-col sm:flex-row items-center justify-center text-sm font-bold uppercase mt-0 px-6 py-2">
 
-            <x-nav.topic-link route="posts.index" title="All Articles" />
-            <x-nav.topic-link route="posts.index" title="Heroes Journey" />
-            <x-nav.topic-link route="posts.index" title="Success" />
-            <x-nav.topic-link route="posts.index" title="Self Improvement" />
-            <x-nav.topic-link route="posts.index" title="Motivation" />
-
             <!-- For Future -->
             {{--BEGING: Section Links--}}
-{{--            <a href="{{route('posts.index')}}" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Articles</a>--}}
-{{--            <a href="" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Videos</a>--}}
-{{--            <a href="" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Podcasts</a>--}}
-{{--            <a href="" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Courses</a>--}}
-{{--            <a href="" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Subscribe</a>--}}
+            <x-nav.topic-link route="posts.index" title="Articles" />
+            <x-nav.topic-link route="posts.index" title="Videos" />
+            <x-nav.topic-link route="posts.index" title="Podcasts" />
+            <x-nav.topic-link route="posts.index" title="Courses" />
             {{--END: Section Links--}}
 
 
             {{--BEGIN: Marketing Links--}}
+            <x-nav.topic-link route="about" title="Subscribe" />
             <x-nav.topic-link route="about" title="About" />
             <x-nav.topic-link route="contact_us.index" title="Contact" />
             <x-nav.topic-link route="contact_us.index" title="Write for Us" />

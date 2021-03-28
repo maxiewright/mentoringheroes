@@ -1,12 +1,13 @@
 <div class="w-full bg-white shadow flex flex-col my-4 p-6">
-    <p class="text-xl font-semibold border-b pb-5">Topics</p>
     <ul class="w-full">
-        @foreach ($categories as $category)
-            <li class="list-none border-b py-2">
-                <a href="#" class="no-underline hover:underline text-blue-700">
-                    {{$category->name}}
-                </a>
-                ({{$category->posts->count() }})
+        @foreach ($categories as $id => $category)
+            <li class="list-none py-1" wire:click.prevent="$emitUp('filterCategories', {{$id}} )">
+                <button class="h-8 px-3 text-white transition-colors duration-150 bg-blue-700 rounded-lg focus:shadow-outline hover:bg-blue-800">
+                    <span class="mr-2">{{$category->name}}</span>
+                    <span class="inline-flex items-center justify-center px-2 py-1 text-sm font-bold leading-none text-black bg-white rounded-full">
+                   {{$category->posts->count() }}
+               </span>
+                </button>
             </li>
         @endforeach
     </ul>

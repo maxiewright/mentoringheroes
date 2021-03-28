@@ -2,6 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script data-ad-client="ca-pub-1791165165288702" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-186028539-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
