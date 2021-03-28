@@ -21,6 +21,6 @@ class ShowPostComponent extends Component
     public function render()
     {
         return view('livewire.blog.show-post-component')
-            ->layout('components.layout.front-end.master');
+            ->layout('components.layout.app');
     }
 }

@@ -1,10 +1,6 @@
-<div>
-    {{-- Success is as dangerous as failure. --}}
-</div>
 <div class="container mx-auto flex flex-wrap py-6">
     @if ($featuredPost)
-        {{-- Featured Article section --}}
-
+        {{-- BEGIN: Featured Article Section --}}
         <section class="w-full md:w-2/3 flex flex-col items-center px-3 mt-4">
             <a href="{{route('posts.show', $featuredPost->id)}}">
                 <article
@@ -14,12 +10,14 @@
                         <img src="{{$featuredPost->image ?? ''}}" class="h- object-fill w-full rounded-l rounded-r">
                     </div>
                     <div class="bg-white flex flex-col justify-start p-6">
-                        <div class="text-blue-700 text-sm font-bold uppercase pb-4">{{$featuredPost->main_category->name}}</div>
+                        <div
+                            class="text-blue-700 text-sm font-bold uppercase pb-4">{{$featuredPost->main_category->name}}</div>
                         <div class="text-3xl font-bold hover:text-gray-700 pb-4">
                             {{$featuredPost->title }}
                         </div>
                         <p class="text-sm pb-3">
-                            By <a href="" class="font-semibold hover:text-gray-800">{{$featuredPost->lead_author->name}}</a>
+                            By <a href=""
+                                  class="font-semibold hover:text-gray-800">{{$featuredPost->lead_author->name}}</a>
                             {{--                        ,{{$featuredPost->published_at->toFormattedDateString()}}--}}
                         </p>
                         <div class="pb-6">
@@ -34,17 +32,18 @@
             </a>
             @endif
         </section>
+        {{--END: Fretured Article Section--}}
 
-        <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
-            <livewire:layouts.front-end.aside.featured-posts/>
-            {{--            <livewire:layout.front-end.aside-categories/>--}}
-        </aside>
-        {{--        @include('components.layout.front-end.aside')--}}
+        {{--BEGIN: Aside--}}
+        <x-layout.front-end.aside>
+            <livewire:blog.aside.tab-component />
+        </x-layout.front-end.aside>
+        {{--END: Aside --}}
 
-        {{-- Latest Article section --}}
+        {{-- BEGIN:  Latest Article section --}}
         <section class="flex flex-row flex-wrap mt-2">
             <!-- Section Header -->
-            <x-typography.section-header> Latest Articles </x-typography.section-header>
+            <x-typography.section-header> Latest Articles</x-typography.section-header>
 
             <!-- Articles -->
             @foreach($posts as $post)

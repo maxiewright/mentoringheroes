@@ -1,7 +1,11 @@
 <nav class="w-full py-4 bg-blue-800 shadow">
     <div class="w-full container mx-auto md:flex md:flex-wrap md:items-center justify-between">
+        {{--BEGIN: Social Links--}}
         <div class="hidden md:block flex items-center text-lg no-underline text-white pr-6">
-            <a class="" href="https://www.facebook.com/mentoringheroes">
+            <a class="" href="https://www.pinterest.com/mentoringheroes/">
+                <i class="fab fa-pinterest fa-lg"></i>
+            </a>
+            <a class="pl-6" href="https://www.facebook.com/mentoringheroes">
                 <i class="fab fa-facebook fa-lg"></i>
             </a>
             <a class="pl-6" href="https://www.instagram.com/mentoringheroes">
@@ -10,12 +14,10 @@
             <a class="pl-6" href="https://www.twitter.com/heromentoring">
                 <i class="fab fa-twitter fa-lg"></i>
             </a>
-            <a class="pl-6" href="https://www.pinterest.com/mentoringheroes/">
-                <i class="fab fa-pinterest fa-lg"></i>
-            </a>
         </div>
+        {{--BEGIN: Social Links--}}
 
-
+        {{--BEGIN: LOGO--}}
         <div class="flex flex-col items-center">
             <a class="text-2xl font-bold text-white uppercase hover:text-red-700 md:text-5xl" href="#">
                 Mentoring Heroes
@@ -24,8 +26,10 @@
                 Here to guide you along your hero's Journey
             </p>
         </div>
+        {{--END: LOGO--}}
 
-        <div class="hidden md:block flex flex-col items-center">
+        {{--BEGIN: Search--}}
+        <div class="invisible md:block flex flex-col items-center">
             <div class="pt-2 relative mx-auto text-gray-600">
                 <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
                        type="search" name="search" placeholder="Search">
@@ -41,5 +45,6 @@
                 </button>
             </div>
         </div>
+        {{--END: Search--}}
     </div>
 </nav>
