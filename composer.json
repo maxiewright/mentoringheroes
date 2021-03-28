@@ -21,6 +21,7 @@
         "laravel/tinker": "^2.0",
         "livewire/livewire": "^2.0",
         "optimistdigital/nova-multiselect-field": "^2.0",
+        "spatie/laravel-analytics": "^3.11",
         "spatie/laravel-permission": "^3.18",
         "tightenco/nova-google-analytics": "^0.1.7"
     },
