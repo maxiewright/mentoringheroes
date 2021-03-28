@@ -14,17 +14,7 @@ use Laravel\Scout\Searchable;
 
 class Post extends Model
 {
-    use HasFactory, Searchable;
-
-    public function toSearchableArray()
-    {
-        $array = $this->toArray();
-
-        return [
-            'id' => $array['id'],
-            'title'   => $array['title']
-        ];
-    }
+    use HasFactory;
 
     protected $fillable = [
         'title',
