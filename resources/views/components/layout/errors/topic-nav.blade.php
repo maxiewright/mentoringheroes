@@ -1,4 +1,4 @@
-<!-- Topic nav -->
+<!-- Category nav -->
 <nav class="w-full py-4 border-t border-b bg-gray-100" x-data="{ open: false }">
     <div class="block sm:hidden">
         <a

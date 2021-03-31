@@ -55,17 +55,13 @@ class Post extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
-            Text::make('Tagline', 'seo_title')
-                ->showOnIndex(false)
-                ->rules('required'),
-
             Image::make('Featured Image', 'image_path')
             ->disk('public')
             ->path('post-images')
                 ->storeAs(function (Request $request) {
                     return $request->image_path->getClientOriginalName();
                 })
-                ->rules('required'),
+                ->creationRules('required'),
 
             Textarea::make('Excerpt')
                 ->rules('required'),
@@ -81,7 +77,6 @@ class Post extends Resource
             Boolean::make('Featured', 'is_featured'),
 
             //MultiSelect Fields
-
             Multiselect::make('Authors', 'authors')
                 ->belongsToMany(User::class)
                 ->required(),
@@ -91,7 +86,7 @@ class Post extends Resource
                 ->required(),
 
             Multiselect::make('Categories', 'categories')
-                ->belongsToMany(Topic::class)
+                ->belongsToMany(Category::class)
                 ->required(),
 
             MorphMany::make('Comments'),

@@ -2,7 +2,7 @@
 
 namespace App\View\Components\Layouts\FrontEnd;
 
-use App\Models\Topic;
+use App\Models\Category;
 use Illuminate\View\Component;
 use phpDocumentor\Reflection\Type;
 

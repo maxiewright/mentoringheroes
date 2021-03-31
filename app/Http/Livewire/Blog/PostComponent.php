@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Blog;
 
-use App\Models\Topic;
+use App\Models\Category;
 use App\Models\Post;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -20,7 +20,7 @@ class PostComponent extends Component
 
     public function mount()
     {
-        $this->categories = Topic::all('id', 'name');
+        $this->categories = Category::all('id', 'name');
     }
 
     public function filterCategories($id)
