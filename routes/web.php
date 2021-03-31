@@ -43,6 +43,6 @@ Route::view('privacy_policy', 'legal.privacy-policy')
     ->name('privacy_policy');
 
 // Admin
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//    return view('dashboard');
+//})->name('dashboard');
