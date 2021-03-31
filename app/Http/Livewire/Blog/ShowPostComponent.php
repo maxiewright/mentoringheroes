@@ -8,19 +8,18 @@ use Livewire\Component;
 class ShowPostComponent extends Component
 {
     public $post;
-    public $previousPost;
-    public $nextPost;
 
-    public function mount($postId)
+    public function mount(Post $post)
     {
-        $this->post = Post::findOrFail($postId);
-        $this->previousPost = Post::where('id', '<', $this->post->id)->first();
-        $this->nextPost  = Post::where('id', '>', $this->post->id)->first();
+        $this->post = $post;
     }
 
     public function render()
     {
-        return view('livewire.blog.show-post-component')
+        return view('livewire.blog.show-post-component',[
+            'previousPost' => Post::where('id', '<', $this->post->id)->first(),
+            'nextPost' => Post::where('id', '>', $this->post->id)->first()
+        ])
             ->layout('components.layout.app');
     }
 }

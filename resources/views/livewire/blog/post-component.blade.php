@@ -2,7 +2,7 @@
     @if ($featuredPost)
         {{-- BEGIN: Featured Article Section --}}
         <section class="w-full md:w-2/3 flex flex-col items-center px-3 mt-4">
-            <a href="{{route('posts.show', $featuredPost->id)}}">
+            <a href="{{route('posts.show', $featuredPost->slug)}}">
                 <article
                     class="flex flex-col items-stretch transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
                     <!-- Article Image -->
@@ -23,7 +23,7 @@
                         <div class="pb-6">
                             {!!$featuredPost->excerpt !!}
                         </div>
-                        <a href="{{route('posts.show', $featuredPost->id)}}"
+                        <a href="{{route('posts.show', $featuredPost->slug)}}"
                            class="uppercase text-gray-800 hover:text-black">
                             Continue Reading
                             <i class="fas fa-arrow-right"></i></a>
@@ -47,7 +47,7 @@
 
             <!-- Articles -->
             @foreach($posts as $post)
-                <a href="{{route('posts.show', $post->id)}}">
+                <a href="{{route('posts.show', $post->slug)}}">
                     <article class="transition-all duration-150 flex w-full px-4 py-6 lg:w-1/3">
                         <div
                             class="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">

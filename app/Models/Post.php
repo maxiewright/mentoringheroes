@@ -41,6 +41,11 @@ class Post extends Model
             ->saveSlugsTo('slug');
     }
 
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
+
     protected static function boot()
     {
         parent::boot();
