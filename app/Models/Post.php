@@ -9,25 +9,37 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\Storage;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory, HasSlug;
 
     protected $fillable = [
         'title',
-        'seo_title',
+        'slug',
         'image_path',
         'excerpt',
         'body',
+        'view_count',
+        'comment_count',
         'post_status_id',
         'is_featured',
         'published_at',
     ];
 
-    protected $dates = [
-        'published_at'
+    protected $casts = [
+        'is_features' => 'bool',
+        'published_at' => 'date',
     ];
+
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug');
+    }
 
     protected static function boot()
     {
@@ -57,7 +69,7 @@ class Post extends Model
      *
      * @return BelongsTo
      */
-    public function status()
+    public function status(): BelongsTo
     {
         return $this->belongsTo(PostStatus::class, 'post_status_id');
     }
@@ -67,7 +79,7 @@ class Post extends Model
      *
      * @return MorphToMany
      */
-    public function authors()
+    public function authors(): MorphToMany
     {
         return $this->morphToMany(User::class, 'authorable')
             ->withPivot('is_lead')
@@ -89,7 +101,7 @@ class Post extends Model
      *
      * @return BelongsToMany
      */
-    public function categories()
+    public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Topic::class, 'post_category')
             ->withPivot('is_main')
@@ -114,7 +126,7 @@ class Post extends Model
      * @return MorphToMany
      */
 
-    public function tags()
+    public function tags(): MorphToMany
     {
         return $this->morphToMany(Tag::class, 'taggable')
             ->withTimestamps();
@@ -125,8 +137,10 @@ class Post extends Model
      *
      * @return MorphMany
      */
-    public function comments()
+    public function comments(): MorphMany
     {
        return $this->morphMany(Comment::class, 'commentable');
     }
+
+
 }
