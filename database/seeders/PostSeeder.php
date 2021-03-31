@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
+use App\Models\Topic;
 use App\Models\Post;
 use Illuminate\Database\Seeder;
 
@@ -18,7 +18,7 @@ class PostSeeder extends Seeder
         Post::factory()
             ->hasAuthors(1)
             ->hasAttached(
-                Category::factory()->count(2),
+                Topic::factory()->count(2),
                 ['is_main' => false]
             )
             ->hasComments(3)

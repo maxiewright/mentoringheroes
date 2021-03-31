@@ -8,14 +8,14 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 
 
-class Category extends Resource
+class Topic extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Category::class;
+    public static $model = \App\Models\Topic::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -50,7 +50,7 @@ class Category extends Resource
 
             BelongsToMany::make('Posts', 'posts', Post::class)
                 ->fields(function (){
-                    Text::make('Main Category', 'is_main');
+                    Text::make('Main Topic', 'is_main');
                 }),
         ];
     }

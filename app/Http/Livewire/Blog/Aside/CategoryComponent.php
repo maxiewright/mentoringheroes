@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Blog\Aside;
 
-use App\Models\Category;
+use App\Models\Topic;
 use Livewire\Component;
 
 class CategoryComponent extends Component
@@ -11,7 +11,7 @@ class CategoryComponent extends Component
 
     public function mount()
     {
-        $this->categories = Category::all();
+        $this->categories = Topic::all();
     }
 
     public function render()

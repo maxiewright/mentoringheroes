@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
+use App\Models\Topic;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
@@ -101,6 +101,6 @@ class CategorySeeder extends Seeder
 
         ];
 
-        Category::insert($categories);
+        Topic::insert($categories);
     }
 }

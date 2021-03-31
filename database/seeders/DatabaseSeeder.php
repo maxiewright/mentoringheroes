@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
+use App\Models\Topic;
 use App\Models\CommentStatus;
 use App\Models\User;
 use Illuminate\Database\Seeder;

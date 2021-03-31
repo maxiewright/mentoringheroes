@@ -91,7 +91,7 @@ class Post extends Resource
                 ->required(),
 
             Multiselect::make('Categories', 'categories')
-                ->belongsToMany(Category::class)
+                ->belongsToMany(Topic::class)
                 ->required(),
 
             MorphMany::make('Comments'),
