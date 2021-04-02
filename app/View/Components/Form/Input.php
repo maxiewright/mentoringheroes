@@ -6,7 +6,7 @@ use Illuminate\View\Component;
 
 class Input extends Component
 {
-    public $model;
+    public $name;
     public $placeholder;
     public $type;
 
@@ -14,13 +14,13 @@ class Input extends Component
      * Create a new component instance.
      *
      * @param $type
-     * @param $model
+     * @param $name
      * @param $placeholder
      */
-    public function __construct($type, $model, $placeholder)
+    public function __construct($type, $name, $placeholder)
     {
         $this->type = $type;
-        $this->model = $model;
+        $this->model = $name;
         $this->placeholder = $placeholder;
     }
 

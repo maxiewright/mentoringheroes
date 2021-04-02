@@ -1,4 +1,4 @@
-<x-layout.front-end.master>
+<x-app-layout>
     <div class="w-full flex flex-col px-3">
         <div class="">
             <x-typography.section-header>
@@ -40,6 +40,6 @@
             </form>
         </div>
     </div>
-</x-layout.front-end.master>
+</x-app-layout>
 
 
