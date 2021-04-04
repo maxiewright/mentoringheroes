@@ -100,6 +100,8 @@
                 @endif
             </section>
 
+            <livewire:comment-component />
+
             <x-layout.front-end.aside>
 
             </x-layout.front-end.aside>

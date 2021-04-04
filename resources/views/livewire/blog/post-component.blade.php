@@ -21,7 +21,7 @@
                             {{--                        ,{{$featuredPost->published_at->toFormattedDateString()}}--}}
                         </p>
                         <div class="pb-6">
-                            {!!$featuredPost->excerpt !!}
+                            {!!$featuredPost->excerpt(500) !!}
                         </div>
                         <a href="{{route('posts.show', $featuredPost->slug)}}"
                            class="uppercase text-gray-800 hover:text-black">
@@ -47,64 +47,66 @@
 
             <!-- Articles -->
             @foreach($posts as $post)
-                <article class="transition-all duration-150 flex w-full px-4 py-6 lg:w-1/3">
-
-                    <div
-                        class="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
-                        <a href="{{route('posts.show', $post->slug)}}" class="md:flex-shrink-0">
-                            <img src="{{$post->image}}"
-                                 alt="Featured Image"
-                                 class="object-fill w-full rounded-lg rounded-b-none md:h-56"
-                            />
-                        </a>
-                        <div class="flex items-center justify-between px-4 py-2 overflow-hidden">
-                            @if ($post->main_category)
-                                <span
-                                    class="text-xs font-medium text-blue-700 uppercase">{{$post->main_category->name}}</span>
-                            @endif
-
-                            <div class="flex flex-row items-center">
-                                {{--                                    @include('blog.partials.stats.views')--}}
-                                {{--                                    @include('blog.partials.stats.comments')--}}
-                                {{--                                    @include('blog.partials.stats.likes')--}}
+                <a href="{{route('posts.show', $post->slug)}}">
+                    <article class="transition-all duration-150 flex w-full px-4 py-6 lg:w-1/3">
+                        <div
+                            class="flex flex-col items-stretch min-h-full pb-4 mb-6 transition-all duration-150 bg-white rounded-lg shadow-lg hover:shadow-2xl">
+                            <div class="md:flex-shrink-0">
+                                <img
+                                    src="{{$post->image}}"
+                                    alt="Featured Image"
+                                    class="object-fill w-full rounded-lg rounded-b-none md:h-56"
+                                />
                             </div>
-                        </div>
-                        <hr class="border-gray-300"/>
-                        <div class="flex flex-wrap items-center flex-1 px-4 py-1 text-center mx-auto">
-                            <h2 class="cursor-pointer text-2xl font-bold hover:text-gray-700 hover:underline">
+                            <div class="flex items-center justify-between px-4 py-2 overflow-hidden">
+                                @if ($post->main_category)
+                                    <span
+                                        class="text-xs font-medium text-blue-700 uppercase">{{$post->main_category->name}}</span>
+                                @endif
 
-                                {{$post->title}}
-
-                            </h2>
-                        </div>
-                        <hr class="border-gray-300"/>
-                        <a href="{{route('posts.show', $post->slug)}}">
-                            <p class="flex flex-row flex-wrap w-full px-4 py-2 overflow-hidden text-sm text-justify text-gray-800">
-                                {!! $post->excerpt !!}
-                            </p>
-                        </a>
-
-                        <hr class="border-gray-300"/>
-                        <div class="px-4 py-2 mt-2">
-                            <div class="flex items-center justify-between">
-
-                                <div class="flex items-center flex-1">
-                                    <img
-                                        class="object-cover h-10 rounded-full"
-                                        src="{{$post->lead_author->profile_photo_url}}"
-                                        alt="Avatar"
-                                    />
-                                    <div class="flex flex-col mx-2">
-                                        <a href="{{route('about')}}" class="font-semibold hover:text-gray-800 hover:underline">
-                                            <span class="nice">{{$post->lead_author->name ?? ''}}</span>
-                                        </a>
-                                    </div>
+                                <div class="flex flex-row items-center">
+                                    {{--                                    @include('blog.partials.stats.views')--}}
+                                    {{--                                    @include('blog.partials.stats.comments')--}}
+                                    {{--                                    @include('blog.partials.stats.likes')--}}
                                 </div>
-                                {{--TODO::add read time calculator --}}
+                            </div>
+                            <hr class="border-gray-300"/>
+                            <div class="flex flex-wrap items-center flex-1 px-4 py-1 text-center mx-auto">
+                                <a href="{{route('posts.show', $post->id)}}" class="hover:underline">
+                                    <h2 class="text-2xl font-bold hover:text-gray-700">
+                                        {{$post->title}}
+                                    </h2>
+                                </a>
+                            </div>
+                            <hr class="border-gray-300"/>
+                            <p class="flex flex-row flex-wrap w-full px-4 py-2 overflow-hidden text-sm text-justify text-gray-800"
+                            >
+                                {!! $post->excerpt() !!}
+                            </p>
+                            <hr class="border-gray-300"/>
+                            <div class="px-4 py-2 mt-2">
+                                <div class="flex items-center justify-between">
+
+                                    <div class="flex items-center flex-1">
+                                        <img
+                                            class="object-cover h-10 rounded-full"
+                                            {{--                                    src="{{$post->lead_author->profile_photo_url}}"--}}
+                                            alt="Avatar"
+                                        />
+                                        <div class="flex flex-col mx-2">
+                                            <a href="" class="font-semibold hover:text-gray-800 hover:underline">
+                                                <span class="nice">{{$post->lead_author->name ?? ''}}</span>
+                                            </a>
+                                            {{--                                            <span class="mx-1 text-xs hover:text-gray-600">{{$post->published_at->toFormattedDateString()}}</span>--}}
+                                        </div>
+                                    </div>
+                                    {{--TODO::add read time calculator --}}
+                                    {{--                            <p class="mt-1 text-xs hover:text-gray-600">9 minutes read</p>--}}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
+                </a>
         @endforeach
         <!-- Pagination -->
             <div class="w-full flex justify-center">

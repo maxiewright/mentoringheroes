@@ -15,8 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             CategorySeeder::class,
-            CommentStatusSeeder::class,
-            PostStatusSeeder::class,
             TagSeeder::class,
             SocialMediaPlatformSeeder::class,
             RolesAndPermissionSeeder::class,

@@ -51,7 +51,7 @@ class Post extends Model
         parent::boot();
 
         static::saving(function ($post){
-            if ($post->published == true ){
+            if ($post->is_published){
                 $post->published_at = now();
             }else{
                 $post->published_at = null;

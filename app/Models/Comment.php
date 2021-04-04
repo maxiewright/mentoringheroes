@@ -38,7 +38,7 @@ class Comment extends Model
         parent::boot();
 
         static::saving(function ($comment){
-            if ($comment->published == true ){
+            if ($comment->is_published){
                 $comment->published_at = now();
             }else{
                 $comment->published_at = null;

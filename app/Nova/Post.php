@@ -54,6 +54,10 @@ class Post extends Resource
                 ->sortable()
                 ->rules('required', 'max:255'),
 
+            Text::make('Slug')
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
+
             Image::make('Featured Image', 'image_path')
             ->disk('public')
             ->path('post-images')
@@ -69,9 +73,13 @@ class Post extends Resource
 
             Boolean::make('Featured', 'is_featured'),
 
-            Boolean::make('Published', 'is_published'),
+            Boolean::make('Published', 'is_published')
+                ->hideWhenCreating(),
 
-            Date::make('Published On', 'published_at')->format('DD MMM YYYY'),
+            Date::make('Published On', 'published_at')
+                ->format('DD MMM YYYY')
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
 
             //MultiSelect Fields
             Multiselect::make('Authors', 'authors')
