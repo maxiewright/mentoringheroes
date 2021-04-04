@@ -1,15 +1,15 @@
 @props([
     'type',
     'placeholder',
-    'model' => null
+    'model' => null,
+    'cols',
+    'rows'
 ])
 
 
-
-
 <div {{$attributes->merge(['class' => ''])}}>
-    <textarea wire:model="{{$model}}"
-                type="text"
+    <textarea {{$attributes->wire('model')}}
+              type="text"
               cols="{{$cols}}"
               rows="{{$rows}}"
               placeholder="{{$placeholder}}"

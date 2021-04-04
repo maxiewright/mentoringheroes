@@ -7,7 +7,7 @@
               class="border p-2 w-full @error($name) border-red-500 @enderror "
               value="{{old($name)}}"
     >
-      {{old($name)}}
+
     </textarea>
     @error($name)<div class="text-red-500"> {{$message}} </div> @enderror
 </div>

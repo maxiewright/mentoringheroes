@@ -4,11 +4,14 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Date;
+
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Http\Requests\NovaRequest;
+
 
 class Comment extends Resource
 {
@@ -32,7 +35,7 @@ class Comment extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'title',
     ];
 
     /**
@@ -46,13 +49,23 @@ class Comment extends Resource
         return [
             ID::make(__('ID'), 'id')->sortable(),
 
-            MorphTo::make('Commentable')->types([
+            MorphTo::make('Comment Type', 'commentable')->types([
                 Post::class,
             ]),
 
-            Textarea::make('Body'),
+            BelongsTo::make('Author', 'author', '\App\Nova\User'),
 
-            BelongsTo::make('Status', 'status', CommentStatus::class),
+            Text::make('Title')
+                ->rules('nullable'),
+
+            Textarea::make('Body')
+                ->rules('required'),
+
+            Boolean::make('Published', 'is_published'),
+
+            Date::make('Published On', 'published_at')
+                ->format('DD MMM YYYY')
+                ->onlyOnIndex(),
         ];
     }
 

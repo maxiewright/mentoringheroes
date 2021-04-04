@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -20,17 +21,16 @@ class Post extends Model
         'title',
         'slug',
         'image_path',
-        'excerpt',
         'body',
         'view_count',
-        'comment_count',
-        'post_status_id',
         'is_featured',
+        'is_published',
         'published_at',
     ];
 
     protected $casts = [
-        'is_features' => 'bool',
+        'is_published' => 'boolean',
+        'is_featured' => 'boolean',
         'published_at' => 'date',
     ];
 
@@ -46,12 +46,12 @@ class Post extends Model
         return 'slug';
     }
 
-    protected static function boot()
+    protected static function booted()
     {
         parent::boot();
 
         static::saving(function ($post){
-            if ($post->status->name == 'Published' ){
+            if ($post->published == true ){
                 $post->published_at = now();
             }else{
                 $post->published_at = null;
@@ -59,6 +59,10 @@ class Post extends Model
         });
     }
 
+    public function excerpt(int $limit = 100): string
+    {
+        return Str::limit($this->body, $limit);
+    }
 
     /**
      * returns article image path
@@ -69,15 +73,6 @@ class Post extends Model
         return Storage::disk('public')->url($this->image_path);
     }
 
-    /**
-     * returns status for this model.
-     *
-     * @return BelongsTo
-     */
-    public function status(): BelongsTo
-    {
-        return $this->belongsTo(PostStatus::class, 'post_status_id');
-    }
 
     /**
      * returns the authors of this models
@@ -144,7 +139,7 @@ class Post extends Model
      */
     public function comments(): MorphMany
     {
-       return $this->morphMany(Comment::class, 'commentable');
+       return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
     }
 
 

@@ -3,13 +3,12 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use OptimistDigital\MultiselectField\Multiselect;
 
@@ -63,18 +62,16 @@ class Post extends Resource
                 })
                 ->creationRules('required'),
 
-            Textarea::make('Excerpt')
-                ->rules('required'),
-
             Trix::make('Body')
                 ->hideFromIndex()
                 ->rules('required'),
 
-            BelongsTo::make('Status', 'status', PostStatus::class)
-                ->default(1)
-                ->rules('required'),
 
             Boolean::make('Featured', 'is_featured'),
+
+            Boolean::make('Published', 'is_published'),
+
+            Date::make('Published On', 'published_at')->format('DD MMM YYYY'),
 
             //MultiSelect Fields
             Multiselect::make('Authors', 'authors')

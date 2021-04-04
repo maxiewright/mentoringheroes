@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Comment extends Model
@@ -17,18 +18,42 @@ class Comment extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'body', 'commentable_id', 'commentable_type', 'comment_status_id', 'approved_at',
+        'user_id',
+        'parent_id',
+        'title',
+        'body',
+        'commentable_id',
+        'commentable_type',
+        'published',
+        'published_at',
     ];
 
+    protected $casts = [
+      'published' => 'boolean',
+      'published_at' => 'date'
+    ];
+
+    protected static function booted()
+    {
+        parent::boot();
+
+        static::saving(function ($comment){
+            if ($comment->published == true ){
+                $comment->published_at = now();
+            }else{
+                $comment->published_at = null;
+            }
+        });
+    }
 
     /**
      * Return the author of a comment
      * @return BelongsTo
      */
 
-    public function author()
+    public function author(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     /**
@@ -36,19 +61,18 @@ class Comment extends Model
      *
      * @return MorphTo
      */
-    public function commentable()
+    public function commentable(): MorphTo
     {
         return $this->morphTo();
     }
 
     /**
-     * Status of comments
-     *
-     * @return BelongsTo
+     * Returns Comment Replies
+     * @return HasMany
      */
-
-    public function status()
+    public function replies(): HasMany
     {
-        return $this->belongsTo(CommentStatus::class, 'comment_status_id');
+        return $this->hasMany(Comment::class, 'parent_id');
     }
+
 }

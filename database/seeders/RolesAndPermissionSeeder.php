@@ -97,7 +97,7 @@ class RolesAndPermissionSeeder extends Seeder
             ]);
 
             // Subscriber
-            Role::create(['name' => 'subscribers'])->givePermissionTo([
+            Role::create(['name' => 'subscriber'])->givePermissionTo([
                 'edit profile'
             ]);
 

@@ -15,16 +15,15 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('parent_id')->nullable()->constrained();
             $table->string('title')->unique();
             $table->string('slug')->unique();
             $table->string('image_path');
-            $table->text('excerpt');
             $table->text('body');
-            $table->integer('view_count')->default(0);
-            $table->integer('comment_count')->default(0);
-            $table->foreignId('post_status_id')->default(1)->constrained();
             $table->boolean('is_featured')->default(0);
+            $table->boolean('is_published')->default(false);
             $table->date('published_at')->nullable();
+            $table->integer('view_count')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
