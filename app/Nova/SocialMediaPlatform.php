@@ -55,7 +55,6 @@ class SocialMediaPlatform extends Resource
 
             Textarea::make('Description')
 
-
         ];
     }
 

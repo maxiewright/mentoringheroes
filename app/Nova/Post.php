@@ -95,6 +95,7 @@ class Post extends Resource
                 ->required(),
 
             MorphMany::make('Comments'),
+
         ];
     }
 

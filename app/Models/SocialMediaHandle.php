@@ -23,6 +23,6 @@ class SocialMediaHandle extends Model
 
     public function platform(): BelongsTo
     {
-        return $this->belongsTo(SocialMediaPlatform::class, 'social_media_platform_id');
+        return $this->belongsTo(SocialMediaPlatform::class);
     }
 }

@@ -97,7 +97,7 @@ class User extends Authenticatable
 
     public function socialMediaHandles()
     {
-        return $this->hasMany(SocialMediaHandle::class, 'social_media_handle_id');
+        return $this->hasMany(SocialMediaHandle::class);
     }
 
 }

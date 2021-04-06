@@ -47,9 +47,9 @@ class SocialMediaHandle extends Resource
 
             BelongsTo::make('User', 'user', User::class),
 
-            BelongsTo::make('SocialMediaPlatform', 'platform', SocialMediaPlatform::class),
+            BelongsTo::make('Social Media Platform', 'platform', SocialMediaPlatform::class),
 
-            Text::make('Social Media Username', 'username'),
+            Text::make('Social Media Handle', 'username'),
 
             Boolean::make('Active', 'is_active'),
 

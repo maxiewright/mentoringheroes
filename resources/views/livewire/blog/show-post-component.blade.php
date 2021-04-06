@@ -21,7 +21,7 @@
                 {{--    Previous and Next articles--}}
 
                 <div class="w-full flex pt-6">
-                    <a href="{{($previousPost) ? route('posts.show', $previousPost->slug) :''}}" class="w-1/2 bg-white shadow cursor-pointer hover:shadow-md text-left p-6">
+                    <a href="{{($previousPost) ? route('posts.show', $previousPost->slug) : ''}}" class="w-1/2 bg-white shadow cursor-pointer hover:shadow-md text-left p-6">
                         <p class="text-lg text-blue-800 font-bold flex items-center">
                            <i class="fas fa-arrow-left pr-1"></i>Previous</p>
                         <p class="pt-2">{{$previousPost->title ?? ''}}</p>
@@ -40,33 +40,28 @@
                             <div class="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg">
                                 <div
                                     class="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
-                                    <img src="{{$author->profile_photo_url}}"
-                                         alt=""
-                                         class="h-full w-full">
+                                    <img src="{{$author->profile_photo_url}}" alt="" class="h-full w-full">
                                 </div>
                                 <h2 class="mt-4 font-bold text-xl">{{$author->name}}</h2>
-
                                 <p class="text-xs text-gray-500 text-center mt-3">
                                     {{$author->about}}
                                 </p>
-
-                                {{--                    TODO:: Extract into a component or view and make dynamic--}}
                                 {{--Social media--}}
-                                <div
-                                    class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">
-                                    <a class="" href="#">
-                                        <i class="fab fa-facebook"></i>
-                                    </a>
-                                    <a class="pl-4" href="#">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                    <a class="pl-4" href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a class="pl-4" href="#">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-                                </div>
+{{--                                <div--}}
+{{--                                    class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">--}}
+{{--                                    <a class="" href="https://www.facebook.com/">--}}
+{{--                                        <i class="fab fa-facebook"></i>--}}
+{{--                                    </a>--}}
+{{--                                    <a class="pl-4" href="https://www.instagram.com/">--}}
+{{--                                        <i class="fab fa-instagram"></i>--}}
+{{--                                    </a>--}}
+{{--                                    <a class="pl-4" href="https://twitter.com/">--}}
+{{--                                        <i class="fab fa-twitter"></i>--}}
+{{--                                    </a>--}}
+{{--                                    <a class="pl-4" href="https://www.linkedin.com/">--}}
+{{--                                        <i class="fab fa-linkedin"></i>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
                             </div>
                         @endforeach
                     </div>
@@ -80,58 +75,30 @@
                             <p class="pt-2">{{$post->leadAuthor->about ?? ''}}</p>
 
                             {{--Social media--}}
-                            <div
-                                class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">
-                                <a class="" href="#">
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                                <a class="pl-4" href="#">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a class="pl-4" href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a class="pl-4" href="#">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
+{{--                            <div--}}
+{{--                                class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">--}}
+{{--                                <a class="" href="#">--}}
+{{--                                    <i class="fab fa-facebook"></i>--}}
+{{--                                </a>--}}
+{{--                                <a class="pl-4" href="#">--}}
+{{--                                    <i class="fab fa-instagram"></i>--}}
+{{--                                </a>--}}
+{{--                                <a class="pl-4" href="#">--}}
+{{--                                    <i class="fab fa-twitter"></i>--}}
+{{--                                </a>--}}
+{{--                                <a class="pl-4" href="#">--}}
+{{--                                    <i class="fab fa-linkedin"></i>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 @endif
             </section>
 
-            <livewire:comment-component />
-
-            <x-layout.front-end.aside>
-
-            </x-layout.front-end.aside>
-
-
-            {{--        <div class="w-full bg-white shadow flex flex-col my-4 p-6">--}}
-            {{--            <p class="text-xl font-semibold pb-5">About Us</p>--}}
-            {{--            <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>--}}
-            {{--            <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">--}}
-            {{--                Get to know us--}}
-            {{--            </a>--}}
-            {{--        </div>--}}
-
-            {{--        <div class="w-full bg-white shadow flex flex-col my-4 p-6">--}}
-            {{--            <p class="text-xl font-semibold pb-5">Pintrest</p>--}}
-            {{--            <div class="grid grid-cols-3 gap-3">--}}
-            {{--                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1">--}}
-            {{--                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=2">--}}
-            {{--                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=3">--}}
-            {{--                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=4">--}}
-            {{--                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=5">--}}
-            {{--                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=6">--}}
-            {{--                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=7">--}}
-            {{--                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8">--}}
-            {{--                <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9">--}}
-            {{--            </div>--}}
-            {{--            <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">--}}
-            {{--                <i class="fab fa-pinterest-square mr-2"></i>--}}
-            {{--            </a>--}}
-            {{--        </div>--}}
-
+        {{--BEGIN: Aside--}}
+        <x-layout.front-end.aside>
+            <livewire:blog.aside.tab-component />
+        </x-layout.front-end.aside>
+        {{--END: Aside --}}
         </div>
 </div>

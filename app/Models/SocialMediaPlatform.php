@@ -13,6 +13,6 @@ class SocialMediaPlatform extends Model
 
     public function handles()
     {
-        $this->hasMany(SocialMediaHandle::class, 'social_media_handle_id');
+        $this->hasMany(SocialMediaHandle::class);
     }
 }
