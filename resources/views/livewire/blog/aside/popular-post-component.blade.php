@@ -9,7 +9,7 @@
                 <span class="flex flex-col md:w-3/4">
                     <h4 class="pb-1">
                         <a class=" no-underline hover:underline hover:text-blue-700"
-                           href="{{route('posts.show', $post->id)}}">{{$post->title}}</a>
+                           href="{{route('posts.show', $post->slug)}}">{{$post->title}}</a>
                     </h4>
                 <p class="no-underline hover:underline text-blue-700">
                     {{$post->mainCategory->name ?? ''}}

@@ -2,7 +2,7 @@
     'post'
 ])
 
-<a href="{{route('posts.show', $post->id)}}">
+<a href="{{route('posts.show', $post->slug)}}">
     <li class="flex flex-row pb-3 hover:opacity-75">
         <div class="flex flex-col md:w-1/4">
             <img src="{{$post->image}}" class="h-20 w-20" alt="">

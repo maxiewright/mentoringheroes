@@ -21,18 +21,17 @@
                 {{--    Previous and Next articles--}}
 
                 <div class="w-full flex pt-6">
-                    <a href="{{($previousPost) ? route('posts.show', $previousPost->id) :''}}" class="w-1/2 bg-white shadow cursor-pointer hover:shadow-md text-left p-6">
+                    <a href="{{($previousPost) ? route('posts.show', $previousPost->slug) :''}}" class="w-1/2 bg-white shadow cursor-pointer hover:shadow-md text-left p-6">
                         <p class="text-lg text-blue-800 font-bold flex items-center">
                            <i class="fas fa-arrow-left pr-1"></i>Previous</p>
                         <p class="pt-2">{{$previousPost->title ?? ''}}</p>
                     </a>
 
-                    <a href="{{($nextPost) ? route('posts.show', $nextPost->id) : '' }}"  class="w-1/2 bg-white shadow cursor-pointer hover:shadow-md text-right p-6">
+                    <a href="{{($nextPost) ? route('posts.show', $nextPost->slug) : '' }}"  class="w-1/2 bg-white shadow cursor-pointer hover:shadow-md text-right p-6">
                         <p class="text-lg text-blue-800 font-bold flex items-center justify-end">
                             Next <i class="fas fa-arrow-right pl-1"></i></p>
                         <p class="pt-2">{{$nextPost->title ?? ''}}</p>
                     </a>
-
                 </div>
 
                 @if ($post->authors->count() > 1)
