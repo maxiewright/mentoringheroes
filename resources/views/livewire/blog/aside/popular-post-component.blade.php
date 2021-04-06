@@ -29,7 +29,7 @@
             {{--                </div>--}}
             {{--            </div>--}}
             {{--            <li class="list-none border-b py-2">--}}
-            {{--                <a href="{{route('posts.show', $post->id)}}" class="no-underline hover:underline text-blue-700 ">--}}
+            {{--                <a href="{{route('posts.show', $post->slug)}}" class="no-underline hover:underline text-blue-700 ">--}}
             {{--                    {{$post->title}}--}}
             {{--                </a>--}}
             {{--            </li>--}}

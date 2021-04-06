@@ -72,7 +72,7 @@
                             </div>
                             <hr class="border-gray-300"/>
                             <div class="flex flex-wrap items-center flex-1 px-4 py-1 text-center mx-auto">
-                                <a href="{{route('posts.show', $post->id)}}" class="hover:underline">
+                                <a href="{{route('posts.show', $post->slug)}}" class="hover:underline">
                                     <h2 class="text-2xl font-bold hover:text-gray-700">
                                         {{$post->title}}
                                     </h2>
@@ -90,18 +90,16 @@
                                     <div class="flex items-center flex-1">
                                         <img
                                             class="object-cover h-10 rounded-full"
-                                            {{--                                    src="{{$post->lead_author->profile_photo_url}}"--}}
+                                            src="{{$post->lead_author->profile_photo_url}}"
                                             alt="Avatar"
                                         />
                                         <div class="flex flex-col mx-2">
                                             <a href="" class="font-semibold hover:text-gray-800 hover:underline">
                                                 <span class="nice">{{$post->lead_author->name ?? ''}}</span>
                                             </a>
-                                            {{--                                            <span class="mx-1 text-xs hover:text-gray-600">{{$post->published_at->toFormattedDateString()}}</span>--}}
                                         </div>
                                     </div>
                                     {{--TODO::add read time calculator --}}
-                                    {{--                            <p class="mt-1 text-xs hover:text-gray-600">9 minutes read</p>--}}
                                 </div>
                             </div>
                         </div>
