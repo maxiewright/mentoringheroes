@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -61,7 +62,7 @@ class Post extends Model
 
     public function excerpt(int $limit = 100): string
     {
-        return Str::limit($this->body, $limit);
+        return Str::limit(strip_tags($this->body), $limit);
     }
 
     /**
