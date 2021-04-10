@@ -93,7 +93,12 @@
                         </div>
                     </div>
                 @endif
+
+
+                <livewire:comment-component />
             </section>
+
+
 
         {{--BEGIN: Aside--}}
         <x-layout.front-end.aside>

@@ -1,3 +1,8 @@
+@props([
+    'name' => null,
+    'placeholder' => null,
+])
+
 <div {{$attributes->merge(['class' => ''])}}>
     <input
         {{$attributes->wire('model')}}
