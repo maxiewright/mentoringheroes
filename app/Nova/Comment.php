@@ -35,7 +35,7 @@ class Comment extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'title',
+        'id', 'body',
     ];
 
     /**
@@ -55,13 +55,8 @@ class Comment extends Resource
 
             BelongsTo::make('Author', 'author', '\App\Nova\User'),
 
-            Text::make('Title')
-                ->rules('nullable'),
-
             Textarea::make('Body')
                 ->rules('required'),
-
-            Boolean::make('Published', 'is_published'),
 
             Date::make('Published On', 'published_at')
                 ->format('DD MMM YYYY')

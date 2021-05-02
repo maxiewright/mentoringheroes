@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\SocialAccountController;
 use App\Http\Controllers\ContactController;
 
 
@@ -18,6 +19,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/*
+ * Auth
+ */
+
+Route::get('login/{provider}',         [SocialAccountController::class, 'redirectToProvider']);
+Route::get('login/{provider}/callback',[SocialAccountController::class, 'handleProviderCallback']);
 
 
 /*

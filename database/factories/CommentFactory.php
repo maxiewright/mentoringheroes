@@ -25,9 +25,8 @@ class CommentFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
+            'parent_id' => null,
             'body' => $this->faker->text(100),
-            'comment_status_id' => rand(1,3),
-            'approved_at' => $this->faker->date(),
         ];
     }
 }

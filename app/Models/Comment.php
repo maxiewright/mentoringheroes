@@ -20,37 +20,26 @@ class Comment extends Model
     protected $fillable = [
         'user_id',
         'parent_id',
-        'title',
         'body',
         'commentable_id',
         'commentable_type',
-        'published',
-        'published_at',
     ];
 
     protected $casts = [
-      'published' => 'boolean',
       'published_at' => 'date'
     ];
 
-    protected static function booted()
-    {
-        parent::boot();
-
-        static::saving(function ($comment){
-            if ($comment->is_published){
-                $comment->published_at = now();
-            }else{
-                $comment->published_at = null;
-            }
-        });
-    }
+   protected static function booted()
+   {
+       self::saving(function ($comment){
+           $comment->user_id = 1;
+       });
+   }
 
     /**
      * Return the author of a comment
      * @return BelongsTo
      */
-
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
