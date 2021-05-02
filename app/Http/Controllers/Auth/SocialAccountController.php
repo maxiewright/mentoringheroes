@@ -44,7 +44,7 @@ class SocialAccountController extends Controller
 
         auth()->login($authUser, true);
 
-        return redirect()->intended();
+        return redirect()->to('/');
     }
 
 }
