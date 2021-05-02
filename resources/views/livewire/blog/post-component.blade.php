@@ -1,6 +1,12 @@
 <div class="container mx-auto flex flex-wrap py-6">
     @if ($featuredPost)
         {{-- BEGIN: Featured Article Section --}}
+        <div
+            class="fb-like"
+            data-share="true"
+            data-width="450"
+            data-show-faces="true">
+        </div>
         <section class="w-full md:w-2/3 flex flex-col items-center px-3 mt-4">
             <article class="flex flex-col shadow my-4 hover:shadow-1xl">
                 <!-- Article Image -->
