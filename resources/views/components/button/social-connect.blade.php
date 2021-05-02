@@ -5,7 +5,7 @@
     'bgColour'
 ])
 
-<button {{$attributes}}
+<a {{$attributes}}
     @switch($service)
     @case('google')
     {{$colour = '#ea4335'}}
@@ -44,9 +44,11 @@
     style="background-color: {{$colour}}"
     onmouseover="this.style.background='{{$bgColour}}'"
     onmouseout="this.style.background='{{$colour}}'"
+    href="{{url('login/'.$service)}}"
     class="w-full px-4 py-2 text-sm font-semibold tracking-wider text-white inline-flex items-center space-x-2 rounded ">
     <span>
         {{$icon}}
     </span>
     <span> {{$signIn ? 'Sign in with ' : 'Connect with '}} {{ucfirst($service)}} </span>
-</button>
+
+</a>
