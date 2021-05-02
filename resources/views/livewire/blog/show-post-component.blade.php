@@ -1,3 +1,4 @@
+
 <div>
     <div class="container mx-auto flex flex-wrap py-6">
             <!-- Posts Section -->
@@ -94,9 +95,20 @@
                     </div>
                 @endif
 
+                <button x-data="{usedKeyboard: false}"
+                        @keydown.window.tab="usedKeyboard = true"
+                        role="button" @click="$dispatch('open-menu', { open: true })"
+                        :class="{'focus:outline-none': !usedKeyboard}"
+                        class="bg-indigo-500 hover:bg-indigo-400 h-64 text-white font-extrabold text-4xl flex items-center justify-center uppercase focus:outline-none">
+                    Open Menu
+                </button>
 
-                <livewire:comment-component />
+                <x-layout.side-panel>
+                    <livewire:comment-component :post="$post" />
+                </x-layout.side-panel>
+
             </section>
+
 
 
 
@@ -106,4 +118,24 @@
         </x-layout.front-end.aside>
         {{--END: Aside --}}
         </div>
+
+
 </div>
+<script>
+    function slideout() {
+        return {
+            open: false,
+            usedKeyboard: false,
+            init() {
+                this.$watch('open', value => {
+                    value && this.$refs.closeButton.focus()
+                    this.toggleOverlay()
+                })
+                this.toggleOverlay()
+            },
+            toggleOverlay() {
+                document.body.classList[this.open ? 'add' : 'remove']('h-screen', 'overflow-hidden')
+            }
+        }
+    }
+</script>

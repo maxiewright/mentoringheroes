@@ -1,73 +1,83 @@
-<div class="w-full flex flex-col">
-    <form wire:submit.prevent="store" class="form bg-white p-6 my-10 relative">
-        <h3 class="text-2xl text-gray-900 font-semibold">Got Feedback?</h3>
-        {{--Name and Email --}}
-        <div class="flex space-x-5 mt-3">
-            <x-form.input wire:model="comment.name" name="comment.name"
-                          type="text" placeholder="Your Name" class="w-1/2"/>
-            <x-form.input wire:model="comment.email" name="comment.email"
-                          type="text" placeholder="Your Email" class="w-1/2"/>
+<div>
+    @if(!$readCommentsOnly)
+    <div class="px-4 py-3 flex mx-auto items-center justify-center  mb-2 max-w-lg">
+        @auth
+            <form wire:submit.prevent="store" class="w-full max-w-xl rounded-lg px-4 pt-2 shadow-lg">
+                <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="flex items-center px-3 mt-2">
+                        <img class="h-8 w-8 rounded-full object-cover"
+                             src="{{ Auth::user()->profile_photo_url }}"
+                             alt="{{ Auth::user()->name }}"
+                        />
+                        <div class="ml-2">
+                            <div class="text-sm ">
+                                <span class="font-semibold">{{Auth::user()->name}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-full px-3 mb-2 mt-2">
+                    <textarea
+                        wire:model="comment.body"
+                        class="bg-gray-100 rounded leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:shadow-outline"
+                        name="body" placeholder='Let us know you thoughts' required></textarea>
+                    </div>
+                    <div class="w-full md:w-full flex items-start md:w-full px-3">
+
+                        <div class="flex items-start w-1/2 text-gray-700 px-2 mr-auto">
+                            <p class="text-xs md:text-sm pt-px"></p>
+                        </div>
+
+                        <div class="-mr-1">
+                            <input type='submit'
+                                   class="bg-blue-800 hover:bg-blue-700 text-white text-sm font-medium py-1 px-4 border rounded tracking-wide mr-1"
+                                   value='Tell Us'>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            @if($saved)
+                <div class="mx-4">
+                    <x-alert.success message="Comment Added!"/>
+                </div>
+            @endif
+        @else
+            <div class="flex flex-col p-4">
+                <livewire:connect-component />
+                <span class="ml-4 text-sm" wire:click.prevent="$set('readCommentsOnly', true)">
+                    Wish to connect later?
+                    <span class="text-blue-700 hover:text-blue-500 font-medium cursor-pointer hover:underline">
+                       See comments only.
+                </span>
+                </span>
+            </div>
+
+        @endif
+    </div>
+
+    <div class="border-t max-w-2xl w-full my-4"></div>
+    @endif
+
+    @forelse ($comments as $comment)
+        <div class="p-5 max-w-lg">
+            <x-layout.comment :name="$comment"/>
+            @if($replyCommentId == $comment->id)
+                <x-layout.reply-form :author="$comment->author->name"/>
+            @endif
+
+            @if($showReplies)
+                <div class="ml-1 pl-3 py-2 mb-1">
+                    @foreach ($comment->replies as $reply)
+                        <x-layout.comment :name="$reply"/>
+                        @if($replyCommentId == $reply->id)
+                            <x-layout.reply-form :author="$reply->author->name"/>
+                        @endif
+                    @endforeach
+                </div>
+            @endif
         </div>
-        {{--Website--}}
-        <x-form.input wire:model="comment.website" name="comment.website"
-                      type="text" name="website" placeholder="Your Website URL" class="w-full mt-3"/>
-        {{--Comment--}}
-        <x-form.textarea wire:model="comment.details" name=""
-                         placeholder="Let us know your thoughts"
-                         class="w-full mt-3" cols="10" rows="3"/>
-        {{--Submit--}}
-        <button type="submit" class="w-full bg-blue-800
-                text-white font-bold text-sm
-                uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
-            Submit Comment
-        </button>
-    </form>
+        <div class="border-t max-w-2xl w-full my-4"></div>
+    @empty
+        No comments yet.
+    @endforelse
 </div>
 
-{{--<div>--}}
-{{--    <div>--}}
-{{--        <section class="rounded-b-lg  mt-4 ">--}}
-{{--            <form action="/" accept-charset="UTF-8" method="post"><input type="hidden">--}}
-{{--                <textarea class="w-full shadow-inner p-4 border-0 mb-4 rounded-lg focus:shadow-outline text-2xl"--}}
-{{--                          placeholder="Ask questions here." cols="6" rows="6" id="comment_content"--}}
-{{--                          spellcheck="false"></textarea>--}}
-{{--                <button class="font-bold py-2 px-4 w-full bg-purple-400 text-lg text-white shadow-md rounded-lg ">--}}
-{{--                    Comment--}}
-{{--                </button>--}}
-{{--            </form>--}}
-
-{{--            <div id="task-comments" class="pt-4">--}}
-{{--                <!--     comment-->--}}
-{{--                <div--}}
-{{--                    class="bg-white rounded-lg p-3  flex flex-col justify-center items-center md:items-start shadow-lg mb-4">--}}
-{{--                    <div class="flex flex-row justify-center mr-2">--}}
-{{--                        <img alt="avatar" width="48" height="48" class="rounded-full w-10 h-10 mr-4 shadow-lg mb-4"--}}
-{{--                             src="https://cdn1.iconfinder.com/data/icons/technology-devices-2/100/Profile-512.png">--}}
-{{--                        <h3 class="text-purple-600 font-semibold text-lg text-center md:text-left ">@Shanel</h3>--}}
-{{--                    </div>--}}
-
-
-{{--                    <p style="width: 90%" class="text-gray-600 text-lg text-center md:text-left ">Hi good morning will--}}
-{{--                        it be the entire house. </p>--}}
-
-{{--                </div>--}}
-{{--                <!--  comment end--><!--     comment-->--}}
-{{--                <div--}}
-{{--                    class="bg-white rounded-lg p-3  flex flex-col justify-center items-center md:items-start shadow-lg mb-4">--}}
-{{--                    <div class="flex flex-row justify-center mr-2">--}}
-{{--                        <img alt="avatar" width="48" height="48" class="rounded-full w-10 h-10 mr-4 shadow-lg mb-4"--}}
-{{--                             src="https://cdn1.iconfinder.com/data/icons/technology-devices-2/100/Profile-512.png">--}}
-{{--                        <h3 class="text-purple-600 font-semibold text-lg text-center md:text-left ">@Tim Motti</h3>--}}
-{{--                    </div>--}}
-
-
-{{--                    <p style="width: 90%" class="text-gray-600 text-lg text-center md:text-left "><span--}}
-{{--                            class="text-purple-600 font-semibold">@Shanel</span> Hello. Yes, the entire exterior,--}}
-{{--                        including the walls. </p>--}}
-
-{{--                </div>--}}
-{{--                <!--  comment end-->--}}
-{{--            </div>--}}
-{{--        </section>--}}
-{{--    </div>--}}
-{{--</div>--}}

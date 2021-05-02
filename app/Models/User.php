@@ -36,9 +36,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name',
-        'middle_name',
-        'last_name',
+        'name',
         'email',
         'about',
         'password',
@@ -74,11 +72,6 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function getNameAttribute(): string
-    {
-        return $this->first_name . ' ' . $this->last_name;
-    }
-
     /**
      * Get all post that are authored by this user
      *
@@ -93,6 +86,11 @@ class User extends Authenticatable
     public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function accounts(): HasMany
+    {
+        return $this->hasMany(SocialAccount::class);
     }
 
     public function socialMediaHandles()

@@ -25,6 +25,7 @@
 {{--            <x-nav.topic-link route="about" title="Subscribe" />--}}
             <x-nav.topic-link route="about" title="About" />
             <x-nav.topic-link route="contact" title="Contact" />
+            <a href="{{ url('login/github') }}"  class="btn btn-default btn-md">Log in with Github</a>
 {{--            <x-nav.topic-link route="contact" title="Write for Us" />--}}
             {{--END: Marketing Links--}}
         </div>

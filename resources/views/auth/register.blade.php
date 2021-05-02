@@ -10,10 +10,7 @@
                 @csrf
                 @method('POST')
                 <h3 class="text-2xl text-gray-900 font-semibold">Become apart of our team!</h3>
-                <div class="flex space-x-5 my-2">
-                    <x-form.input type="text" name="first_name" placeholder="First Name" class="w-1/2"/>
-                    <x-form.input type="text" name="last_name" placeholder="Last Name" class="w-1/2"/>
-                </div>
+                <x-form.input type="text" name="name" placeholder="Name" class="w-1/2"/>
                 <x-form.input type="text" name="email" placeholder="Your Email" class="mb-2"/>
                 <x-form.textarea name="about" placeholder="Briefly describe yourself"
                                  class="w-full mt-3" cols="10" rows="3" />

@@ -24,9 +24,8 @@ class PostFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'image_path' => $this->faker->imageUrl(),
-            'excerpt' => $this->faker->text(100),
+            'slug' => $this->faker->slug,
             'body' => $this->faker->text,
-            'post_status_id' => rand(1, 3),
             'is_featured' => $this->faker->boolean,
             'published_at' => $this->faker->date(),
         ];

@@ -117,7 +117,6 @@ class Post extends Model
     public function getMainCategoryAttribute()
     {
         return $this->categories
-//            ->wherePivot('is_main', true)
             ->first();
     }
 
@@ -140,7 +139,9 @@ class Post extends Model
      */
     public function comments(): MorphMany
     {
-       return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
+       return $this->morphMany(Comment::class, 'commentable')
+           ->whereNull('parent_id')
+           ->latest();
     }
 
 
