@@ -1,33 +1,21 @@
 @props([
-    'type',
-    'name',
-    'placeholder',
-    'model' => null
+    'type' => 'text',
+    'name' => null,
+    'placeholder' => null,
+    'label' => null
 ])
 
 <div {{$attributes->merge(['class' => ''])}}>
+    @if($label)
+        <label>{{$label}}</label>
+    @endif
 
-    <input wire:model="{{$model}}"
+    <input {{$attributes->wire('model')}}
+            name="{{$name}}"
            type="{{$type}}"
            placeholder="{{$placeholder}}"
-           class="border p-2 w-full @error($model) border-red-500 @enderror "
+           class="border p-2 w-full @error($name) border-red-500 @enderror "
     >
-    @error($model)<div class="text-red-500"> {{$message}} </div> @enderror
-</div>
-
-@props([
-    'type',
-    'name',
-    'placeholder',
-    'model' => null
-])
-
-<div {{$attributes->merge(['class' => ''])}}>
-
-    <input wire:model="{{$model}}"
-           type="{{$type}}"
-           placeholder="{{$placeholder}}"
-           class="border p-2 w-full @error($model) border-red-500 @enderror "
-    >
-    @error($model)<div class="text-red-500"> {{$message}} </div> @enderror
+    @error($name)
+    <div class="text-sm text-red-500"> {{$message}} </div> @enderror
 </div>

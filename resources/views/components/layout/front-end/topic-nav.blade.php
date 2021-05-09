@@ -22,11 +22,23 @@
 
 
             {{--BEGIN: Marketing Links--}}
-{{--            <x-nav.topic-link route="about" title="Subscribe" />--}}
-            <x-nav.topic-link route="about" title="About" />
-            <x-nav.topic-link route="contact" title="Contact" />
-            <a href="{{ url('login/github') }}"  class="btn btn-default btn-md">Log in with Github</a>
-{{--            <x-nav.topic-link route="contact" title="Write for Us" />--}}
+            {{--            <x-nav.topic-link route="about" title="Subscribe" />--}}
+            <x-nav.topic-link route="about" title="About"/>
+            <x-nav.topic-link route="contact" title="Contact"/>
+            @guest
+                <a href="{{ url('login/github') }}" class="btn btn-default btn-md">Log in with Github</a>
+            @else
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-jet-dropdown-link href="{{ route('logout') }}"
+                                         onclick="event.preventDefault();
+                                                            this.closest('form').submit();">
+                        {{ __('Logout') }}
+                    </x-jet-dropdown-link>
+                </form>
+            @endguest
+            {{--            <x-nav.topic-link route="contact" title="Write for Us" />--}}
             {{--END: Marketing Links--}}
         </div>
 
