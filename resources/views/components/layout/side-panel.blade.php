@@ -24,9 +24,9 @@
                 <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
         </button>
-        <div class="py-10 absolute top-0 h-full overflow-y-scroll">
-            {{$slot}}
-        </div>
+
+        {{$slot}}
+
     </div>
 </section>
 

@@ -1,4 +1,4 @@
-<div>
+<div class="h-full overflow-y-scroll">
     @if(!$readCommentsOnly)
     <div class="px-4 py-3 flex mx-auto items-center justify-center  mb-2 max-w-lg">
         @auth
@@ -43,7 +43,7 @@
         @else
             <div class="flex flex-col p-4">
                 <livewire:connect-component />
-                <span class="ml-4 text-sm" wire:click.prevent="$set('readCommentsOnly', true)">
+                <span class="mt-2 text-sm" wire:click.prevent="$set('readCommentsOnly', true)">
                     Wish to connect later?
                     <span class="text-blue-700 hover:text-blue-500 font-medium cursor-pointer hover:underline">
                        See comments only.
@@ -58,7 +58,7 @@
     @endif
 
     @forelse ($comments as $comment)
-        <div class="p-5 max-w-lg">
+        <div class="p-5">
             <x-layout.comment :name="$comment"/>
             @if($replyCommentId == $comment->id)
                 <x-layout.reply-form :author="$comment->author->name"/>

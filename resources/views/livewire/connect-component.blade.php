@@ -1,6 +1,6 @@
 <div class="flex flex-col space-y-2">
-    <div>Connect with us to share what you think:</div>
-    <div class="px-4 space-y-2">
+    <span>Join the journey, Share you thoughts </span>
+    <div class="space-y-2">
         @if(!$emailConnect)
             @if(!$signIn)
                 <x-connect.options/>
@@ -8,16 +8,29 @@
                 <x-connect.options signIn/>
             @endif
         @elseif($emailConnect && !$signIn)
-            <form wire:submit.prevent="">
-
+            <form wire:submit.prevent="register" novalidate>
+                <div class="mb-2">
+                    <x-input.text wire:model.defer="user.name" name="user.name" placeholder="Username"/>
+                </div>
+                <div class="mb-2">
+                    <x-input.text wire:model.lazy="user.email" name="user.email" type="email" placeholder="Email"/>
+                </div>
+                <div class="mb-2">
+                    <x-input.password wire:model.defer="user.password" name="user.password" />
+                </div>
+                <span class="text-sm">Remember Me</span>
+                <div class="">
+                    <x-button.submit value="Let's Go" class="w-full"/>
+                </div>
             </form>
-            Sign Up with Email HERE
-        @else
-            <form wire:submit.prevent="">
+    </div>
 
-            </form>
-            Login with Email HERE
-        @endif
+@else
+    <form wire:submit.prevent="">
+
+    </form>
+    Login with Email HERE
+    @endif
     </div>
     <div class="mt-4">
         @if(!$emailConnect)
