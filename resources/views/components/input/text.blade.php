@@ -11,7 +11,7 @@
     @endif
 
     <input {{$attributes->wire('model')}}
-            name="{{$name}}"
+           name="{{$name}}"
            type="{{$type}}"
            placeholder="{{$placeholder}}"
            class="border p-2 w-full @error($name) border-red-500 @enderror "

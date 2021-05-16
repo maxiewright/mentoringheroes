@@ -16,21 +16,28 @@
                     <x-input.text wire:model.lazy="user.email" name="user.email" type="email" placeholder="Email"/>
                 </div>
                 <div class="mb-2">
-                    <x-input.password wire:model.defer="user.password" name="user.password" />
+                    <x-input.password wire:model.defer="user.password" name="user.password"/>
                 </div>
                 <span class="text-sm">Remember Me</span>
                 <div class="">
                     <x-button.submit value="Let's Go" class="w-full"/>
                 </div>
             </form>
-    </div>
-
-@else
-    <form wire:submit.prevent="">
-
-    </form>
-    Login with Email HERE
-    @endif
+        @else
+            <form wire:submit.prevent="login" novalidate>
+                <div class="mb-2">
+                    <x-input.text wire:model.defer="email" name="email" type="email" placeholder="Email"/>
+                </div>
+                <div class="mb-2">
+                    <x-input.password wire:model.defer="password" name="password" />
+                </div>
+                <span class="text-sm">Remember Me</span>
+                <div class="">
+                    <x-button.submit value="Rejoin the Journey" class="w-full"/>
+                </div>
+            </form>
+            Login with Email HERE
+        @endif
     </div>
     <div class="mt-4">
         @if(!$emailConnect)

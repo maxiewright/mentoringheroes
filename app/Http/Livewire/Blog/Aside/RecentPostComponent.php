@@ -12,7 +12,7 @@ class RecentPostComponent extends Component
         return  Post::query()
             ->whereNotNull('published_at')
             ->orderBy('published_at', 'desc')
-            ->limit(10)
+            ->limit(5)
             ->get();
     }
 

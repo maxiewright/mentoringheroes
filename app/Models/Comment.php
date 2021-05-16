@@ -32,7 +32,7 @@ class Comment extends Model
    protected static function booted()
    {
        self::saving(function ($comment){
-           $comment->user_id = 1;
+           $comment->user_id = auth()->id();
        });
    }
 
