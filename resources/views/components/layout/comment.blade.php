@@ -31,12 +31,14 @@
             </div>
         @endif
     </div>
+    @auth
     <div>
         <div wire:click.prevent="reply({{ $name->id }})"
              class="hover:underline cursor-pointer text-sm mr-2">
             Reply
         </div>
     </div>
+    @endauth
 </div>
 
 

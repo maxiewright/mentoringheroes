@@ -4,6 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\Comment;
 use App\Models\Post;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
 class CommentComponent extends Component
@@ -14,16 +17,18 @@ class CommentComponent extends Component
     public bool $showReplies = false;
     public bool $readCommentsOnly = false;
     public int|null $replyCommentId = null;
+    public bool $replyMode = false;
 
     protected $listeners = ['refreshComponent' => '$refresh'];
 
-    protected $rules = [
+    protected array $rules = [
         'comment.parent_id' => 'nullable',
         'comment.body'  => 'required|min:60|max:5000',
     ];
 
-    protected $messages = [
-        'comment.body.min' => 'Please Enter more that 60 to words',
+    protected array $messages = [
+        'comment.body.required' => 'Please share some words',
+        'comment.body.min' => 'Please enter more that 60 characters',
         'comment.body.max' => 'Your Comment must not exceed 5000 characters',
     ];
 
@@ -51,15 +56,18 @@ class CommentComponent extends Component
     {
         $this->mount();
         $this->replyCommentId = null;
+        $this->replyMode = false;
         $this->emit('refreshComponent');
     }
 
     public function reply($commentId)
     {
         $this->replyCommentId = $commentId;
+
+        $this->replyMode = true;
     }
 
-    public function render()
+    public function render(): Factory|View|Application
     {
         return view('livewire.comment-component', [
            'comments' => $this->post->comments,
