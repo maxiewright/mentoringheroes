@@ -49,7 +49,7 @@
 
             <!-- Articles -->
             @foreach($posts as $post)
-                <article class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+                <article class="w-full md:w-1/3 p-6 flex flex-col">
                     <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
                         <!-- Article Image -->
                         <a href="{{route('posts.show', $post->slug)}}" class="hover:opacity-75">

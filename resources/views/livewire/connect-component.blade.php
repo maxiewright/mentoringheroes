@@ -1,5 +1,5 @@
 <div class="flex flex-col space-y-2">
-    <span>Join the journey, Share you thoughts </span>
+    <span>Join the journey, Share your thoughts </span>
     <div class="space-y-2">
         @if(!$emailConnect)
             @if(!$signIn)

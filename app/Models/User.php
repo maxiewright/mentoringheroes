@@ -6,6 +6,7 @@ use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -95,9 +96,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Comment::class);
     }
 
-    public function accounts(): HasMany
+    public function account(): HasOne
     {
-        return $this->hasMany(SocialAccount::class);
+        return $this->hasOne(SocialAccount::class);
+    }
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new VerifyEmail());
     }
 
     public function socialMediaHandles()
