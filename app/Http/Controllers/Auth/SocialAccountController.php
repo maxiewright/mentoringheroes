@@ -25,14 +25,14 @@ class SocialAccountController extends Controller
     /**
      * Obtain the user information
      *
-     * @param \App\Services\SocialAccountsService $accountService
+     * @param SocialAccountsService $accountService
      * @param $provider
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return Application|\Illuminate\Http\RedirectResponse|Redirector
      */
     public function handleProviderCallback(SocialAccountsService $accountService, $provider): Redirector|\Illuminate\Http\RedirectResponse|Application
     {
         try {
-            $user = Socialite::with($provider)->user();
+            $user = Socialite::driver($provider)->user();
         } catch (\Exception $e) {
             return redirect('/');
         }
