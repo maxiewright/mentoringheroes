@@ -1,5 +1,4 @@
 @props([
-    'signIn' => null,
     'service',
     'colour',
     'bgColour'
@@ -45,10 +44,9 @@
     onmouseover="this.style.background='{{$bgColour}}'"
     onmouseout="this.style.background='{{$colour}}'"
     href="{{url('login/'.$service)}}"
-    class="w-full px-4 py-2 text-sm font-semibold tracking-wider text-white inline-flex items-center space-x-2 rounded ">
-    <span>
-        {{$icon}}
+    class="flex-1 px-4 py-2 tracking-wider text-white inline-flex items-center rounded">
+    <span class="mx-auto">
+      {{$icon}}
     </span>
-    <span> {{$signIn ? 'Sign in with ' : 'Connect with '}} {{ucfirst($service)}} </span>
 
 </a>

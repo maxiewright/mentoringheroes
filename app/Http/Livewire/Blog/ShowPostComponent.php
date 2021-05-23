@@ -9,6 +9,10 @@ class ShowPostComponent extends Component
 {
     public $post;
 
+    protected $listeners  = [
+        'refreshPost' => '$refresh',
+    ];
+
     public function mount(Post $post)
     {
         $this->post = $post;

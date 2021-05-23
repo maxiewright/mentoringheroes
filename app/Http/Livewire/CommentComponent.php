@@ -19,7 +19,7 @@ class CommentComponent extends Component
     public int|null $replyCommentId = null;
     public bool $replyMode = false;
 
-    protected $listeners = ['refreshComponent' => '$refresh'];
+    protected $listeners = ['refreshComments' => '$refresh'];
 
     protected array $rules = [
         'comment.parent_id' => 'nullable',
@@ -57,7 +57,7 @@ class CommentComponent extends Component
         $this->mount();
         $this->replyCommentId = null;
         $this->replyMode = false;
-        $this->emit('refreshComponent');
+        $this->emit('refreshComments');
     }
 
     public function reply($commentId)
