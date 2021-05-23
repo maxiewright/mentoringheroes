@@ -13,16 +13,16 @@ class ConnectComponent extends Component
 {
     public User $user;
 
-    public bool $signIn = false;
+    public bool $signIn = true;
     public bool $signUp = false;
+    public bool $forgotPassword = false;
     public bool $showPassword = false;
     public string $email = '';
     public string $password = '';
     public bool $remember = true;
 
     protected $listeners = [
-        'refreshComponent' => '$refresh',
-        'refreshComments' => 'resetComponent',
+        'refreshComponent' => '$refresh'
     ];
 
 
@@ -40,23 +40,24 @@ class ConnectComponent extends Component
         'email.exists' => 'Sorry! We cannot find your email',
     ];
 
+    public function signIn()
+    {
+        $this->forgotPassword = false;
+        $this->signUp = false;
+        $this->signIn = true;
+    }
+
     public function signUp()
     {
         $this->signIn = false;
         $this->signUp = true;
     }
 
-    public function signIn()
-    {
-        $this->signUp = false;
-        $this->signIn = true;
-    }
-
-    public function resetConnect()
+    public function forgotPassword()
     {
         $this->signIn = false;
         $this->signUp = false;
-        $this->showPassword = false;
+        $this->forgotPassword = true;
     }
 
     public function updatedUserEmail()
@@ -77,8 +78,9 @@ class ConnectComponent extends Component
         ]);
 
         if (\Auth::attempt($credentials, $this->remember)) {
-            $this->emit('refreshComments');
-            session()->flash('message', 'Welcome Back');
+
+            $this->emit('refreshComponent');
+
             return;
         }
 
@@ -101,7 +103,7 @@ class ConnectComponent extends Component
 
     public function verify()
     {
-        auth()->login($this->user->fresh(), true);
+        auth()->login($this->user->fresh(), $this->remember);
     }
 
     public function render()

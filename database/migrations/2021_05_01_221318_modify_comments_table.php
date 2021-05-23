@@ -16,6 +16,7 @@ class ModifyCommentsTable extends Migration
         Schema::table('comments', function (Blueprint $table){
             $table->dropColumn('title');
             $table->dropColumn('is_published');
+            $table->boolean('is_approved')->default(true);
         });
     }
 
@@ -26,6 +27,8 @@ class ModifyCommentsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('is_approved');
+        });
     }
 }

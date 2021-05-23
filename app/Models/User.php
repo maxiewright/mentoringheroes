@@ -57,11 +57,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'two_factor_secret',
     ];
 
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = bcrypt($value);
-    }
-
     /**
      * The attributes that should be cast to native types.
      *
@@ -105,11 +100,6 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->socialAccount()->exists();
     }
-
-//    public function sendEmailVerificationNotification()
-//    {
-//        $this->notify(new VerifyEmail());
-//    }
 
     public function socialMediaHandles()
     {

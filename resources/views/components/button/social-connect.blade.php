@@ -44,6 +44,7 @@
     onmouseover="this.style.background='{{$bgColour}}'"
     onmouseout="this.style.background='{{$colour}}'"
     href="{{url('login/'.$service)}}"
+    title="Connect with {{$service}}"
     class="flex-1 px-4 py-2 tracking-wider text-white inline-flex items-center rounded">
     <span class="mx-auto">
       {{$icon}}
