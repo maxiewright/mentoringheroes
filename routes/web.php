@@ -20,10 +20,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('social', function (){
+   $user = \App\Models\User::find(14);
+
+   return $user->hasSocialAccount();
+
+});
+
+
 /*
  * Auth
  */
-
 Route::get('login/{provider}',         [SocialAccountController::class, 'redirectToProvider']);
 Route::get('login/{provider}/callback',[SocialAccountController::class, 'handleProviderCallback']);
 

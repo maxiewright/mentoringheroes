@@ -96,15 +96,20 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Comment::class);
     }
 
-    public function account(): HasOne
+    public function socialAccount(): HasOne
     {
         return $this->hasOne(SocialAccount::class);
     }
 
-    public function sendEmailVerificationNotification()
+    public function hasSocialAccount(): bool
     {
-        $this->notify(new VerifyEmail());
+        return $this->socialAccount()->exists();
     }
+
+//    public function sendEmailVerificationNotification()
+//    {
+//        $this->notify(new VerifyEmail());
+//    }
 
     public function socialMediaHandles()
     {

@@ -25,17 +25,6 @@
             {{--            <x-nav.topic-link route="about" title="Subscribe" />--}}
             <x-nav.topic-link route="about" title="About"/>
             <x-nav.topic-link route="contact" title="Contact"/>
-            @auth
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-jet-dropdown-link href="{{ route('logout') }}"
-                                         onclick="event.preventDefault();
-                                                            this.closest('form').submit();">
-                        {{ __('Logout') }}
-                    </x-jet-dropdown-link>
-                </form>
-            @endauth
             {{--            <x-nav.topic-link route="contact" title="Write for Us" />--}}
             {{--END: Marketing Links--}}
         </div>

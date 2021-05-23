@@ -18,33 +18,11 @@
     </x-slot>
 </x-button.social-connect>
 
-<x-button.social-connect wire:click.prevent="$set('emailConnect', true)"
+<x-button.social-connect wire:click.prevent="signUp()"
                          :signIn="$signIn" service="Email">
     <x-slot name="icon">
         <x-icon.mail class="w-5 h-5 fill-current"/>
     </x-slot>
 </x-button.social-connect>
 
-<!-- Future Buttons -->
 
-<!--
-
-<x-button.social-connect :signIn="$signIn" service="instagram">
-    <x-slot name="icon">
-        <x-icon.facebook class="w-5 h-5 fill-current"/>
-    </x-slot>
-</x-button.social-connect>
-
-<x-button.social-connect :signIn="$signIn" service="linkedin">
-    <x-slot name="icon">
-        <x-icon.facebook class="w-5 h-5 fill-current"/>
-    </x-slot>
-</x-button.social-connect>
-
-<x-button.social-connect :signIn="$signIn" service="pinterest">
-    <x-slot name="icon">
-        <x-icon.facebook class="w-5 h-5 fill-current"/>
-    </x-slot>
-</x-button.social-connect>
-
--->

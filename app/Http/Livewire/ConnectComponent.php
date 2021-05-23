@@ -14,17 +14,18 @@ class ConnectComponent extends Component
     public User $user;
 
     public bool $signIn = false;
-    public bool $emailConnect = false;
+    public bool $signUp = false;
     public bool $showPassword = false;
-
-    // Login
     public string $email = '';
     public string $password = '';
     public bool $remember = true;
 
     protected $listeners = [
         'refreshComponent' => '$refresh',
+        'refreshComments' => 'resetComponent',
     ];
+
+
 
     protected $rules = [
         'user.name' => 'required',
@@ -33,13 +34,30 @@ class ConnectComponent extends Component
     ];
 
     protected $messages = [
-
         //Login
         'email.required' => 'Your email is require',
         'email.email' => 'Please enter a valid email',
         'email.exists' => 'Sorry! We cannot find your email',
-
     ];
+
+    public function signUp()
+    {
+        $this->signIn = false;
+        $this->signUp = true;
+    }
+
+    public function signIn()
+    {
+        $this->signUp = false;
+        $this->signIn = true;
+    }
+
+    public function resetConnect()
+    {
+        $this->signIn = false;
+        $this->signUp = false;
+        $this->showPassword = false;
+    }
 
     public function updatedUserEmail()
     {
@@ -59,7 +77,9 @@ class ConnectComponent extends Component
         ]);
 
         if (\Auth::attempt($credentials, $this->remember)) {
-            return redirect()->back();
+            $this->emit('refreshComments');
+            session()->flash('message', 'Welcome Back');
+            return;
         }
 
         $this->addError('password', 'The password is incorrect' );
@@ -72,10 +92,11 @@ class ConnectComponent extends Component
 
         $this->user->save();
 
-        event(new Registered($this->user->fresh()));
+        $user = $this->user->fresh();
 
-        return back();
+        auth()->login($user, $this->remember);
 
+        event(new Registered($user));
     }
 
     public function verify()

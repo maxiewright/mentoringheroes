@@ -15,7 +15,8 @@ class PostComponent extends Component
     public array $selectedCategories = [];
 
     protected $listeners = [
-       'filterCategories'
+        'refreshPost' => '$refresh',
+        'filterCategories'
     ];
 
     public function mount()

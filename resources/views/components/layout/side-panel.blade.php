@@ -30,11 +30,3 @@
     </div>
 </section>
 
-
-<!-- Dev tools -->
-<div
-    id="alpine-devtools"
-    x-data="devtools('left')"
-    x-show="alpines.length"
-    x-init="start()">
-</div>
