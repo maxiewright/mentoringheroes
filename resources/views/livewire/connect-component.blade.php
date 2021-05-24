@@ -51,7 +51,6 @@
 
     @endif
 
-
     @if($signUp)
 
         <p class="mb-3 text-gray-500">Join the journey, Share your thoughts </p>
@@ -80,9 +79,9 @@
     @endif
 
     @if($forgotPassword)
-        <span class="text-sm mb-3">Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.</span>
 
-        @if (session('status'))
+        <span class="text-sm mb-3">Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.</span>
+        @if(session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
                 {{ session('status') }}
             </div>
@@ -90,18 +89,13 @@
 
         <form method="POST" action="{{ route('password.email') }}">
             @csrf
-
             <div class="mb-2">
                 <x-input.text wire:model.lazy="email" name="email" type="email" placeholder="Email"/>
             </div>
-
             <div class="">
                 <x-button.submit value="Send me the Password Reset Link" class="w-full"/>
             </div>
         </form>
-
     @endif
-
-
 </div>
 
