@@ -1,5 +1,5 @@
 <div class="flex flex-col my-5">
-    @if(!$signUp)
+    @if($signIn)
         <p class="mb-3 text-gray-500">To share your thoughts, connect with: </p>
 
         <div class="flex flex-row justify-between items-center space-x-3">
@@ -48,9 +48,7 @@
                 Forgot Password?
             </span>
         </span>
-    @endif
-
-    @if($signUp)
+    @elseif($signUp)
         <p class="mb-3 text-gray-500">Join the journey, Share your thoughts </p>
 
         <form class="" wire:submit.prevent="register" novalidate>
@@ -71,10 +69,7 @@
             <span wire:click.prevent="signIn()" class="text-blue-800 cursor-pointer hover:text-blue-600 font-medium">
             I'll Sign In </span>
         </p>
-    @endif
-
-    @if($forgotPassword)
-
+    @else
         <span class="text-sm mb-3">Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.</span>
 
         @if(session('status'))
