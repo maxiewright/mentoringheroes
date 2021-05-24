@@ -48,15 +48,21 @@
                 Forgot Password?
             </span>
         </span>
-    @elseif($signUp)
+
+    @endif
+
+    @if($signUp)
+
         <p class="mb-3 text-gray-500">Join the journey, Share your thoughts </p>
+
 
         <form class="" wire:submit.prevent="register" novalidate>
             <div class="mb-2">
-                <x-input.text wire:model.defer="user.name" name="user.name" placeholder="Username"/>
+                <x-input.text wire:model.defer="user.name" name="user.name" placeholder="Username" class="mb-2"/>
             </div>
             <div class="mb-2">
-                <x-input.text wire:model.lazy="user.email" name="user.email" type="email" placeholder="Email"/>
+                <x-input.text wire:model.lazy="user.email" name="user.email" type="email" placeholder="Email"
+                              class="mb-2"/>
             </div>
             <div class="mb-2">
                 <x-input.password wire:model.defer="user.password" name="user.password"/>
@@ -66,18 +72,19 @@
             </div>
         </form>
         <p class="text-sm mt-3">I remembered my details.
-            <span wire:click.prevent="signIn()" class="text-blue-800 cursor-pointer hover:text-blue-600 font-medium">
+            <span wire:click.prevent="signIn()"
+                  class="text-blue-800 cursor-pointer hover:text-blue-600 font-medium">
             I'll Sign In </span>
         </p>
-    @else
-        <span class="text-sm mb-3">Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.</span>
+    @endif
 
+    @if($forgotPassword)
+        <span class="text-sm mb-3">Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.</span>
         @if(session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
                 {{ session('status') }}
             </div>
         @endif
-
         <form method="POST" action="{{ route('password.email') }}">
             @csrf
             <div class="mb-2">
@@ -87,6 +94,11 @@
                 <x-button.submit value="Send me the Password Reset Link" class="w-full"/>
             </div>
         </form>
+        <p class="text-sm mt-3">I remembered my details.
+            <span wire:click.prevent="signIn()"
+                  class="text-blue-800 cursor-pointer hover:text-blue-600 font-medium">
+            I'll Sign In </span>
+        </p>
     @endif
 </div>
 
