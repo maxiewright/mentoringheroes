@@ -1,4 +1,4 @@
-<div class="flex flex-col mt-6">
+<div class="flex flex-col my-5">
     @if($signIn)
         <p class="mb-3 text-gray-500">To share your thoughts, connect with: </p>
 

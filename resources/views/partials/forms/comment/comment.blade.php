@@ -1,3 +1,20 @@
+<form class="form place-self-end" method="POST" action="{{ route('logout') }}">
+    @csrf
+    <a href="{{ route('logout') }}"
+       class="flex  items-center px-2 py-2 hover:bg-gray-200"
+       onclick="event.preventDefault(); this.closest('form').submit();"
+    >
+        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" viewBox="0 0 24 24" class="text-gray-600"
+        >
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path
+                d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
+        </svg>
+        <span class="ml-2">Logout</span>
+    </a>
+
+</form>
 <form wire:submit.prevent="store" class="w-full max-w-xl rounded-lg px-4 pt-2 shadow-lg" novalidate>
     <div class="flex flex-wrap -mx-3 mb-6">
         <div class="flex items-center px-3 mt-2">
@@ -41,3 +58,8 @@
         </div>
     </div>
 </form>
+@if($saved)
+    <div class="mt-3 w-full">
+        <x-alert.success message="Comment Added!"/>
+    </div>
+@endif
