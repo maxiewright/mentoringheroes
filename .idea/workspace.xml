@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d1d42dc-4858-41c1-ad8e-c4596f3e4746" name="Default Changelist" comment="Added Contact, About, Subscribe, vlogs, podcast and course views.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/errors/503.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/errors/503.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/connect-component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/connect-component.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

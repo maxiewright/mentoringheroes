@@ -1,4 +1,4 @@
-<x-layouts.errors.master>
+<x-layout.app>
     <div class="bg-white rounded-lg shadow-lg p-5 md:p-20 mx-2">
         <div class="text-center">
             <h2 class="text-4xl tracking-tight leading-10 font-bold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
@@ -37,4 +37,4 @@
             </div>
         </div>
     </div>
-</x-layouts.errors.master>
+</x-layout.app>>
