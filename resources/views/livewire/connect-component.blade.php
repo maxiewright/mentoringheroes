@@ -51,32 +51,32 @@
 
     @endif
 
-    @if($signUp)
+{{--    @if($signUp)--}}
 
-        <p class="mb-3 text-gray-500">Join the journey, Share your thoughts </p>
+{{--        <p class="mb-3 text-gray-500">Join the journey, Share your thoughts </p>--}}
 
 
-        <form class="" wire:submit.prevent="register" novalidate>
-            <div class="mb-2">
-                <x-input.text wire:model.defer="user.name" name="user.name" placeholder="Username" class="mb-2"/>
-            </div>
-            <div class="mb-2">
-                <x-input.text wire:model.lazy="user.email" name="user.email" type="email" placeholder="Email"
-                              class="mb-2"/>
-            </div>
-            <div class="mb-2">
-                <x-input.password wire:model.defer="user.password" name="user.password"/>
-            </div>
-            <div class="">
-                <x-button.submit value="Let's Go" class="w-full"/>
-            </div>
-        </form>
-        <p class="text-sm mt-3">I remembered my details.
-            <span wire:click.prevent="signIn()"
-                  class="text-blue-800 cursor-pointer hover:text-blue-600 font-medium">
-            I'll Sign In </span>
-        </p>
-    @endif
+{{--        <form class="" wire:submit.prevent="register" novalidate>--}}
+{{--            <div class="mb-2">--}}
+{{--                <x-input.text wire:model.defer="user.name" name="user.name" placeholder="Username" class="mb-2"/>--}}
+{{--            </div>--}}
+{{--            <div class="mb-2">--}}
+{{--                <x-input.text wire:model.lazy="user.email" name="user.email" type="email" placeholder="Email"--}}
+{{--                              class="mb-2"/>--}}
+{{--            </div>--}}
+{{--            <div class="mb-2">--}}
+{{--                <x-input.password wire:model.defer="user.password" name="user.password"/>--}}
+{{--            </div>--}}
+{{--            <div class="">--}}
+{{--                <x-button.submit value="Let's Go" class="w-full"/>--}}
+{{--            </div>--}}
+{{--        </form>--}}
+{{--        <p class="text-sm mt-3">I remembered my details.--}}
+{{--            <span wire:click.prevent="signIn()"--}}
+{{--                  class="text-blue-800 cursor-pointer hover:text-blue-600 font-medium">--}}
+{{--            I'll Sign In </span>--}}
+{{--        </p>--}}
+{{--    @endif--}}
 
     @if($forgotPassword)
         <span class="text-sm mb-3">Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.</span>
