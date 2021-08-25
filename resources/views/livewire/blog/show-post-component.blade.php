@@ -67,22 +67,6 @@
                             <p class="text-xs text-gray-500 text-center mt-3">
                                 {{$author->about}}
                             </p>
-                            {{--Social media--}}
-                            {{--                                <div--}}
-                            {{--                                    class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">--}}
-                            {{--                                    <a class="" href="https://www.facebook.com/">--}}
-                            {{--                                        <i class="fab fa-facebook"></i>--}}
-                            {{--                                    </a>--}}
-                            {{--                                    <a class="pl-4" href="https://www.instagram.com/">--}}
-                            {{--                                        <i class="fab fa-instagram"></i>--}}
-                            {{--                                    </a>--}}
-                            {{--                                    <a class="pl-4" href="https://twitter.com/">--}}
-                            {{--                                        <i class="fab fa-twitter"></i>--}}
-                            {{--                                    </a>--}}
-                            {{--                                    <a class="pl-4" href="https://www.linkedin.com/">--}}
-                            {{--                                        <i class="fab fa-linkedin"></i>--}}
-                            {{--                                    </a>--}}
-                            {{--                                </div>--}}
                         </div>
                     @endforeach
                 </div>
@@ -94,23 +78,6 @@
                     <div class="flex-1 flex flex-col justify-center md:justify-start">
                         <p class="font-semibold text-2xl">{{$post->leadAuthor->name ?? ''}}</p>
                             <p class="pt-2">{{$post->leadAuthor->about ?? ''}}</p>
-
-                            {{--Social media--}}
-{{--                            <div--}}
-{{--                                class="flex items-center justify-center md:justify-start text-2xl no-underline text-blue-800 pt-4">--}}
-{{--                                <a class="" href="#">--}}
-{{--                                    <i class="fab fa-facebook"></i>--}}
-{{--                                </a>--}}
-{{--                                <a class="pl-4" href="#">--}}
-{{--                                    <i class="fab fa-instagram"></i>--}}
-{{--                                </a>--}}
-{{--                                <a class="pl-4" href="#">--}}
-{{--                                    <i class="fab fa-twitter"></i>--}}
-{{--                                </a>--}}
-{{--                                <a class="pl-4" href="#">--}}
-{{--                                    <i class="fab fa-linkedin"></i>--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
                         </div>
                     </div>
                 @endif
@@ -121,7 +88,6 @@
                 </x-layout.side-panel>
 
             </section>
-
 
 
 

@@ -17,7 +17,6 @@
                     <p href="#" class="text-sm pb-3">
                         By <a href="{{route('about')}}"
                               class="font-semibold hover:text-gray-800">{{$featuredPost->lead_author->name}}</a>,
-                        Published on {{$featuredPost->published_at->toFormattedDateString()}}
                     </p>
 
                     <div class="pb-6">
@@ -65,7 +64,6 @@
                             <p href="#" class="text-sm pb-3">
                                 By <a href="{{route('about')}}"
                                       class="font-semibold hover:text-gray-800">{{$post->lead_author->name}}</a>,
-                                Published on {{$featuredPost->published_at->toFormattedDateString()}}
                             </p>
 
                             <div class="pb-4">
