@@ -21,6 +21,7 @@ class CreateCommentsTable extends Migration
             $table->integer('commentable_id');
             $table->string('commentable_type');
             $table->date('published_at')->nullable();
+            $table->boolean('is_approved')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });
