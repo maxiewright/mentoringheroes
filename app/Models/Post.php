@@ -11,12 +11,13 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
+use Laravel\Scout\Searchable;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 class Post extends Model
 {
-    use HasFactory, HasSlug;
+    use HasFactory, HasSlug, Searchable;
 
     protected $fillable = [
         'title',
@@ -34,6 +35,16 @@ class Post extends Model
         'is_featured' => 'boolean',
         'published_at' => 'date',
     ];
+
+//    public function searchableAs()
+//    {
+//        return 'posts_index';
+//    }
+
+    public function getScoutKey()
+    {
+        return $this->title;
+    }
 
     public function getSlugOptions(): SlugOptions
     {

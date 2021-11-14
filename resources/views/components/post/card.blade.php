@@ -6,17 +6,23 @@
 >
     <div class="py-6 px-5 {{$featured ? 'lg:flex' : ''}} ">
         <div class="{{$featured ? 'flex-1 lg:mr-8' : 'mb-4' }}">
-            {{--TODO--}}
-            <img src="{{asset('images/illustration-1.png')}}" alt="Blog Post illustration" class="rounded-xl">
+            <img src="{{$post->image_path}}"
+                 alt="Blog Post illustration"
+                 class="rounded-xl">
         </div>
 
         <div class="flex-1 flex flex-col justify-between">
             <header class="mt-8 lg:mt-0">
-                <div class="space-x-2">
-                    <a href="{{route('category.posts', $post->category->slug)}}"
-                       class="px-3 py-1 border border-blue-300 rounded-full text-blue-300 text-xs uppercase font-semibold"
-                       style="font-size: 10px">{{$post->category->name}}</a>
+
+                <div class="grid grid-cols-3 gap-2 mt-1">
+                    @foreach($post->categories as $category)
+
+                        <a href=""
+                       class="px-3 block py-1 border border-blue-800 rounded-full text-blue-800 text-xs uppercase font-semibold"
+                       style="font-size: 10px">{{$category?->name}}</a>
+                    @endforeach
                 </div>
+
 
                 <div class="mt-4">
 
@@ -34,15 +40,15 @@
 
             <div class="text-sm mt-2">
                 <p>
-                    {!! $post->excerpt !!}
+                    {!! $post->excerpt() !!}
                 </p>
             </div>
 
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
-                    <img src="{{asset('images/lary-avatar.svg')}}" alt="Lary avatar">
+                    <img src="{{$post->author?->profile_photo_url}}" alt="{{$post->author?->name}}">
                     <div class="ml-3">
-                        <h5 class="font-bold">{{$post->author->name}}</h5>
+                        <h5 class="font-bold">{{$post->author?->name}}</h5>
                     </div>
                 </div>
 

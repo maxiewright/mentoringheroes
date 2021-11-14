@@ -4,8 +4,8 @@ use App\Http\Controllers\Auth\SocialAccountController;
 use App\Http\Controllers\ContactController;
 
 
-use App\Http\Livewire\Blog\PostComponent;
-use App\Http\Livewire\Blog\ShowPostComponent;
+use App\Http\Livewire\Blog\IndexPage;
+use App\Http\Livewire\Blog\ShowPage;
 use App\Http\Livewire\ContactComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -38,9 +38,10 @@ Route::get('login/{provider}/callback',[SocialAccountController::class, 'handleP
 /*
  * Front End
  */
-Route::get('/', PostComponent::class)
+Route::get('/', IndexPage::class)
     ->name('posts.index');
-Route::get('posts/{post}', ShowPostComponent::class)
+
+Route::get('posts/{post}', ShowPage::class)
     ->name('posts.show');
 
 Route::get('contact', ContactComponent::class)
