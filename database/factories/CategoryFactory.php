@@ -23,8 +23,6 @@ class CategoryFactory extends Factory
     {
         return [
            'name' => $this->faker->name,
-           'meta_title' => $this->faker->name,
-           'slug' => $this->faker->slug,
         ];
     }
 }
