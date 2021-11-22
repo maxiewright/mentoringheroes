@@ -22,7 +22,6 @@
             {{ $posts->links()}}
         </div>
     </main>
-
 </div>
 
 

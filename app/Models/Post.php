@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasLikes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -17,7 +18,7 @@ use Spatie\Sluggable\SlugOptions;
 
 class Post extends Model
 {
-    use HasFactory, HasSlug, Searchable;
+    use HasFactory, HasSlug, Searchable, HasLikes;
 
     protected $fillable = [
         'title',
@@ -105,7 +106,12 @@ class Post extends Model
      */
     public function getLeadAuthorAttribute()
     {
-        return $this->authors()->first();
+
+        if ($this->authors()->count() == 1) {
+            return $this->authors()->first();
+        }
+
+        return $this->authors()->wherePivot('is_lead', '!=', null)->first();
     }
 
     /**

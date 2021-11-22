@@ -2,17 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Tag;
+use App\Models\Like;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class TagFactory extends Factory
+class LikeFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Tag::class;
+    protected $model = Like::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +23,7 @@ class TagFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->unique()->word(),
+            'user_id' => User::all()->random()->id,
         ];
     }
 }

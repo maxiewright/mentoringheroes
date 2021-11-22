@@ -17,13 +17,19 @@ class PostSeeder extends Seeder
     {
         Post::factory()
             ->hasAuthors(1)
-            ->hasAttached(
-                Category::factory()->count(2),
-                ['is_main' => false]
-            )
-            ->hasComments(3)
+            ->has(Category::factory()->count(3))
+//            ->hasComments(3)
             ->hasTags(3)
+            ->count(10)
+            ->create();
 
-            ->count(10)->create();
+
+//        $posts = Post::factory()
+//            ->has(User::factory()->count(1), 'authors')
+//            ->has(Category::factory()->count(3))
+//            ->create();
+
+
+
     }
 }
