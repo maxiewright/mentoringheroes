@@ -17,9 +17,9 @@
                 <div class="grid grid-cols-3 gap-2 mt-1">
                     @foreach($post->categories as $category)
 
-                        <a href=""
-                       class="px-3 block py-1 border border-blue-800 rounded-full text-blue-800 text-xs uppercase font-semibold"
-                       style="font-size: 10px">{{$category?->name}}</a>
+                        <span wire:click="setCategory({{$category->id}})"
+                              class="px-3 block py-1 border border-blue-800 rounded-full text-blue-800 text-xs uppercase font-semibold cursor-pointer"
+                              style="font-size: 10px">{{$category?->name}}</span>
                     @endforeach
                 </div>
 
@@ -33,7 +33,8 @@
                     </h1>
 
                     <span class="mt-2 block text-gray-400 text-xs">
-                        Published <time>{{$post->created_at->diffForHumans()}}</time>
+                        Published
+                        <time>{{$post->created_at->diffForHumans()}}</time>
                     </span>
                 </div>
             </header>
@@ -45,12 +46,12 @@
             </div>
 
             <footer class="flex justify-between items-center mt-8">
-                <div class="flex items-center text-sm">
-                    <img src="{{$post->author?->profile_photo_url}}" alt="{{$post->author?->name}}">
-                    <div class="ml-3">
-                        <h5 class="font-bold">{{$post->author?->name}}</h5>
+                    <div class="flex items-center text-sm">
+                        <img class="rounded-full h-10 object-cover" src="{{$post->lead_author?->profile_photo_url}}" alt="{{$post->lead_author?->name}}">
+                        <div class="ml-3">
+                            <h5 class="font-bold">{{$post->lead_author?->name}}</h5>
+                        </div>
                     </div>
-                </div>
 
                 <div class="hidden lg:block">
                     <a href="{{route('posts.show', $post->slug)}}"

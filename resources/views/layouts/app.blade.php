@@ -118,10 +118,17 @@
 <footer class="w-full py-3 border-t border-b bg-gray-100">
     <div class="w-full container mx-auto flex flex-col items-center">
         <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-6">
-            <a href="#" class="uppercase px-3">About Us</a>
-            <a href="#" class="uppercase px-3">Privacy Policy</a>
-            <a href="#" class="uppercase px-3">Terms & Conditions</a>
-            <a href="#" class="uppercase px-3">Contact Us</a>
+            <a href="{{route('about')}}" class="uppercase px-3">About Us</a>
+            <a href="https://www.freeprivacypolicy.com/live/107b39da-e3fd-43d9-b1ea-823c4927ce71"
+               class="uppercase px-3"
+            >
+                Privacy Policy
+            </a>
+            <a href="https://www.termsfeed.com/live/59f27ac2-35aa-4d47-9641-62a0961d2d8b"
+               class="uppercase px-3">
+                Terms & Conditions
+            </a>
+            <a href="{{route('contact')}}" class="uppercase px-3">Contact Us</a>
         </div>
         <div class="uppercase pb-6">&copy; <a href="{{route('posts.index')}}">mentoringheroes.com</a></div>
     </div>

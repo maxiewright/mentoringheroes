@@ -7,6 +7,8 @@ use App\Models\Post;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Redirector;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -48,6 +50,12 @@ class IndexPage extends Component
     {
         $this->resetPage();
         $this->emit('refresh');
+    }
+
+    public function setCategory($categoryId)
+    {
+        $this->resetPage();
+        $this->category = $categoryId;
     }
 
     public function mount()

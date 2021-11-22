@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Traits\HasProfilePhoto;
-use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -67,16 +66,23 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
-    protected $appends = [
+    protected array $appends = [
         'profile_photo_url',
     ];
 
     /**
      * Get all post that are authored by this user
      *
-     * @return MorphToMany
+     * @return HasMany
      */
-    public function posts()
+
+    public function likes(): HasMany
+    {
+        return $this->hasMany(Like::class);
+    }
+
+
+    public function posts(): MorphToMany
     {
         return $this->morphedByMany(Post::class, 'authorable')
             ->withPivot('is_lead');
