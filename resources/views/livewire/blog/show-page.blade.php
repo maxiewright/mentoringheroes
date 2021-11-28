@@ -9,7 +9,7 @@
         <input wire:model="search" type="text" class="form-input block w-full sm:w-64" placeholder="Find something">
     </x-category-nav-layout>
     <main class="max-w-6xl mx-auto mt-10 lg:mt-10 space-y-6 mb-10">
-        <article class="lg:grid lg:grid-cols-12 gap-x-10">
+        <section class="lg:grid lg:grid-cols-12 gap-x-10">
             <div class="col-span-4 lg:text-center lg:pt-14 mt-2 mb-10">
                 <img src="{{$post->image_path}}"
                      alt=""
@@ -30,7 +30,7 @@
 
             </div>
 
-            <div class="col-span-8">
+            <article class="col-span-8">
                 <div class="hidden lg:flex justify-between mb-6">
                     <a href="{{route('posts.index')}}"
                        class="text-lg text-blue-500 hover:text-blue-800 transition-colors duration-300 font-bold flex items-center">
@@ -54,8 +54,36 @@
                 <h1 class="font-bold text-3xl lg:text-4xl mb-5">{{$post->title}}</h1>
 
                 <div class="space-y-4 lg:text-lg leading-loose">{!! $post->body !!}</div>
-            </div>
-        </article>
+
+                <div class="mt-5 flex flex-row justify-between">
+                    <!-- Like and Comment -->
+                    <div class="flex space-x-6">
+                        <livewire:like-component :model="$post" />
+
+                        <span class="flex flex-row space-x-3 text-center cursor-pointer hover:text-blue-800">
+                            <x-icon.comment class="h-6 w-6 mr-1" /> {{$post->commentCount()}}
+                        </span>
+                    </div>
+                    <!-- Share -->
+                    <div wire:ignore class="flex items-center no-underline pr-6">
+                        <a class="" href="https://www.pinterest.com/mentoringheroes/">
+                            <i class="fab fa-whatsapp fa-lg"></i>
+                        </a>
+                        <a class="pl-3" href="https://www.facebook.com/mentoringheroes">
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                        <a class="pl-3" href="https://www.instagram.com/mentoringheroes">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a class="pl-3" href="https://www.twitter.com/heromentoring">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+
 
         <hr>
 

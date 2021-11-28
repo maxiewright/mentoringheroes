@@ -57,5 +57,6 @@ class ShowPage extends Component
             'previousPost' => Post::where('id', '<', $this->post->id)->orderByDesc('id')->first(),
             'nextPost' => Post::where('id', '>', $this->post->id)->orderBy('id')->first()
         ]);
+
     }
 }
