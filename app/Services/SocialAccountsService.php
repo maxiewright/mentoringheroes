@@ -29,7 +29,7 @@ class SocialAccountsService
                 ]);
             }
 
-            $user->accounts()->create([
+            $user->socialAccount()->create([
                 'provider_id'   => $providerUser->getId(),
                 'provider_name' => $provider,
             ]);

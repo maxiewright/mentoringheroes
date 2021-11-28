@@ -17,5 +17,6 @@
            class="border p-2 w-full @error($name) border-red-500 @enderror "
     >
     @error($name)
-    <div class="text-sm text-red-500"> {{$message}} </div> @enderror
+    <div class="text-sm text-red-500"> {{$message}} </div>
+        @enderror
 </div>

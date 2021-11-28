@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('social', function (){
+Route::get('oauth', function (){
    $user = \App\Models\User::find(14);
 
    return $user->hasSocialAccount();
@@ -57,6 +57,3 @@ Route::view('privacy_policy', 'legal.privacy-policy')
 
 
 require __DIR__.'/auth.php';
-
-
-

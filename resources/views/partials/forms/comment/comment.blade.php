@@ -15,6 +15,9 @@
     </a>
 
 </form>
+
+@if(!$replyMode)
+
 <form wire:submit.prevent="store" class="w-full max-w-xl rounded-lg px-4 pt-2 shadow-lg" novalidate>
     <div class="flex flex-wrap -mx-3 mb-6">
         <div class="flex items-center px-3 mt-2">
@@ -29,11 +32,8 @@
             </div>
         </div>
         <div class="w-full md:w-full px-3 mb-2 mt-2">
-                    <textarea wire:model="comment.body" name="comment.body"
-                              class="bg-gray-100 rounded leading-normal resize-none w-full h-20 py-2 px-3
-                        font-medium placeholder-gray-700 focus:outline-none focus:shadow-outline
-                        @if(!$replyMode) @error('comment.body') border border-red-700 @enderror @endif"
-
+                    <textarea wire:model.defer="comment.body" name="comment.body"
+                              class="bg-gray-100 rounded leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:shadow-outline @if(!$replyMode) @error('comment.body') border border-red-700 @enderror @endif"
                               placeholder="Let us know you thoughts" required
 
                     >
@@ -58,6 +58,9 @@
         </div>
     </div>
 </form>
+
+@endif
+
 @if($saved)
     <div class="mt-3 w-full">
         <x-alert.success message="Comment Added!"/>

@@ -5,42 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d1d42dc-4858-41c1-ad8e-c4596f3e4746" name="Default Changelist" comment="Added Contact, About, Subscribe, vlogs, podcast and course views.">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticatedSessionController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmablePasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/EmailVerificationNotificationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/EmailVerificationPromptController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/NewPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordResetLinkController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisteredUserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerifyEmailController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Auth/LoginRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/View/Components/GuestLayout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/auth/confirm-password.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/application-logo.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/auth-card.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/auth-session-status.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/auth-validation-errors.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/button.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/dropdown-link.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/dropdown.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/input.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/label.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/nav-link.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/responsive-nav-link.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/Auth/AuthenticationTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/Auth/EmailVerificationTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/Auth/PasswordConfirmationTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/Auth/PasswordResetTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/Auth/RegistrationTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/CommentComponent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/CommentComponent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/category-nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/category-nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/ConnectComponent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/ConnectComponent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/SocialAccountsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/SocialAccountsService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/input/password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/input/password.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/input/text.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/input/text.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/layout/reply-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/layout/reply-form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/blog/show-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/blog/show-page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/comment-component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/comment-component.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/connect-component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/connect-component.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/forms/auth/verify-email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/forms/auth/verify-email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/forms/comment/comment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/forms/comment/comment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/forms/comment/reply.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/forms/comment/reply.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/oauth/providers.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

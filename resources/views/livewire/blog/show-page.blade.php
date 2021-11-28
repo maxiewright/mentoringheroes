@@ -65,20 +65,20 @@
                         </span>
                     </div>
                     <!-- Share -->
-                    <div wire:ignore class="flex items-center no-underline pr-6">
-                        <a class="" href="https://www.pinterest.com/mentoringheroes/">
-                            <i class="fab fa-whatsapp fa-lg"></i>
-                        </a>
-                        <a class="pl-3" href="https://www.facebook.com/mentoringheroes">
-                            <i class="fab fa-facebook fa-lg"></i>
-                        </a>
-                        <a class="pl-3" href="https://www.instagram.com/mentoringheroes">
-                            <i class="fab fa-instagram fa-lg"></i>
-                        </a>
-                        <a class="pl-3" href="https://www.twitter.com/heromentoring">
-                            <i class="fab fa-twitter fa-lg"></i>
-                        </a>
-                    </div>
+{{--                    <div wire:ignore class="flex items-center no-underline pr-6">--}}
+{{--                        <a class="" href="https://www.pinterest.com/mentoringheroes/">--}}
+{{--                            <i class="fab fa-whatsapp fa-lg"></i>--}}
+{{--                        </a>--}}
+{{--                        <a class="pl-3" href="https://www.facebook.com/mentoringheroes">--}}
+{{--                            <i class="fab fa-facebook fa-lg"></i>--}}
+{{--                        </a>--}}
+{{--                        <a class="pl-3" href="https://www.instagram.com/mentoringheroes">--}}
+{{--                            <i class="fab fa-instagram fa-lg"></i>--}}
+{{--                        </a>--}}
+{{--                        <a class="pl-3" href="https://www.twitter.com/heromentoring">--}}
+{{--                            <i class="fab fa-twitter fa-lg"></i>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
                 </div>
             </article>
         </section>

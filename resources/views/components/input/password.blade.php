@@ -1,10 +1,11 @@
 @props([
-    'name' => null,
+    'name' => 'password',
+    'placeholder' => 'Password'
 ])
 <div {{$attributes->merge(['class' => ''])}}  x-data="{ show: true }">
     <div class="relative">
         <input {{$attributes->wire('model')}}
-               placeholder="Password"
+               placeholder="{{$placeholder}}"
                :type="show ? 'password' : 'text'"
                name="{{$name}}"
                class="border p-2 w-full @error($name) border-red-500 @enderror "
