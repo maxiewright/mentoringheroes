@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
+use App\Traits\HasComments;
 use App\Traits\HasLikes;
+
+use App\Traits\HasTags;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
 use Spatie\Sluggable\HasSlug;
@@ -18,7 +18,12 @@ use Spatie\Sluggable\SlugOptions;
 
 class Post extends Model
 {
-    use HasFactory, HasSlug, Searchable, HasLikes;
+    use HasFactory,
+        HasSlug,
+        Searchable,
+        HasLikes,
+        HasComments,
+        HasTags;
 
     protected $fillable = [
         'title',
@@ -37,6 +42,11 @@ class Post extends Model
         'published_at' => 'date',
     ];
 
+    protected $withCount = [
+        'likes'
+    ];
+
+
 //    public function searchableAs()
 //    {
 //        return 'posts_index';
@@ -45,6 +55,7 @@ class Post extends Model
     public function getScoutKey()
     {
         return $this->title;
+
     }
 
     public function getSlugOptions(): SlugOptions
@@ -135,30 +146,6 @@ class Post extends Model
     {
         return $this->categories
             ->first();
-    }
-
-    /**
-     * returns the tags for this model
-     *
-     * @return MorphToMany
-     */
-
-    public function tags(): MorphToMany
-    {
-        return $this->morphToMany(Tag::class, 'taggable')
-            ->withTimestamps();
-    }
-
-    /**
-     * returns the comments for this model
-     *
-     * @return MorphMany
-     */
-    public function comments(): MorphMany
-    {
-       return $this->morphMany(Comment::class, 'commentable')
-           ->whereNull('parent_id')
-           ->latest();
     }
 
 

@@ -5,26 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d1d42dc-4858-41c1-ad8e-c4596f3e4746" name="Default Changelist" comment="Added Contact, About, Subscribe, vlogs, podcast and course views.">
-      <change afterPath="$PROJECT_DIR$/app/Traits/HasLikes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/LikeFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/icon/left-arrow.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/LikeComponent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Traits/HasComments.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Traits/HasTags.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/components/icon/thumb-up.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/like-component.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/like.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Blog/IndexPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Blog/IndexPage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Blog/ShowPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Blog/ShowPage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Like.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Like.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/HasProfilePhoto.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/HasProfilePhoto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/HasLikes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/HasLikes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/CategoryFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CategoryFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/PostFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PostFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/TagFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TagFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_04_000357_create_likes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_04_000357_create_likes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PostSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/PostSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/post/card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/post/card.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/blog/index-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/blog/index-page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/icon/comment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/icon/comment.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/blog/show-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/blog/show-page.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,6 +219,9 @@
       <path value="$PROJECT_DIR$/vendor/php-http/client-common" />
       <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
       <path value="$PROJECT_DIR$/vendor/meilisearch/meilisearch-php" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iQE3RGwaUxQK63INuMgVmXQj1o" />
@@ -332,7 +333,8 @@
       <workItem from="1636984106337" duration="91000" />
       <workItem from="1637422484166" duration="1199000" />
       <workItem from="1637439789833" duration="19918000" />
-      <workItem from="1637597171465" duration="523000" />
+      <workItem from="1637597171465" duration="602000" />
+      <workItem from="1638092063584" duration="12834000" />
     </task>
     <task id="LOCAL-00001" summary="Completed Blog Models">
       <created>1601861448608</created>

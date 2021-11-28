@@ -11,16 +11,26 @@ class Like extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id'];
+    protected $fillable = [
+        'user_id',
+        'ip',
+        'user_agent'
+    ];
 
     public function likeable(): MorphTo
     {
         return $this->morphTo();
     }
 
-    public function likedBy(): BelongsTo
+
+    public function scopeWhereIp($query, string $ip)
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $query->where('ip', $ip);
+    }
+
+    public function scopeWhereUserAgent($query, string $userAgent)
+    {
+        return $query->where('user_agent', $userAgent);
     }
 
 }

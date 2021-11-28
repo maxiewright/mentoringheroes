@@ -4,13 +4,12 @@ namespace App\Traits;
 
 use App\Models\Like;
 use App\Models\User;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
-use Illuminate\Database\Eloquent\Relations\HasOneThrough;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasLikes
 {
+
     public function likes(): MorphMany
     {
         return $this->morphMany(Like::class, 'likeable');
@@ -21,23 +20,60 @@ trait HasLikes
         return $this->likes()->count();
     }
 
+//    public function likedBy(): HasManyThrough
+//    {
+//        return $this->hasManyThrough(
+//            User::class,
+//            Like::class,
+//            'likeable_id',
+//            'id',
+//            'id',
+//            'user_id'
+//        );
+//    }
 
-    public function likers(): HasManyThrough
+
+    public function likedBy(): HasMany
     {
-        return $this->hasManyThrough(
-            User::class,
-            Like::class,
-            'likeable_id',
-            'id',
-            'id',
-            'user_id'
-        );
+        return $this->hasMany(User::class);
     }
 
-    public function liker()
+    public function isLiked(): bool
     {
-       return $this->likers()->where('likes.user_id', auth()->id());
+        if (auth()->user()) {
+            return $this->likes->contains('user_id', auth()->id());
+        }
+
+        if (($ip = request()->ip()) && ($userAgent = request()->userAgent())) {
+            return $this->likes()
+                ->whereIp($ip)
+                ->whereUserAgent($userAgent)
+                ->count();
+        }
+
+        return false;
     }
+
+    public function removeLike(): bool
+    {
+        if (auth()->user()) {
+            return  $this->likes()->where('user_id', auth()->id())->delete();
+        }
+
+        if (($ip = request()->ip()) && ($userAgent = request()->userAgent())) {
+            return $this->likes()
+                ->whereIp($ip)
+                ->whereUserAgent($userAgent)
+                ->delete();
+        }
+
+        return false;
+    }
+
+
+
+
+
 
 
 }

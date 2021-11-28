@@ -20,7 +20,7 @@ class IndexPage extends Component
     public string $category = '';
     public string $search = '';
 
-    protected array $queryString = [
+    protected $queryString = [
         'search' => ['except' => ''],
         'category' => ['except' => '']
     ];

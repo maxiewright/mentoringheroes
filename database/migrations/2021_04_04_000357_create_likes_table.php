@@ -15,12 +15,13 @@ class CreateLikesTable extends Migration
     {
         Schema::create('likes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->nullable()->constrained();
+            $table->ipAddress('ip')->nullable();
+            $table->string('user_agent')->nullable();
             $table->integer('likeable_id');
             $table->string('likeable_type');
             $table->timestamps();
 
-            $table->unique(['user_id', 'likeable_id', 'likeable_type'], 'user_likes');
         });
     }
 
