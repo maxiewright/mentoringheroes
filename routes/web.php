@@ -1,9 +1,6 @@
 <?php
 
 use App\Http\Controllers\Auth\SocialAccountController;
-use App\Http\Controllers\ContactController;
-
-
 use App\Http\Livewire\Blog\IndexPage;
 use App\Http\Livewire\Blog\ShowPage;
 use App\Http\Livewire\ContactComponent;
@@ -57,6 +54,9 @@ Route::view('terms_and_conditions', 'legal.terms-and-conditions')
     ->name('terms_and_conditions');
 Route::view('privacy_policy', 'legal.privacy-policy')
     ->name('privacy_policy');
+
+
+require __DIR__.'/auth.php';
 
 
 
