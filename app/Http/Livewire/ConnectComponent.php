@@ -17,44 +17,48 @@ class ConnectComponent extends Component
     public bool $signUp = false;
     public bool $forgotPassword = false;
     public bool $showPassword = false;
-    public string $email = '';
-    public string $password = '';
     public bool $remember = true;
+    public string $name;
+    public string $email ;
+    public string $password;
+    public string $password_confirmation;
 
     protected $listeners = [
         'refreshComponent' => '$refresh'
     ];
 
-
-
-    protected $rules = [
-        'user.name' => 'required',
-        'user.email' => 'required|email|unique:users,email',
-        'user.password' => 'required'
-    ];
-
     protected $messages = [
-        //Login
-        'email.required' => 'Your email is require',
+        'email.required' => 'Your email is required',
         'email.email' => 'Please enter a valid email',
         'email.exists' => 'Sorry! We cannot find your email',
     ];
 
+    public function mount()
+    {
+        $this->user = User::make();
+        $this->name = '';
+        $this->email = '';
+        $this->password = '';
+        $this->password_confirmation = '';
+    }
+
     public function signIn()
     {
-        $this->forgotPassword = false;
+        $this->mount();
         $this->signUp = false;
         $this->signIn = true;
     }
 
     public function signUp()
     {
+        $this->mount();
         $this->signIn = false;
         $this->signUp = true;
     }
 
     public function forgotPassword()
     {
+        $this->mount();
         $this->signIn = false;
         $this->signUp = false;
         $this->forgotPassword = true;
@@ -65,10 +69,6 @@ class ConnectComponent extends Component
         $this->validateOnly('user.email');
     }
 
-    public function mount()
-    {
-        $this->user = User::make();
-    }
 
     public function login()
     {
@@ -90,15 +90,20 @@ class ConnectComponent extends Component
 
     public function register()
     {
-        $this->validate();
+        $registrationDetails = $this->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed'],
+        ]);
 
-        $this->user->save();
+        $this->user = User::query()->create($registrationDetails);
 
-        $user = $this->user->fresh();
+        event(new Registered($this->user));
 
-        auth()->login($user, $this->remember);
+        auth()->login($this->user);
 
-        event(new Registered($user));
+        $this->emit('refreshComponent');
+
     }
 
     public function verify()

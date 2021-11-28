@@ -1,31 +1,14 @@
-<div>
+{{--<div>--}}
     @if($signIn)
-        <div class="flex flex-col my-5">
+        <div class="flex flex-col my-5 w-full">
             <p class="mb-3 text-gray-500">To share your thoughts, connect with: </p>
 
-            <div class="flex flex-row justify-between items-center space-x-3">
-                <x-button.social-connect service="facebook">
-                    <x-slot name="icon">
-                        <x-icon.facebook class="w-5 h-5 fill-current"/>
-                    </x-slot>
-                </x-button.social-connect>
-                <x-button.social-connect service="google">
-                    <x-slot name="icon">
-                        <x-icon.google class="w-5 h-5 fill-current"/>
-                    </x-slot>
-                </x-button.social-connect>
-
-                <x-button.social-connect service="twitter">
-                    <x-slot name="icon">
-                        <x-icon.twitter class="w-5 h-5 fill-current"/>
-                    </x-slot>
-                </x-button.social-connect>
-            </div>
+            @include('partials.oauth.providers')
 
             <div class="relative text-center py-6">
-            <span class="relative top-3 border-2 p-1.5 rounded-full bg-white border-gray-300 font-semibold">
-                OR
-            </span>
+                <span class="relative top-3 border-2 p-1.5 rounded-full bg-white border-gray-300 font-semibold">
+                    OR
+                </span>
                 <hr class="border border-gray-300">
             </div>
 
@@ -41,18 +24,20 @@
                 </div>
             </form>
 
-            <span class="mt-2 inline-block text-sm text-blue-800 cursor-pointer font-medium">
-            <span class="hover:text-blue-600" wire:click.prevent="signUp()">
-                First time connecting?
-            </span> |
-            <span class="hover:text-blue-600" wire:click.prevent="forgotPassword()">
-                Forgot Password?
+            <span class="mx-auto mt-2 inline-block text-sm text-blue-800 cursor-pointer font-medium">
+                <span class="hover:text-blue-600" wire:click.prevent="signUp()">
+                    First time connecting?
+                </span> |
+                <span class="hover:text-blue-600" wire:click.prevent="forgotPassword()">
+                    Forgot Password?
+                </span>
             </span>
-        </span>
         </div>
     @elseif($forgotPassword)
         <div class="flex flex-col my-5">
-            <span class="text-sm mb-3">Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.</span>
+            <span class="text-sm mb-3">
+                {{__('Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.')}}
+            </span>
             @if(session('status'))
                 <div class="mb-4 font-medium text-sm text-green-600">
                     {{ session('status') }}
@@ -67,40 +52,51 @@
                     <x-button.submit value="Send me the Password Reset Link" class="w-full"/>
                 </div>
             </form>
-            <p class="text-sm mt-3">I remembered my details.
+            <p class="text-sm mt-3 mx-auto">I remembered my details.
                 <span wire:click.prevent="signIn()"
                       class="text-blue-800 cursor-pointer hover:text-blue-600 font-medium">
-            I'll Sign In </span>
+                    I'll Sign In
+                </span>
             </p>
         </div>
     @else
-
         <div class="flex flex-col my-5">
-            <p class="mb-3 text-gray-500">
-                Email Registration Comming Soon!!!
+            <p class="mb-3 text-gray-500">Join the journey with: </p>
+
+            @include('partials.oauth.providers')
+
+            <div class="relative text-center py-6">
+                <span class="relative top-3 border-2 p-1.5 rounded-full bg-white border-gray-300 font-semibold">
+                    OR
+                </span>
+                <hr class="border border-gray-300">
+            </div>
+
+            <form  wire:submit.prevent="register">
+                <div class="mb-2">
+                    <x-input.text wire:model.defer="name" name="name" placeholder="Name" class="mb-2"/>
+                </div>
+                <div class="mb-2">
+                    <x-input.text wire:model.defer="email" name="email" placeholder="Email" class="mb-2"/>
+                </div>
+                <div class="mb-2">
+                    <x-input.password wire:model.defer="password" />
+                </div>
+
+                <div class="mb-2">
+                    <x-input.password wire:model="password_confirmation" placeholder="Confirm Password" name="password_confirmation"/>
+                </div>
+                <div class="">
+                    <x-button.submit value="Let's Go" class="w-full"/>
+                </div>
+            </form>
+            <p class="text-sm mt-3 mx-auto"> I remembered my details.
+                <span wire:click.prevent="signIn()"
+                      class="text-blue-800 cursor-pointer hover:text-blue-600 font-medium">
+                    I'll Sign In
+                </span>
             </p>
-{{--            <form wire:submit.prevent="register">--}}
-{{--                <div class="mb-2">--}}
-{{--                    <x-input.text wire:model.defer="user.name" name="user.name" placeholder="Username" class="mb-2"/>--}}
-{{--                </div>--}}
-{{--                <div class="mb-2">--}}
-{{--                    <x-input.text wire:model.lazy="user.email" name="user.email" type="email" placeholder="Email"--}}
-{{--                                  class="mb-2"/>--}}
-{{--                </div>--}}
-{{--                <div class="mb-2">--}}
-{{--                    <x-input.password wire:model.defer="user.password" name="user.password"/>--}}
-{{--                </div>--}}
-{{--                <div class="">--}}
-{{--                    <x-button.submit value="Let's Go" class="w-full"/>--}}
-{{--                </div>--}}
-{{--            </form>--}}
-{{--            <p class="text-sm mt-3"> I remembered my details.--}}
-{{--                <span wire:click.prevent="signIn()"--}}
-{{--                      class="text-blue-800 cursor-pointer hover:text-blue-600 font-medium">--}}
-{{--            I'll Sign In--}}
-{{--            </span>--}}
-{{--            </p>--}}
         </div>
     @endif
-</div>
+{{--</div>--}}
 

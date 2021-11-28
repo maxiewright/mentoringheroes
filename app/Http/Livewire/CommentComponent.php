@@ -19,16 +19,18 @@ class CommentComponent extends Component
     public int|null $replyCommentId = null;
     public bool $replyMode = false;
 
-    protected $listeners = ['refreshComponent' => '$refresh'];
+    protected $listeners = [
+        'refreshComponent'
+    ];
 
     protected array $rules = [
         'comment.parent_id' => 'nullable',
-        'comment.body'  => 'required|min:60|max:5000',
+        'comment.body'  => 'required|min:25|max:5000',
     ];
 
     protected array $messages = [
         'comment.body.required' => 'Please share some words',
-        'comment.body.min' => 'Please enter more that 60 characters',
+        'comment.body.min' => 'Please share more that 25 characters',
         'comment.body.max' => 'Your Comment must not exceed 5000 characters',
     ];
 
@@ -47,17 +49,17 @@ class CommentComponent extends Component
 
         $this->model->comments()->save($this->comment);
 
-        $this->resetComponent();
+        $this->refreshComponent();
 
         $this->saved = true;
     }
 
-    public function resetComponent()
+    public function refreshComponent()
     {
         $this->mount();
         $this->replyCommentId = null;
         $this->replyMode = false;
-        $this->emit('refreshComponent');
+
     }
 
     public function reply($commentId)
@@ -66,6 +68,14 @@ class CommentComponent extends Component
 
         $this->replyMode = true;
     }
+
+    public function cancelReply()
+    {
+        $this->replyCommentId = null;
+
+        $this->replyMode = false;
+    }
+
 
     public function render(): Factory|View|Application
     {

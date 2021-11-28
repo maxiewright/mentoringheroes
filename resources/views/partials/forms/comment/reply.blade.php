@@ -17,8 +17,7 @@
                    class="bg-blue-800 hover:bg-blue-700 text-sm text-white font-medium py-1 px-4 border rounded tracking-wide mr-1"
                    value='Tell Them'
             >
-            <span wire:click.prevent="$set('replyCommentId', {{null}})"
-                  wire:click.prevent="$set('replyMode', false)"
+            <span wire:click.prevent="cancelReply"
                   class="cursor-pointer hover:underline text-sm">
                 Maybe later
             </span>

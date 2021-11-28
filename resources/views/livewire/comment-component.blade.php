@@ -1,6 +1,6 @@
 <div class="h-full overflow-y-scroll">
     <div class="flex flex-col mx-auto items-center mb-2 max-w-lg">
-        <div class="flex flex-col space-y-2 text-sm text-gray-600 p-4">
+        <div class="flex flex-col space-y-2 text-sm text-gray-600 p-4 w-full">
             @auth
                 @if(!auth()->user()->hasSocialAccount() && !auth()->user()->hasVerifiedEmail())
                     @include('partials.forms.auth.verify-email')
@@ -9,7 +9,7 @@
                 @endif
             @endauth
             @guest
-                    <livewire:connect-component/>
+                    <livewire:connect-component />
             @endguest
         </div>
         <div class="border-t max-w-2xl w-full my-0"></div>
