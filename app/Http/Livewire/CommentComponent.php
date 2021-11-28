@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class CommentComponent extends Component
 {
-    public Post $post;
+    public object $model;
     public Comment $comment;
     public bool $saved =false;
     public bool $showReplies = false;
@@ -45,7 +45,7 @@ class CommentComponent extends Component
 
         $this->validate();
 
-        $this->post->comments()->save($this->comment);
+        $this->model->comments()->save($this->comment);
 
         $this->resetComponent();
 
@@ -70,7 +70,7 @@ class CommentComponent extends Component
     public function render(): Factory|View|Application
     {
         return view('livewire.comment-component', [
-           'comments' => $this->post->comments,
+           'comments' => $this->model->comments,
         ]);
     }
 }

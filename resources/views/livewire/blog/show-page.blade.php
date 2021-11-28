@@ -38,8 +38,6 @@
                         Back to Posts
                     </a>
 
-
-
                     <div class="grid grid-cols-3 gap-2 mt-1">
                         @foreach($post->categories as $category)
                             <span wire:click="goToCategory({{$category->id}})"
@@ -47,8 +45,6 @@
                                style="font-size: 10px">{{$category?->name}}</span>
                         @endforeach
                     </div>
-
-
                 </div>
 
                 <h1 class="font-bold text-3xl lg:text-4xl mb-5">{{$post->title}}</h1>
@@ -60,7 +56,11 @@
                     <div class="flex space-x-6">
                         <livewire:like-component :model="$post" />
 
-                        <span class="flex flex-row space-x-3 text-center cursor-pointer hover:text-blue-800">
+                        <span x-data="{usedKeyboard: false}"
+                              @keydown.window.tab="usedKeyboard = true"
+                              role="button" @click="$dispatch('open-menu', { open: true })"
+                              :class="{'focus:outline-none': !usedKeyboard}"
+                            class="flex flex-row space-x-3 text-center cursor-pointer hover:text-blue-800">
                             <x-icon.comment class="h-6 w-6 mr-1" /> {{$post->commentCount()}}
                         </span>
                     </div>
@@ -122,6 +122,10 @@
         @endauth
 
     </main>
+
+    <x-layout.side-panel>
+        <livewire:comment-component :model="$post" />
+    </x-layout.side-panel>
 
 
 </div>
