@@ -1,11 +1,19 @@
 <div>
-    <div class="container mx-auto flex flex-wrap py-6">
+    <x-category-nav-layout >
+{{--        <select wire:model="category" class="form-select block w-full sm:w-64">--}}
+{{--            <option value="">{{__('Post Categories')}}</option>--}}
+{{--            @foreach($categories as $categories)--}}
+{{--                <option value="{{$categories->id}}">{{$categories->name}}</option>--}}
+{{--            @endforeach--}}
+{{--        </select>--}}
+        {{--        <input wire:model="search" type="text" class="form-input block w-full sm:w-64" placeholder="Find something">--}}
+    </x-category-nav-layout>
+    <main class="max-w-6xl mx-auto mt-10 lg:mt-10 space-y-6 mb-10 flex flex-wrap">
         <div class="w-full md:w-2/3 flex flex-col px-3">
             <div class="">
-                <x-typography.section-header> Contact Us </x-typography.section-header>
+                <x-typography.section-header> Let us contact you! </x-typography.section-header>
             </div>
-            <form wire:submit.prevent="store" class="form bg-white p-6 my-10 relative">
-                <h3 class="text-2xl text-gray-900 font-semibold">Let us contact you!</h3>
+            <form wire:submit.prevent="store" class="form bg-white px-6 relative">
                 <div class="flex space-x-5 mt-3">
                     <x-form.input model="contact.name" type="text" placeholder="Your Name" class="w-1/2"/>
                     <x-form.input model="contact.phone" type="text"  placeholder="Your Number" class="w-1/2"/>
@@ -21,7 +29,13 @@
             </form>
         </div>
         <x-layout.front-end.aside>
-            <livewire:blog.aside.tab-component />
+            <div class="items-center px-3 py-2 bg-blue-700 rounded-lg mb-4">
+                <span class="text-white font-medium uppercase hover:text-gary-700 text-2xl">
+                    Recent Articles
+                </span>
+            </div>
+            <livewire:blog.aside.recent-post-component/>
         </x-layout.front-end.aside>
-    </div>
+    </main>
 </div>
+

@@ -15,6 +15,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "http-interop/http-factory-guzzle": "^1.2",
         "itsgoingd/clockwork": "^5.0",
+        "larabug/larabug": "^2.4",
         "laravel/framework": "^8.0",
         "laravel/nova": "~3.0",
         "laravel/scout": "^9.3",

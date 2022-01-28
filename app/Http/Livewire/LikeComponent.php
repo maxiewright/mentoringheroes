@@ -11,6 +11,7 @@ class LikeComponent extends Component
 {
     public object $model;
     public int $count;
+    public string $text;
 
     public function mount($model)
     {
@@ -20,9 +21,10 @@ class LikeComponent extends Component
 
     public function like()
     {
-        if ($this->model->isLiked()) {
 
-            $this->model->removeLike();
+        if ($this->model->isLikedByViewer()) {
+
+            $this->removeLike();
 
             $this->count--;
 
@@ -34,15 +36,40 @@ class LikeComponent extends Component
 
             $this->count++;
 
-        } elseif (($ip = request()->ip()) && ($userAgent = request()->userAgent())) {
-
+        } else {
             $this->model->likes()->create([
-                'ip' => $ip,
-                'user_agent' => $userAgent,
+                'ip' => request()->ip(),
+                'user_agent' => request()->userAgent(),
             ]);
 
             $this->count++;
         }
+    }
+
+    public function removeLike()
+    {
+        $ip = request()->ip();
+        $userAgent = request()->userAgent();
+
+        if (auth()->user()) {
+            $this->model->likes()
+                ->where('user_id', auth()->id())
+                ->delete();
+        }
+
+        if ($this->model->ip = $ip && $this->model->user_agent = $userAgent) {
+            $this->model->likes()
+                ->whereIp(request()->ip())
+                ->whereUserAgent(request()->userAgent())
+                ->delete();
+        }
+    }
+
+    public function isLiked()
+    {
+        $this->model->isLikedByViewer()
+            ? $this->text = 'text-green-400 hover:text-green-500'
+            : $this->text = 'text-gray-400 hover:text-gray-500';
     }
 
     public function render(): Factory|View|Application

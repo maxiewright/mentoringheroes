@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
 use App\Models\Contact;
 use Livewire\Component;
 
@@ -9,6 +10,7 @@ class ContactComponent extends Component
 {
 
     Public Contact $contact;
+
 
     protected $rules = [
         'contact.name' => 'required',
@@ -30,6 +32,7 @@ class ContactComponent extends Component
        $this->contact = Contact::make();
     }
 
+
     public function updatedContact()
     {
         $this->validateOnly($this->contact);
@@ -46,7 +49,6 @@ class ContactComponent extends Component
 
     public function render()
     {
-        return view('livewire.contact-component')
-            ->layout('components.layout.app');
+        return view('livewire.contact-component');
     }
 }

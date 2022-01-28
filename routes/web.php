@@ -35,14 +35,11 @@ Route::get('login/{provider}/callback',[SocialAccountController::class, 'handleP
 /*
  * Front End
  */
-Route::get('/', IndexPage::class)
-    ->name('posts.index');
+Route::get('/', IndexPage::class)->name('posts.index');
 
-Route::get('posts/{post}', ShowPage::class)
-    ->name('posts.show');
+Route::get('posts/{post}', ShowPage::class)->name('posts.show');
 
-Route::get('contact', ContactComponent::class)
-    ->name('contact');
+Route::get('contact', ContactComponent::class)->name('contact');
 
 
 //Views
