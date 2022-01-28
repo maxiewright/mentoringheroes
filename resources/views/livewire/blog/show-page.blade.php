@@ -6,7 +6,7 @@
                 <option value="{{$categories->id}}">{{$categories->name}}</option>
             @endforeach
         </select>
-        <input wire:model="search" type="text" class="form-input block w-full sm:w-64" placeholder="Find something">
+{{--        <input wire:model="search" type="text" class="form-input block w-full sm:w-64" placeholder="Find something">--}}
     </x-category-nav-layout>
     <main class="max-w-6xl mx-auto mt-10 lg:mt-10 space-y-6 mb-10">
         <section class="lg:grid lg:grid-cols-12 gap-x-10">
@@ -64,6 +64,7 @@
                             <x-icon.comment class="h-6 w-6 mr-1" /> {{$post->commentCount()}}
                         </span>
                     </div>
+                    {{--TODO:: Add social media sharing--}}
                     <!-- Share -->
 {{--                    <div wire:ignore class="flex items-center no-underline pr-6">--}}
 {{--                        <a class="" href="https://www.pinterest.com/mentoringheroes/">--}}
@@ -115,12 +116,6 @@
                 @endif
             </div>
         </div>
-        @auth
-
-        <span wire:click="togglePostLike">Like</span>
-
-        @endauth
-
     </main>
 
     <x-layout.side-panel>

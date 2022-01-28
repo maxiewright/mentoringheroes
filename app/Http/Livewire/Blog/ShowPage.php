@@ -5,6 +5,8 @@ namespace App\Http\Livewire\Blog;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
 use Livewire\Component;
@@ -14,6 +16,8 @@ class ShowPage extends Component
     public Post $post;
     public object $categories;
     public string $category = '';
+    public string $search = '';
+
 
     protected $listeners  = [
         'refreshPost' => '$refresh',
@@ -34,24 +38,7 @@ class ShowPage extends Component
         return redirect('/?category='.$categoryId);
     }
 
-    public function togglePostLike()
-    {
-//        dd(auth()->id());
-//        dd($this->post->liker);
-
-        // if auth user already liked post remove like record
-        if (auth()->user()->is($this->post->liker)){
-
-        }
-
-       dd('no');
-        // create like record
-        $this->post->likes()->create([
-            'user_id' => auth()->id()
-        ]);
-    }
-
-    public function render()
+    public function render(): Factory|View|Application
     {
         return view('livewire.blog.show-page',[
             'previousPost' => Post::where('id', '<', $this->post->id)->orderByDesc('id')->first(),

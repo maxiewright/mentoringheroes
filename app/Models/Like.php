@@ -22,7 +22,6 @@ class Like extends Model
         return $this->morphTo();
     }
 
-
     public function scopeWhereIp($query, string $ip)
     {
         return $query->where('ip', $ip);

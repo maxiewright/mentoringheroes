@@ -20,31 +20,16 @@ trait HasLikes
         return $this->likes()->count();
     }
 
-//    public function likedBy(): HasManyThrough
-//    {
-//        return $this->hasManyThrough(
-//            User::class,
-//            Like::class,
-//            'likeable_id',
-//            'id',
-//            'id',
-//            'user_id'
-//        );
-//    }
-
-
-    public function likedBy(): HasMany
+    public function isLikedByViewer(): bool
     {
-        return $this->hasMany(User::class);
-    }
+        $ip = request()->ip();
+        $userAgent = request()->userAgent();
 
-    public function isLiked(): bool
-    {
         if (auth()->user()) {
             return $this->likes->contains('user_id', auth()->id());
         }
 
-        if (($ip = request()->ip()) && ($userAgent = request()->userAgent())) {
+        if ($this->ip = $ip && $this->user_agent = $userAgent) {
             return $this->likes()
                 ->whereIp($ip)
                 ->whereUserAgent($userAgent)
@@ -53,27 +38,5 @@ trait HasLikes
 
         return false;
     }
-
-    public function removeLike(): bool
-    {
-        if (auth()->user()) {
-            return  $this->likes()->where('user_id', auth()->id())->delete();
-        }
-
-        if (($ip = request()->ip()) && ($userAgent = request()->userAgent())) {
-            return $this->likes()
-                ->whereIp($ip)
-                ->whereUserAgent($userAgent)
-                ->delete();
-        }
-
-        return false;
-    }
-
-
-
-
-
-
 
 }
