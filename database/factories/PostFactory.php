@@ -27,7 +27,25 @@ class PostFactory extends Factory
             'slug' => $this->faker->slug,
             'body' => $this->faker->paragraphs(5, true),
             'is_featured' => $this->faker->boolean,
-            'published_at' => $this->faker->date(),
         ];
+    }
+
+
+    public function published(): self
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'published_at' => $this->faker->date()
+            ];
+        });
+    }
+
+    public function draft(): self
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'published_at' => null
+            ];
+        });
     }
 }

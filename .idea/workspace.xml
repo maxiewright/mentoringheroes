@@ -5,23 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d1d42dc-4858-41c1-ad8e-c4596f3e4746" name="Default Changelist" comment="Added Contact, About, Subscribe, vlogs, podcast and course views.">
-      <change afterPath="$PROJECT_DIR$/config/larabug.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/components/post/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/Blog/BlogIndexTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Blog/ShowPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Blog/ShowPage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/ContactComponent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/ContactComponent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/LikeComponent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/LikeComponent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Like.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Like.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/HasLikes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/HasLikes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/logging.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/details/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/details/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/blog/show-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/blog/show-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/contact-component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/contact-component.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/like-component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/like-component.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/PostFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PostFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_01_220151_modify_users_table_for_social_login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +47,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/resources/views/livewire/connect-component.blade.php" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.1">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
@@ -265,11 +258,25 @@
       <recent name="C:\Users\maxie\mentoringheroes\resources\views\components\layouts" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.BlogIndexTest.test_index_shows_blog_posts">
+    <configuration name="BlogIndexTest.test_index_shows_blog_posts" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 8.1" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\Blog\BlogIndexTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/Blog/BlogIndexTest.php" method="test_index_shows_blog_posts" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.BlogIndexTest.test_index_shows_blog_posts" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -334,6 +341,9 @@
       <workItem from="1637439789833" duration="19918000" />
       <workItem from="1637597171465" duration="602000" />
       <workItem from="1638092063584" duration="12834000" />
+      <workItem from="1643547389286" duration="598000" />
+      <workItem from="1643559288686" duration="7150000" />
+      <workItem from="1643579831848" duration="1569000" />
     </task>
     <task id="LOCAL-00001" summary="Completed Blog Models">
       <created>1601861448608</created>
@@ -487,6 +497,11 @@
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/livewire/blog/show-page.blade.php</url>
           <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/tests/Feature/Blog/BlogIndexTest.php</url>
+          <line>11</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
