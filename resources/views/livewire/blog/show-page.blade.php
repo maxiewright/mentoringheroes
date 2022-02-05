@@ -11,7 +11,7 @@
     <main class="max-w-6xl mx-auto mt-10 lg:mt-10 space-y-6 mb-10">
         <section class="lg:grid lg:grid-cols-12 gap-x-10">
             <div class="col-span-4 lg:text-center lg:pt-14 mt-2 mb-10">
-                <img src="{{$post->image_path}}"
+                <img src="{{$post->image}}"
                      alt=""
                      class="rounded-xl">
 

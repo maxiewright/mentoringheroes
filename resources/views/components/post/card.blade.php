@@ -6,7 +6,7 @@
 >
     <div class="py-6 px-5 {{$featured ? 'lg:flex' : ''}} ">
         <div class="{{$featured ? 'flex-1 lg:mr-8' : 'mb-4' }}">
-            <img src="{{$post->image_path}}"
+            <img src="{{$post->image}}"
                  alt="Blog Post illustration"
                  class="rounded-xl">
         </div>
