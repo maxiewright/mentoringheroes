@@ -5,21 +5,20 @@
 <article {{$attributes->merge(['class' => 'transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl'])}}
 >
     <div class="py-6 px-5 {{$featured ? 'lg:flex' : ''}} ">
-        <div class="{{$featured ? 'flex-1 lg:mr-8' : 'mb-4' }}">
+        <div class="{{$featured ? 'flex-1 lg:mr-8 h-80' : 'mb-4 h-72' }} h-72">
             <img src="{{$post->image}}"
                  alt="Blog Post illustration"
-                 class="rounded-xl">
+                 class="h-full w-full rounded-xl">
         </div>
 
         <div class="flex-1 flex flex-col justify-between">
             <header class="mt-8 lg:mt-0">
 
-                <div class="grid grid-cols-3 gap-2 mt-1">
+                <div class="flex flex-wrap gap-2 mt-1">
                     @foreach($post->categories as $category)
-
-                        <span wire:click="setCategory({{$category->id}})"
+                        <div wire:click="setCategory({{$category->id}})"
                               class="px-3 block py-1 border border-blue-800 rounded-full text-blue-800 text-xs uppercase font-semibold cursor-pointer"
-                              style="font-size: 10px">{{$category?->name}}</span>
+                              style="font-size: 10px">{{$category?->name}}</div>
                     @endforeach
                 </div>
 
@@ -39,7 +38,7 @@
                 </div>
             </header>
 
-            <div class="text-sm mt-2">
+            <div class="text mt-2">
                 <p>
                     {!! $post->excerpt() !!}
                 </p>

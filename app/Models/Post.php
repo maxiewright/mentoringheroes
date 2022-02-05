@@ -83,7 +83,7 @@ class Post extends Model
         });
     }
 
-    public function excerpt(int $limit = 100): string
+    public function excerpt(int $limit = 300): string
     {
         return Str::limit(strip_tags($this->body), $limit);
     }
