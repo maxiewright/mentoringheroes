@@ -16,6 +16,11 @@ class Category extends Model
        'name', 'slug'
     ];
 
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()

@@ -62,7 +62,7 @@ class IndexPage extends Component
     {
         $this->categories = Category::query()
             ->whereHas('posts')
-            ->get(['id', 'name']);
+            ->get(['id', 'slug', 'name']);
     }
 
     public function render(): Factory|View|Application
@@ -71,7 +71,7 @@ class IndexPage extends Component
             'posts' => Post::query()
                 ->with('categories', 'authors', 'tags')
                 ->when($this->category, fn($query, $filter) => $query
-                    ->whereRelation('categories', 'category_id', $filter)
+                    ->whereRelation('categories', 'slug', $filter)
                 )
                 ->when($this->search, fn($query, $search) => $query
                     ->whereRelation('categories', 'name', 'like', '%' . $search . '%' )

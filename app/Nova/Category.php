@@ -46,6 +46,8 @@ class Category extends Resource
             ID::make(__('ID'), 'id')
                 ->sortable(),
 
+            Text::make('Slug'),
+
             Text::make('Name'),
 
             BelongsToMany::make('Posts', 'posts', Post::class)

@@ -44,16 +44,9 @@ class Post extends Model
         'likes'
     ];
 
-
-//    public function searchableAs()
-//    {
-//        return 'posts_index';
-//    }
-
     public function getScoutKey()
     {
         return $this->title;
-
     }
 
     public function getSlugOptions(): SlugOptions
@@ -94,7 +87,6 @@ class Post extends Model
     {
         return Storage::disk('public')->url($this->image_path);
     }
-
 
     /**
      * returns the authors of this models
@@ -145,6 +137,5 @@ class Post extends Model
         return $this->categories
             ->first();
     }
-
 
 }
