@@ -4,9 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Validation\Rule;
-use JetBrains\PhpStorm\ArrayShape;
 use Livewire\Component;
 
 class ConnectComponent extends Component
@@ -14,17 +11,25 @@ class ConnectComponent extends Component
     public User $user;
 
     public bool $signIn = true;
+
     public bool $signUp = false;
+
     public bool $forgotPassword = false;
+
     public bool $showPassword = false;
+
     public bool $remember = true;
+
     public string $name;
-    public string $email ;
+
+    public string $email;
+
     public string $password;
+
     public string $password_confirmation;
 
     protected $listeners = [
-        'refreshComponent' => '$refresh'
+        'refreshComponent' => '$refresh',
     ];
 
     protected $messages = [
@@ -69,23 +74,20 @@ class ConnectComponent extends Component
         $this->validateOnly('user.email');
     }
 
-
     public function login()
     {
         $credentials = $this->validate([
             'email' => 'required|email|exists:users,email',
-            'password' => 'required'
+            'password' => 'required',
         ]);
 
         if (\Auth::attempt($credentials, $this->remember)) {
-
             $this->emit('refreshComponent');
 
             return;
         }
 
-        $this->addError('password', 'The password is incorrect' );
-
+        $this->addError('password', 'The password is incorrect');
     }
 
     public function register()
@@ -103,7 +105,6 @@ class ConnectComponent extends Component
         auth()->login($this->user);
 
         $this->emit('refreshComponent');
-
     }
 
     public function verify()

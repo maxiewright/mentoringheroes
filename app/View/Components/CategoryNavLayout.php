@@ -18,6 +18,4 @@ class CategoryNavLayout extends Component
     {
         return view('layouts.category-nav');
     }
-
 }
-

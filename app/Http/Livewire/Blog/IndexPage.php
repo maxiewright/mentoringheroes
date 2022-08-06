@@ -7,8 +7,6 @@ use App\Models\Post;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Routing\Redirector;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -17,16 +15,18 @@ class IndexPage extends Component
     use WithPagination;
 
     public object $categories;
+
     public string $category = '';
+
     public string $search = '';
 
     protected $queryString = [
         'search' => ['except' => ''],
-        'category' => ['except' => '']
+        'category' => ['except' => ''],
     ];
 
     protected $listeners = [
-       'refresh' => '$refresh'
+        'refresh' => '$refresh',
     ];
 
     public function paginationView(): string
@@ -70,17 +70,16 @@ class IndexPage extends Component
         return view('livewire.blog.index-page', [
             'posts' => Post::query()
                 ->with('categories', 'authors', 'tags')
-                ->when($this->category, fn($query, $filter) => $query
+                ->when($this->category, fn ($query, $filter) => $query
                     ->whereRelation('categories', 'slug', $filter)
                 )
-                ->when($this->search, fn($query, $search) => $query
-                    ->whereRelation('categories', 'name', 'like', '%' . $search . '%' )
-                    ->orWhere('title', 'like', '%' . $search . '%')
-                    ->orWhere('body', 'like', '%' . $search . '%')
+                ->when($this->search, fn ($query, $search) => $query
+                    ->whereRelation('categories', 'name', 'like', '%'.$search.'%')
+                    ->orWhere('title', 'like', '%'.$search.'%')
+                    ->orWhere('body', 'like', '%'.$search.'%')
                 )
                 ->latest()
                 ->paginate(6),
-
         ]);
     }
 }

@@ -19,7 +19,7 @@ class RolesAndPermissionSeeder extends Seeder
     {
         DB::transaction(function () {
             //Reset cached roles and Permissions
-            app() [PermissionRegistrar::class]->forgetCachedPermissions();
+            app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
             //Permissions
 
@@ -64,16 +64,16 @@ class RolesAndPermissionSeeder extends Seeder
 
             // Editor
             Role::create(['name' => 'editor'])->givePermissionTo([
-            //posts
-            'edit posts', 'write posts', 'publish posts', 'edit published posts', 'deleted published posts',
-            //Comments
-            'view comments', 'edit comments', 'deleted comments', 'Approve comments',
-            // Media
-            'upload media', 'edit media', 'delete media',
-            //Tags
-            'add tags', 'edit tags', 'delete tags',
-            //Categories
-            'add categories', 'edit categories', 'delete categories',
+                //posts
+                'edit posts', 'write posts', 'publish posts', 'edit published posts', 'deleted published posts',
+                //Comments
+                'view comments', 'edit comments', 'deleted comments', 'Approve comments',
+                // Media
+                'upload media', 'edit media', 'delete media',
+                //Tags
+                'add tags', 'edit tags', 'delete tags',
+                //Categories
+                'add categories', 'edit categories', 'delete categories',
             ]);
 
             // Author
@@ -98,9 +98,8 @@ class RolesAndPermissionSeeder extends Seeder
 
             // Subscriber
             Role::create(['name' => 'subscriber'])->givePermissionTo([
-                'edit profile'
+                'edit profile',
             ]);
-
         });
     }
 }

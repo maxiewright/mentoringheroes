@@ -30,8 +30,8 @@ class AppServiceProvider extends ServiceProvider
         Paginator::defaultView('vendor.pagination.tailwind');
 
         Relation::morphMap([
-          'post' => Post::class,
-          'user' => User::class,
-       ]);
+            'post' => Post::class,
+            'user' => User::class,
+        ]);
     }
 }

@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Like extends Model
@@ -14,7 +13,7 @@ class Like extends Model
     protected $fillable = [
         'user_id',
         'ip',
-        'user_agent'
+        'user_agent',
     ];
 
     public function likeable(): MorphTo
@@ -31,5 +30,4 @@ class Like extends Model
     {
         return $query->where('user_agent', $userAgent);
     }
-
 }

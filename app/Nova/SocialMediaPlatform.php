@@ -2,12 +2,10 @@
 
 namespace App\Nova;
 
-
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Http\Requests\NovaRequest;
 
 class SocialMediaPlatform extends Resource
 {
@@ -53,7 +51,7 @@ class SocialMediaPlatform extends Resource
                 ->sortable()
                 ->rules('required'),
 
-            Textarea::make('Description')
+            Textarea::make('Description'),
 
         ];
     }

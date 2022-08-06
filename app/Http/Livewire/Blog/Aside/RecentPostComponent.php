@@ -19,7 +19,7 @@ class RecentPostComponent extends Component
     public function render()
     {
         return view('livewire.blog.aside.recent-post-component', [
-            'recentPosts' => $this->recentPosts
+            'recentPosts' => $this->recentPosts,
         ]);
     }
 }

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Services;
-
 
 use App\Models\SocialAccount;
 use App\Models\User;
@@ -19,18 +17,17 @@ class SocialAccountsService
         if ($account) {
             return $account->user;
         } else {
-
             $user = User::where('email', $providerUser->getEmail())->first();
 
             if (! $user) {
                 $user = User::create([
                     'email' => $providerUser->getEmail(),
-                    'name'  => $providerUser->getName(),
+                    'name' => $providerUser->getName(),
                 ]);
             }
 
             $user->socialAccount()->create([
-                'provider_id'   => $providerUser->getId(),
+                'provider_id' => $providerUser->getId(),
                 'provider_name' => $provider,
             ]);
 

@@ -2,15 +2,12 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Category;
 use App\Models\Contact;
 use Livewire\Component;
 
 class ContactComponent extends Component
 {
-
-    Public Contact $contact;
-
+    public Contact $contact;
 
     protected $rules = [
         'contact.name' => 'required',
@@ -29,9 +26,8 @@ class ContactComponent extends Component
 
     public function mount()
     {
-       $this->contact = Contact::make();
+        $this->contact = Contact::make();
     }
-
 
     public function updatedContact()
     {

@@ -23,13 +23,9 @@ class PostSeeder extends Seeder
             ->count(10)
             ->create();
 
-
 //        $posts = Post::factory()
 //            ->has(User::factory()->count(1), 'authors')
 //            ->has(Category::factory()->count(3))
 //            ->create();
-
-
-
     }
 }

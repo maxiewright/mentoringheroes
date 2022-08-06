@@ -25,7 +25,7 @@ class SocialAccountController extends Controller
     /**
      * Obtain the user information
      *
-     * @param SocialAccountsService $accountService
+     * @param  SocialAccountsService  $accountService
      * @param $provider
      * @return Application|\Illuminate\Http\RedirectResponse|Redirector
      */
@@ -46,5 +46,4 @@ class SocialAccountController extends Controller
 
         return redirect()->intended();
     }
-
 }

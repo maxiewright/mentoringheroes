@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Traits\HasComments;
 use App\Traits\HasLikes;
-
 use App\Traits\HasTags;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -41,7 +40,7 @@ class Post extends Model
     ];
 
     protected $withCount = [
-        'likes'
+        'likes',
     ];
 
     public function getScoutKey()
@@ -65,10 +64,10 @@ class Post extends Model
     {
         parent::boot();
 
-        static::saving(function ($post){
-            if ($post->is_published){
+        static::saving(function ($post) {
+            if ($post->is_published) {
                 $post->published_at = now();
-            }else{
+            } else {
                 $post->published_at = null;
             }
         });
@@ -81,6 +80,7 @@ class Post extends Model
 
     /**
      * returns article image path
+     *
      * @return string
      */
     public function getImageAttribute(): string
@@ -107,7 +107,6 @@ class Post extends Model
      */
     public function getLeadAuthorAttribute()
     {
-
         if ($this->authors()->count() == 1) {
             return $this->authors()->first();
         }
@@ -137,5 +136,4 @@ class Post extends Model
         return $this->categories
             ->first();
     }
-
 }

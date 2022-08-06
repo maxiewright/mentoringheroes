@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use App\Models\Comment;
-use App\Models\Post;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -12,20 +11,26 @@ use Livewire\Component;
 class CommentComponent extends Component
 {
     public object $model;
+
     public Comment $comment;
-    public bool $saved =false;
+
+    public bool $saved = false;
+
     public bool $showReplies = false;
+
     public bool $readCommentsOnly = false;
+
     public int|null $replyCommentId = null;
+
     public bool $replyMode = false;
 
     protected $listeners = [
-        'refreshComponent'
+        'refreshComponent',
     ];
 
     protected array $rules = [
         'comment.parent_id' => 'nullable',
-        'comment.body'  => 'required|min:25|max:5000',
+        'comment.body' => 'required|min:25|max:5000',
     ];
 
     protected array $messages = [
@@ -36,12 +41,12 @@ class CommentComponent extends Component
 
     public function mount()
     {
-       $this->comment = Comment::make();
+        $this->comment = Comment::make();
     }
 
     public function store()
     {
-        if ($this->replyCommentId != null){
+        if ($this->replyCommentId != null) {
             $this->comment['parent_id'] = $this->replyCommentId;
         }
 
@@ -59,7 +64,6 @@ class CommentComponent extends Component
         $this->mount();
         $this->replyCommentId = null;
         $this->replyMode = false;
-
     }
 
     public function reply($commentId)
@@ -76,11 +80,10 @@ class CommentComponent extends Component
         $this->replyMode = false;
     }
 
-
     public function render(): Factory|View|Application
     {
         return view('livewire.comment-component', [
-           'comments' => $this->model->comments,
+            'comments' => $this->model->comments,
         ]);
     }
 }

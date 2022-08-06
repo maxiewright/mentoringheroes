@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Responses;
 
 use Illuminate\Support\Facades\Auth;

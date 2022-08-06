@@ -13,7 +13,7 @@ class Category extends Model
     use HasFactory, HasSlug;
 
     protected $fillable = [
-       'name', 'slug'
+        'name', 'slug',
     ];
 
     public function getRouteKeyName(): string
@@ -33,6 +33,4 @@ class Category extends Model
         return $this->belongsToMany(Post::class, 'post_category')
             ->withPivot('is_main');
     }
-
-
 }

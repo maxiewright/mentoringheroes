@@ -30,12 +30,11 @@ class PostFactory extends Factory
         ];
     }
 
-
     public function published(): self
     {
         return $this->state(function (array $attributes) {
             return [
-                'published_at' => $this->faker->date()
+                'published_at' => $this->faker->date(),
             ];
         });
     }
@@ -44,7 +43,7 @@ class PostFactory extends Factory
     {
         return $this->state(function (array $attributes) {
             return [
-                'published_at' => null
+                'published_at' => null,
             ];
         });
     }

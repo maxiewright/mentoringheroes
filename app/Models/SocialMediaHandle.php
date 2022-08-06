@@ -13,7 +13,7 @@ class SocialMediaHandle extends Model
     protected $fillable = ['user_id', 'social_media_platform_id', 'username', 'is_active'];
 
     protected $casts = [
-        'is_active' => 'boolean'
+        'is_active' => 'boolean',
     ];
 
     public function user(): BelongsTo

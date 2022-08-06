@@ -23,7 +23,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         parent::boot();
 
-        self::created(function($user){
+        self::created(function ($user) {
             $user->assignRole('subscriber');
         });
     }
@@ -75,12 +75,10 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @return HasMany
      */
-
     public function likes(): HasMany
     {
         return $this->hasMany(Like::class);
     }
-
 
     public function posts(): MorphToMany
     {
@@ -107,6 +105,4 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(SocialMediaHandle::class);
     }
-
-
 }

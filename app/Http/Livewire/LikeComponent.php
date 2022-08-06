@@ -10,7 +10,9 @@ use Livewire\Component;
 class LikeComponent extends Component
 {
     public object $model;
+
     public int $count;
+
     public string $text;
 
     public function mount($model)
@@ -21,21 +23,16 @@ class LikeComponent extends Component
 
     public function like()
     {
-
         if ($this->model->isLikedByViewer()) {
-
             $this->removeLike();
 
             $this->count--;
-
         } elseif (auth()->user()) {
-
             $this->model->likes()->create([
                 'user_id' => auth()->id(),
             ]);
 
             $this->count++;
-
         } else {
             $this->model->likes()->create([
                 'ip' => request()->ip(),

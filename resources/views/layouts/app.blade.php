@@ -97,17 +97,6 @@
             Here to guide you along your hero's Journey
         </p>
     </div>
-
-
-    <div class="flex flex-col items-center">
-        <a class="text-2xl font-bold text-white uppercase hover:text-red-700 md:text-5xl" href="#">
-
-        </a>
-        <p class="hidden md:block text-lg text-white">
-
-        </p>
-    </div>
-
 </header>
 
 

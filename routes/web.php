@@ -17,20 +17,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('oauth', function (){
-   $user = \App\Models\User::find(14);
+Route::get('oauth', function () {
+    $user = \App\Models\User::find(14);
 
-   return $user->hasSocialAccount();
-
+    return $user->hasSocialAccount();
 });
-
 
 /*
  * Auth
  */
-Route::get('login/{provider}',         [SocialAccountController::class, 'redirectToProvider']);
-Route::get('login/{provider}/callback',[SocialAccountController::class, 'handleProviderCallback']);
-
+Route::get('login/{provider}', [SocialAccountController::class, 'redirectToProvider']);
+Route::get('login/{provider}/callback', [SocialAccountController::class, 'handleProviderCallback']);
 
 /*
  * Front End
@@ -41,16 +38,14 @@ Route::get('posts/{post}', ShowPage::class)->name('posts.show');
 
 Route::get('contact', ContactComponent::class)->name('contact');
 
-
 //Views
-Route::view('subscribe','details.subscribe')
+Route::view('subscribe', 'details.subscribe')
     ->name('subscribe');
-Route::view('about','details.about')
+Route::view('about', 'details.about')
     ->name('about');
 Route::view('terms_and_conditions', 'legal.terms-and-conditions')
     ->name('terms_and_conditions');
 Route::view('privacy_policy', 'legal.privacy-policy')
     ->name('privacy_policy');
-
 
 require __DIR__.'/auth.php';

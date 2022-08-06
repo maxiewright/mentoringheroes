@@ -26,18 +26,19 @@ class Comment extends Model
     ];
 
     protected $casts = [
-      'published_at' => 'date'
+        'published_at' => 'date',
     ];
 
-   protected static function booted()
-   {
-       self::saving(function ($comment){
-           $comment->user_id = auth()->id();
-       });
-   }
+    protected static function booted()
+    {
+        self::saving(function ($comment) {
+            $comment->user_id = auth()->id();
+        });
+    }
 
     /**
      * Return the author of a comment
+     *
      * @return BelongsTo
      */
     public function author(): BelongsTo
@@ -57,11 +58,11 @@ class Comment extends Model
 
     /**
      * Returns Comment Replies
+     *
      * @return HasMany
      */
     public function replies(): HasMany
     {
         return $this->hasMany(Comment::class, 'parent_id');
     }
-
 }

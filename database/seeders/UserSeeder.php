@@ -23,15 +23,15 @@ class UserSeeder extends Seeder
         $users = [
             [
                 'name' => 'Maxie Wright',
-                'email'  => 'maxiewright@gmail.com',
+                'email' => 'maxiewright@gmail.com',
                 'about' => 'Developer',
-                'password' => Hash::make('Password-01')
+                'password' => Hash::make('Password-01'),
             ],
             [
                 'name' => 'Kanu Sankara',
-                'email'  => 'khsankara@gmail.com',
+                'email' => 'khsankara@gmail.com',
                 'about' => 'Lead Author',
-                'password' => Hash::make('Password-01')
+                'password' => Hash::make('Password-01'),
             ],
         ];
 
@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
 
         $admins = User::all();
 
-        foreach ($admins as $admin){
+        foreach ($admins as $admin) {
             $admin->assignRole('admin');
         }
     }

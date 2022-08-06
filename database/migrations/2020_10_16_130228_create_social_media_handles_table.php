@@ -13,7 +13,6 @@ class CreateSocialMediaHandlesTable extends Migration
      */
     public function up()
     {
-
         Schema::create('social_media_handles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();

@@ -3,13 +3,10 @@
 namespace App\Traits;
 
 use App\Models\Like;
-use App\Models\User;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasLikes
 {
-
     public function likes(): MorphMany
     {
         return $this->morphMany(Like::class, 'likeable');
@@ -38,5 +35,4 @@ trait HasLikes
 
         return false;
     }
-
 }

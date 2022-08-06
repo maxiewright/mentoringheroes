@@ -35,7 +35,6 @@ trait HasProfilePhoto
      */
     public function deleteProfilePhoto()
     {
-
         Storage::disk($this->profilePhotoDisk())->delete($this->profile_photo_path);
 
         $this->forceFill([
