@@ -60,7 +60,9 @@ class IndexPage extends Component
 
     public function mount()
     {
-        $this->categories = Category::all('id', 'name');
+        $this->categories = Category::query()
+            ->whereHas('posts')
+            ->get(['id', 'name']);
     }
 
     public function render(): Factory|View|Application

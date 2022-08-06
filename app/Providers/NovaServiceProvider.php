@@ -42,7 +42,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function gate()
     {
         Gate::define('viewNova', function ($user) {
-            return $user->hasAnyRole('admin', 'editor', 'author','contributor');
+            return in_array($user->email, [
+                //
+            ]);
         });
     }
 
@@ -54,9 +56,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new \Tightenco\NovaGoogleAnalytics\PageViewsMetric,
-            new \Tightenco\NovaGoogleAnalytics\VisitorsMetric,
-//            new \Tightenco\NovaGoogleAnalytics\MostVisitedPagesCard,
+            new Help,
         ];
     }
 
@@ -77,9 +77,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [
-            \Vyuldashev\NovaPermission\NovaPermissionTool::make(),
-        ];
+        return [];
     }
 
     /**
