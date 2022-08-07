@@ -4,7 +4,6 @@ namespace App\Http\Livewire\Blog;
 
 use App\Models\Category;
 use App\Models\Post;
-use Google\Service\ShoppingContent\Resource\Pos;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -30,7 +29,9 @@ class ShowPage extends Component
 
     public function mount()
     {
-        $this->categories = Category::query()->get(['id', 'name']);
+        $this->categories = Category::query()
+            ->whereHas('posts')
+            ->get(['id', 'name']);
     }
 
     public function updatedCategory(): Redirector|Application|RedirectResponse
@@ -38,9 +39,9 @@ class ShowPage extends Component
         return redirect('/?category=' . $this->category);
     }
 
-    public function goToCategory($categoryId): Redirector|Application|RedirectResponse
+    public function goToCategory($categorySlug): Redirector|Application|RedirectResponse
     {
-        return redirect('/?category=' . $categoryId);
+        return redirect('/?category=' . $categorySlug);
     }
 
     public function render(): Factory|View|Application

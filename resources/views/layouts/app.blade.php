@@ -33,9 +33,9 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
-@livewireStyles
+    @livewireStyles
 
-<!-- AlpineJS -->
+    <!-- AlpineJS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <!-- Font Awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
@@ -52,6 +52,14 @@
 
         <nav>
             <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
+                @if(!request()->routeIs('posts.index'))
+                    <li>
+                        <a class="hover:text-gray-200 hover:underline px-4"
+                           href="{{route('posts.index')}}">
+                            Home
+                        </a>
+                    </li>
+                @endif
                 <li>
                     <a class="hover:text-gray-200 hover:underline px-4"
                        href="{{route('about')}}">
@@ -101,7 +109,6 @@
 
 
 {{$slot}}
-
 
 
 <footer class="w-full py-3 border-t border-b bg-gray-100">

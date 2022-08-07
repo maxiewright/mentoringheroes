@@ -2,8 +2,8 @@
     <x-category-nav-layout >
         <select wire:model="category" class="form-select block w-full sm:w-64">
             <option value="">{{__('Categories')}}</option>
-            @foreach($categories as $categories)
-                <option value="{{$categories->id}}">{{$categories->name}}</option>
+            @foreach($categories as $category)
+                <option value="{{$category->slug}}">{{$category->name}}</option>
             @endforeach
         </select>
 {{--        <input wire:model="search" type="text" class="form-input block w-full sm:w-64" placeholder="Find something">--}}
