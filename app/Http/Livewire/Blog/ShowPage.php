@@ -36,12 +36,12 @@ class ShowPage extends Component
 
     public function updatedCategory(): Redirector|Application|RedirectResponse
     {
-        return redirect('/?category=' . $this->category);
+        return redirect('/?category='.$this->category);
     }
 
     public function goToCategory($categorySlug): Redirector|Application|RedirectResponse
     {
-        return redirect('/?category=' . $categorySlug);
+        return redirect('/?category='.$categorySlug);
     }
 
     public function render(): Factory|View|Application
